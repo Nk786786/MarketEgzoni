@@ -124,12 +124,14 @@
             </div>
         </div>
         <div>
+
             <div class="btn-group" style="text-align: center; margin: 15px 0px 15px">
                 <button class="btn btn-primary btn-lg" style="background-color: #d62217; border: none;">
                     Total : {{total}} €
                 </button>
 
             </div>
+            {% if not length == 0 %}
             <div class="btn-group" style="text-align: center; margin: 15px 0px 5px;">
                 <form method="post">
                     <p><input class="eoli" type="submit" name="submit1"
@@ -137,6 +139,7 @@
                               value="Fshij"></p>
                 </form>
             </div>
+            {% endif %}
         </div>
     </div>
 
@@ -153,7 +156,12 @@
     {% with messages = get_flashed_messages() %}
     {% if messages %}
     {% for msg in messages %}
+    {% if msg=="Porosia është e zbrazët!" %}
     <p style="color: black; opacity: 1.0; text-align: center;">{{msg}}</p>
+    {% endif %}
+    {% if msg=="Porosia është dërguar me sukses!" %}
+    <p style="color: green; opacity: 1.0; text-align: center;">{{msg}}</p>
+    {% endif %}
     {% endfor %}
     {% endif %}
     {% endwith %}
