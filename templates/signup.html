@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Market Egzoni - Regjistrohu</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="shortcut icon" type="image/png" href="static/images/logo2.png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<style>
+    ::placeholder {
+  color:  #D63D17;
+  opacity: 1.0;
+}
+
+
+</style>
+<body style="background-color: #D63D17; color: white;">
+<div style="padding-bottom: 100px;">
+    <a href="/home"><img src="static/images/cart.png" alt="Logo" height="50" style="padding: 10px 10px 0px"></a>
+    <div style="text-align: center;">
+        <h1 style="padding-top: 140px;">Regjistrohu</h1>
+        <p style="font-size: 25px; color:black;">Ju lutem regjistrohuni që të mund të kyçeni.</p>
+        <p style="font-size: 15px; color:black;">Numri i telefonit nuk është i detyrueshëm por nëse e harroni fjalëkalimin nuk mund ta gjeni pa numër të telefonit. .</p>
+        <form method="post" style="padding-top: 20px;">
+            <input class="container-fluid" type="text" name="name" placeholder="Emri i përdoruesit"
+                   style="margin-bottom: 20px; width: 700px; height: 50px; border: none; color: #D63D17;" required
+                   minlength="4">
+            <p style="margin-bottom: 0px;"><input class="container-fluid" type="email" name="email"
+                                                  placeholder="Shtypni email-ën tuaj"
+                                                  style="margin-bottom: 20px; width: 700px; height: 50px; border: none; color: #D63D17;" required>
+            </p>
+            <p style="margin-bottom: 0px;"><input class="container-fluid" type="number" name="phone"
+                                                  placeholder="Shtypni numrin e telefonit (opsional)"
+                                                  style="margin-bottom: 20px; width: 700px; height: 50px; border: none; color: #D63D17;">
+            </p>
+            <p><input class="container-fluid" type="password" name="password" placeholder="Shtypni fjalëkalimin"
+                      style="margin-bottom: 20px; width: 700px; height: 50px; border: none; color: #D63D17;"
+                      pattern="(?=.*\d)(?=.*[a-z]).{8,}"
+                      title="Must contain at least one number and lowercase letter, and at least 8 or more characters"
+                      required>
+            </p>
+            <p><input type="submit" name="submit" value="Regjistrohu" style="color: #D63D17;"></p>
+        </form>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        {% for msg in messages %}
+        <p style="color: black; opacity: 1.0;">{{msg}}</p>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+    </div>
+</div>
+</body>
+</html>

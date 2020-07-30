@@ -1,0 +1,44 @@
+<div class="container-fluid">
+    <p style="font-size: 26px; margin-bottom: 0px;">Porosi nga <strong style="font-size: 29px;">{{client}}</strong></p>
+    <p style="margin-top; 5px;"><i><b>Email:</b> {{email}}</i></p>
+    <p style="margin-bottom: 50px;"><i><b>Numri i telefonit:</b> {{phone}}</i></p>
+    <hr>
+    <table class="table">
+        <thead>
+        <tr>
+            <td><strong style="font-size: 30px; margin-right: 100px;">Kategoria</strong></td>
+
+            <td><strong style="font-size: 30px; margin-right: 100px;">Produkti</strong></td>
+
+            <td><strong style="font-size: 30px; margin-right: 100px;">Sasia</strong></td>
+
+            <td><strong style="font-size: 30px; margin-right: 100px; margin-bottom: 0px">Çmimi për një
+            </strong></td>
+
+            <td><strong style="font-size: 30px; margin-right: 100px; margin-bottom: 0px">Çmimi për të gjitha
+            </strong></td>
+        </tr>
+        </thead>
+
+        <tbody>
+        {% for item in orders %}
+        <tr>
+            <td><strong><i>{{item.category}}</i></strong></td>
+
+            <td><strong><i>{{item.product}}</i></strong></td>
+
+            <td><strong><i>{{item.quantity}}</i></strong></td>
+
+            <td><strong><i>{{item.qmimi}} €</i></strong></td>
+
+            <td><strong><i>{{item.price}} €</i></strong></td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+<hr>
+<p style="font-size: 26px;">Total: <strong style="font-size: 26px;">{{total}} €</strong></p>
+
+
+

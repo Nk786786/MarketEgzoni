@@ -1,0 +1,185 @@
+{% extends "base.html" %}
+{% block title %}Market Egzoni{% endblock %}
+{% block content %}
+<style>
+    body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+}
+::placeholder {
+  color:  #D63D17;
+  opacity: 0.85;
+}
+.myDivElement{
+    text-align:center;
+}
+.myDivElement ul li{
+   display:inline;
+
+ }
+.indicator {
+position: relative;
+width: 50px;
+height: 50px;
+transform: rotate(45deg);
+}
+
+.indicator span {
+ postion: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  box-sizing: border-box;
+  border: none;
+  border-right: 3px solid #D63D17;
+  border-bottom: 3px solid #D63D17;
+}
+
+
+#example1 {
+  border: none;
+  border-radius: 25px;
+  padding: 10px;
+  box-shadow: 3px 5px #212F3D;
+  background-color: #D63D17;
+  width: auto;
+  height: auto;
+}
+#example11 {
+  border: none;
+  border-radius: 25px;
+  padding: 10px;
+  box-shadow: 3px 5px #212F3D;
+  background-color: #d62217;
+  width: auto;
+  height: auto;
+
+}
+#example2 {
+  border: none;
+  border-radius: 25px;
+  padding: 10px;
+  box-shadow: 3px 5px #212F3D;
+  background-color: #d62217;
+  width: 350px;
+
+
+
+}
+#section1 {
+  height: auto;
+  background-color: white;
+}
+
+#section2 {
+  height: auto;
+  background-color: white;
+}
+
+.row {
+  display: flex;
+}
+
+
+.column {
+  flex: 50%;
+  padding: 5px;
+}
+
+@media only screen and (max-width: 995px) {
+    #btngroup {
+        display: none;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+</style>
+<body>
+<div class="main" id="section1" style="margin: 0px 0px 0px 0px;">
+    <p style="font-family: 'stencil'; text-align: center; color: #d62217; font-size: 65px; margin: 0px 0px 0px 0px; padding-top: 30px;">
+        <img src="static/images/logo1.png" height="150px"> <img src="static/images/cart.png" height="140px"
+                                                                style="margin-bottom: 30px;"></p>
+    <div class="container-fluid" style="color: #d62217;">
+        <h2>Çka është Market Egzoni?</h2>
+        <div id="example1">
+            <p style="font-size: 25px; color:white;">Market Egzoni jemi një biznis ushqimor ku lokacionin e marketit
+                tonë e kemi në fshatin Manastirc-Ferizaj. Aty filluam si një mini-market por duke punuar çdo ditë drejt
+                qëllimit tonë, sot furnizojmë të gjithë rajonin e Ferizajit duke përfshirë Shtimen dhe Lipjanin.
+            </p>
+            <p style="font-size: 25px; color:white;">
+                Ne bëjmë ofrimin e produkteve ushqimore dhe produkteve të marketeve në përgjithësi informatat e së
+                cilave mund ti gjeni në linkat e lart përmendur "Ushqime, Pije dhe Higjienë".
+
+            </p>
+            <p style="font-size: 25px; color:white;">
+                Ideja jonë me këtë webfaqe është qe të ja bëjmë sa më të lehtë dhe sa më të arritshëm produktet tona tek
+                ju.<br>
+                Me këtë webfaqe ju mund ti shikoni produktet dhe ofertat tona për ato produkte dhe në të njejtën kohë
+                mund edhe ti porositni ato. Porosia juaj arrinë në një ditë të caktuar të javës, varësisht nga vendi në
+                të cilën gjendeni.</p>
+            <p style="font-size: 25px; color:white;">
+                Pra, qfarë po pritni. Porositni sa më shpejt!
+
+            </p>
+        </div>
+        <a href="#section2" style="color: #007bff;">
+            <div class="indicator" style="margin-left: 48.5%; opacity: 1.0; margin-bottom: 100px; margin-top: 100px;">
+                <span></span>
+            </div>
+        </a>
+
+    </div>
+
+</div>
+
+
+<div class="main" id="section2" style="padding-top: 80px;">
+    <div class="container" style="color:white;">
+        <p style="font-size: 25px; color:#d62217;">
+            Ne mundohemi te jemi sa më profesionistë në punën tonë por nëse ke ndonjë problem ose mendon se mund të
+            ndryshojmë ndonjë gjë në webfaqe ose në mënyrën se si po funksionon porosia online atëherë na kontaktoni në
+            informatat më poshtë.
+        </p>
+
+            <div class="container" id="example2" style="margin: 30px 0px 100px; display: block; margin-left: auto; margin-right: auto; width: 40%;">
+                <ul>
+                    <li>Phone: +383 49 793 208</li>
+                    <li>Gmail: eol.nuha22@gmail.com</li>
+                    <li>Email: olinuha08@hotmail.com</li>
+                    <li>Facebook: Eol Nuha</li>
+                    <li>Instagram: eol.nuha</li>
+                </ul>
+
+            </div>
+
+        <div style="text-align: center;">
+            <p style="font-size: 25px; color:#d62217;">Mund të na dërgoni kërkesën tuaj direkt në emailin tonë duke
+                e shkruar kërkesën e juaj më poshtë.</p>
+            <form method="post" style=" margin-bottom: 100px;">
+                <textarea
+                        class="container-fluid" name="name" placeholder="Kerkesa juaj" rows="5" cols="60"
+                        style="margin-bottom: 20px; width: 700px; height: 150px; border: black; color:#d62217; box-shadow:
+                        0 0 1px rgba(0, 0, 0, 0.3),
+                        0 3px 7px rgba(0, 0, 0, 0.3),
+                        inset 0 1px rgba(255,255,255,1),
+                        inset 0 -3px 2px rgba(0,0,0,0.25); border-radius: 5px;
+                        background: linear-gradient(#eeefef, #ffffff 10%);" required
+                ></textarea><br>
+                <input type="submit" name="submit" value="Dërgo" style="color: #d62217;">
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+{% endblock %}
+

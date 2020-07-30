@@ -1,0 +1,322 @@
+{% extends "base.html" %}
+{% block title %}Market Egzoni - Higjienë{% endblock %}
+{% block content %}
+
+<style>
+    body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+}
+* {box-sizing: border-box}
+.mySlides1, .mySlides2, .mySlides3, .mySlides4 {display: none}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+</style>
+<body>
+
+<p style="text-align: center; color: #d62217; font-size: 65px; margin: 0px 0px 0px 0px">
+    Higjienë</p>
+
+
+<div class="main" id="section1" style="margin: 0px 0px 0px 0px; padding-bottom: 100px;">
+    <div class="container-fluid" style="color: #d62217;">
+        <h2>Cilat produkte përfshihen ne sektorin Higjienë?</h2>
+        <p style="font-size: 25px; color:black; opacity: 0.7;">
+            Ne sektorin <strong>Higjienë</strong> përfshihen artikuj të ndryshëm si : <strong>detergjenta, pastë të dhëmbëve, kimikale për tualet</strong>, si dhe shumë artikuj të tjerë të ngjashëm me këto.<br>
+            Më poshtë janë disa slideshow të cilat tregojnë produktet të cilat gjenden ne depot tona. Në pjesën e lartë te fotos është emri i produktit si dhe cmimi i atij produkti.<br>
+            Për të gjithë produktet që ju keni nevojë, shkruaj sasinë për aq sa ju keni nevojë dhe shtypni <strong>"Shto në listë"</strong>.<br>
+        </p>
+        <h3 style="margin-bottom: 25px; margin-top: 75px;">Kategoria : Detergjenta për rroba</h3>
+
+
+    </div>
+
+    <div class="slideshow-container" style="color: white;">
+        <form method="post">
+        <div class="mySlides1" style="text-align: center;">
+            <p style="color: #d62217;">Abc i lëngjshëm i zi - cmimi 2.2 €</p>
+            <img src="static/images/abc.png" style="height:400px;">
+            <p><input class="container-fluid borderbox" type="number" id="number" name="quantity"
+                                                  pattern="[0-9]*" min="1"
+                                                  placeholder="Sasia"
+                                                  style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
+                      required><br><input class="eoli" type="submit" name="submit"
+                      style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;" value="Shto në listë">
+            </p>
+        </div>
+            </form>
+        <form method="post">
+
+
+        <div class="mySlides1" style="text-align: center;">
+
+            <p style="color: #d62217;">Abc i lëngjshëm i bardhë - cmimi 2.2 €</p>
+            <img src="static/images/abc1.png" style="height:400px;">
+            <p><input class="container-fluid borderbox" type="number" id="number1" name="quantity"
+                                                  pattern="[0-9]*" min="1"
+                                                  placeholder="Sasia"
+                                                  style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
+                      required><br><input class="eoli" type="submit" name="submit1"
+                      style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;" value="Shto në listë">
+            </p>
+        </div>
+        </form>
+        <form method="post">
+
+
+        <div class="mySlides1" style="text-align: center;">
+            <p style="color: #d62217;">Abc powder detergjent - cmimi 1.8 € €</p>
+            <img src="static/images/abc2.png" style="height:400px;">
+            <p><input class="container-fluid borderbox" type="number" id="number2" name="quantity"
+                                                  pattern="[0-9]*" min="1"
+                                                  placeholder="Sasia"
+                                                  style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
+                      required><br><input class="eoli" type="submit" name="submit2"
+                      style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;" value="Shto në listë">
+            </p>
+        </div>
+        </form>
+        <form method="post">
+        <div class="mySlides1" style="text-align: center;">
+            <p style="color: #d62217;">Abc detergjent për rroba matik - cmimi 2 €</p>
+            <img src="static/images/abc3.png" style="height:400px;">
+            <p><input class="container-fluid borderbox" type="number" id="number3" name="quantity"
+                                                  pattern="[0-9]*" min="1"
+                                                  placeholder="Sasia"
+                                                  style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
+                      required><br><input class="eoli" type="submit" name="submit3"
+                      style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;" value="Shto në listë">
+            </p>
+        </div>
+        </form>
+
+
+        <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+    </div>
+
+    <div class="container-fluid" style="color: #d62217; margin-top: 95px; margin-bottom: 25px;">
+        <h3>Kategoria : Pastë e dhëmbëve</h3>
+    </div>
+    <div class="slideshow-container" style="color: white;">
+        <form method="post">
+
+
+        <div class="mySlides2" style="text-align: center;">
+
+            <p style="color: #d62217;">Colgate MaxWhite - cmimi 2.8 €</p>
+            <img src="static/images/colgate.png" style="height:400px;">
+            <p><input class="container-fluid borderbox" type="number" id="keksa1" name="quantity"
+                                                  pattern="[0-9]*" min="1"
+                                                  placeholder="Sasia"
+                                                  style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
+                      required><br><input class="eoli" type="submit" name="submit10"
+                      style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;" value="Shto në listë">
+            </p>
+        </div>
+        </form>
+
+
+        <form method="post">
+
+
+        <div class="mySlides2" style="text-align: center;">
+            <p style="color: #d62217;">Colgate MaxFresh Blue - cmimi 1.7 €</p>
+            <img src="static/images/colgate1.png" style="height:400px;">
+            <p><input class="container-fluid borderbox" type="number" id="keksa2" name="quantity"
+                                                  pattern="[0-9]*" min="1"
+                                                  placeholder="Sasia"
+                                                  style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
+                      required><br><input class="eoli" type="submit" name="submit11"
+                      style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;" value="Shto në listë">
+            </p>
+        </div>
+        </form>
+        <form method="post">
+        <div class="mySlides2" style="text-align: center;">
+            <p style="color: #d62217;">Colgate MaxFresh Green - cmimi 1.7 €</p>
+            <img src="static/images/colgate3.png" style="height:400px;">
+            <p><input class="container-fluid borderbox" type="number" id="keksa3" name="quantity"
+                                                  pattern="[0-9]*" min="1"
+                                                  placeholder="Sasia"
+                                                  style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
+                      required><br><input class="eoli" type="submit" name="submit12"
+                      style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;" value="Shto në listë">
+            </p>
+        </div>
+        </form>
+        <form method="post">
+        <div class="mySlides2" style="text-align: center;">
+            <p style="color: #d62217;">Colgate Herbal - cmimi 1.5 €</p>
+            <img src="static/images/colgate2.png" style="height:400px;">
+            <p><input class="container-fluid borderbox" type="number" id="keksa4" name="quantity"
+                                                  pattern="[0-9]*" min="1"
+                                                  placeholder="Sasia"
+                                                  style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
+                      required><br><input class="eoli" type="submit" name="submit13"
+                      style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;" value="Shto në listë">
+            </p>
+        </div>
+        </form>
+        <form method="post">
+        <div class="mySlides2" style="text-align: center;">
+            <p style="color: #d62217;">Brush e dhëmbëve Colgate - cmimi 1.3 €</p>
+            <img src="static/images/brush.png" style="height:400px;">
+            <p><input class="container-fluid borderbox" type="number" id="keksa" name="quantity"
+                                                  pattern="[0-9]*" min="1"
+                                                  placeholder="Sasia"
+                                                  style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
+                      required><br><input class="eoli" type="submit" name="submit9"
+                      style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;" value="Shto në listë">
+            </p>
+        </div>
+            </form>
+        <form method="post">
+        <div class="mySlides2" style="text-align: center;">
+            <p style="color: #d62217;">Brush e dhëmbëve për fëmijë Colgate - cmimi 0.8 €</p>
+            <img src="static/images/brush1.png" style="height:400px;">
+            <p><input class="container-fluid borderbox" type="number" id="keksa01" name="quantity"
+                                                  pattern="[0-9]*" min="1"
+                                                  placeholder="Sasia"
+                                                  style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
+                      required><br><input class="eoli" type="submit" name="submit4"
+                      style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;" value="Shto në listë">
+            </p>
+        </div>
+            </form>
+        <form method="post">
+        <div class="mySlides2" style="text-align: center;">
+            <p style="color: #d62217;">Brush e dhëmbëve Colgate Double - cmimi 2.4 €</p>
+            <img src="static/images/brush2.png" style="height:400px;">
+            <p><input class="container-fluid borderbox" type="number" id="keksa02" name="quantity"
+                                                  pattern="[0-9]*" min="1"
+                                                  placeholder="Sasia"
+                                                  style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
+                      required><br><input class="eoli" type="submit" name="submit5"
+                      style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;" value="Shto në listë">
+            </p>
+        </div>
+            </form>
+
+
+
+        <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
+    </div>
+
+
+
+    <div class="container-fluid" style="color: #d62217; margin-top: 95px; margin-bottom: 25px;">
+        <h3>Kategoria : Domestos</h3>
+    </div>
+    <div class="slideshow-container" style="color: white;">
+        <form method="post">
+        <div class="mySlides3" style="text-align: center;">
+            <p style="color: #d62217;">Domestos i gjelbër - cmimi 1.6 €</p>
+            <img src="static/images/domestos.png" style="height:400px;">
+            <p><input class="container-fluid borderbox" type="number" id="qoko" name="quantity"
+                                                  pattern="[0-9]*" min="1"
+                                                  placeholder="Sasia"
+                                                  style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
+                      required><br><input class="eoli" type="submit" name="submit14"
+                      style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;" value="Shto në listë">
+            </p>
+        </div>
+            </form>
+        <form method="post">
+
+
+        <div class="mySlides3" style="text-align: center;">
+            <p style="color: #d62217;">Domestos i kaltër - cmimi 1.6 €</p>
+            <img src="static/images/domestos1.png" style="height:400px;">
+            <p><input class="container-fluid borderbox" type="number" id="qoko1" name="quantity"
+                                                  pattern="[0-9]*" min="1"
+                                                  placeholder="Sasia"
+                                                  style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
+                      required><br><input class="eoli" type="submit" name="submit15"
+                      style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;" value="Shto në listë">
+            </p>
+        </div>
+        </form>
+        <form method="post">
+
+
+        <div class="mySlides3" style="text-align: center;">
+            <p style="color: #d62217;">Domestos i bardhë - cmimi 1.6 €</p>
+            <img src="static/images/domestos2.png" style="height:400px;">
+            <p><input class="container-fluid borderbox" type="number" id="qoko2" name="quantity"
+                                                  pattern="[0-9]*" min="1"
+                                                  placeholder="Sasia"
+                                                  style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
+                      required><br><input class="eoli" type="submit" name="submit16"
+                      style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;" value="Shto në listë">
+            </p>
+        </div>
+            </form>
+        <form method="post">
+        <div class="mySlides3" style="text-align: center;">
+            <p style="color: #d62217;">Domestos i verdhë - cmimi 1.6 €</p>
+            <img src="static/images/domestos3.png" style="height:400px;">
+            <p><input class="container-fluid borderbox" type="number" id="qoko3" name="quantity"
+                                                  pattern="[0-9]*" min="1"
+                                                  placeholder="Sasia"
+                                                  style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
+                      required><br><input class="eoli" type="submit" name="submit17"
+                      style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;" value="Shto në listë">
+            </p>
+        </div>
+        </form>
+
+
+
+
+        <a class="prev" onclick="plusSlides(-1, 2)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1, 2)">&#10095;</a>
+    </div>
+
+
+
+
+
+
+
+
+    <script>
+var slideIndex = [1,1,1];
+var slideId = ["mySlides1", "mySlides2", "mySlides3"]
+showSlides(1, 0);
+showSlides(1, 1);
+showSlides(1, 2);
+
+function plusSlides(n, no) {
+  showSlides(slideIndex[no] += n, no);
+}
+
+function showSlides(n, no) {
+  var i;
+  var x = document.getElementsByClassName(slideId[no]);
+  if (n > x.length) {slideIndex[no] = 1}
+  if (n < 1) {slideIndex[no] = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";
+  }
+  x[slideIndex[no]-1].style.display = "block";
+}
+
+
+
+
+
+    </script>
+
+
+</div>
+</body>
+{% endblock %}
