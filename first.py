@@ -93,6 +93,7 @@ def order():
                     orders.clear()
                     prices.clear()
                     length = len(orders)
+                    flash(f"Porosia është dërguar me sukses!")
         return render_template("order.html", orders=orders, length=length, prices=prices, total=("%.2f" % round(sum(prices), 2)))
 
 
