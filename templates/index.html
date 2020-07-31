@@ -68,6 +68,17 @@ transform: rotate(45deg);
 
 
 }
+#example5 {
+  border: none;
+  border-radius: 25px;
+  padding: 10px;
+  box-shadow: 3px 5px #212F3D;
+  background-color: #d62217;
+  width: 350px;
+
+
+
+}
 #section1 {
   height: auto;
   background-color: white;
@@ -88,8 +99,25 @@ transform: rotate(45deg);
   padding: 5px;
 }
 
-@media only screen and (max-width: 995px) {
+@media only screen and (max-width: 750px) {
     #btngroup {
+        display: none;
+    }
+    #example3 {
+        display: none;
+    }
+    #remove {
+        display: none;
+    }
+}
+@media only screen and (min-width: 750px) {
+    #btngroup1 {
+        display: none;
+    }
+    #example4 {
+        display: none;
+    }
+    #remove1 {
         display: none;
     }
 }
@@ -103,13 +131,19 @@ transform: rotate(45deg);
 
 
 
+
 </style>
 <body>
 <div class="main" id="section1" style="margin: 0px 0px 0px 0px;">
-    <p style="font-family: 'stencil'; text-align: center; color: #d62217; font-size: 65px; margin: 0px 0px 0px 0px; padding-top: 30px;">
+    <p style="font-family: 'stencil'; text-align: center; color: #d62217; font-size: 65px; margin: 0px 0px 0px 0px; padding-top: 30px;"
+       id="btngroup">
         <img src="static/images/logo1.png" height="150px"> <img src="static/images/cart.png" height="140px"
                                                                 style="margin-bottom: 30px;"></p>
-    <div class="container-fluid" style="color: #d62217;">
+    <p style="font-family: 'stencil'; text-align: center; color: #d62217; font-size: 65px; margin: 0px 0px 0px 0px; padding-top: 30px;"
+       id="btngroup1">
+        <img src="static/images/logo1.png" height="80px"> <img src="static/images/cart.png" height="70px"
+                                                               style="margin-bottom: 30px;"></p>
+    <div class="container-fluid" style="color: #d62217; margin-top: 25px;">
         <h2>Çka është Market Egzoni?</h2>
         <div id="example1">
             <p style="font-size: 25px; color:white;">Market Egzoni jemi një biznis ushqimor ku lokacionin e marketit
@@ -150,8 +184,10 @@ transform: rotate(45deg);
             ndryshojmë ndonjë gjë në webfaqe ose në mënyrën se si po funksionon porosia online atëherë na kontaktoni në
             informatat më poshtë.
         </p>
-
-            <div class="container" id="example2" style="margin: 30px 0px 100px; display: block; margin-left: auto; margin-right: auto; width: 40%;">
+        <div id="example3">
+            <div class="container"
+                 style="margin: 30px 0px 100px; display: block; margin-left: auto; margin-right: auto; width: 40%;"
+                 id="example2">
                 <ul>
                     <li>Phone: +383 49 793 208</li>
                     <li>Gmail: eol.nuha22@gmail.com</li>
@@ -161,14 +197,40 @@ transform: rotate(45deg);
                 </ul>
 
             </div>
+        </div>
+        <div id="example4">
+            <div class="container"
+                 style="margin: 30px 0px 100px; display: block; margin-left: auto; margin-right: auto; width: 100%;"
+                 id="example5">
+                <ul>
+                    <li>Phone: +383 49 793 208</li>
+                    <li>Gmail: eol.nuha22@gmail.com</li>
+                    <li>Email: olinuha08@hotmail.com</li>
+                    <li>Facebook: Eol Nuha</li>
+                    <li>Instagram: eol.nuha</li>
+                </ul>
 
+            </div>
+        </div>
         <div style="text-align: center;">
             <p style="font-size: 25px; color:#d62217;">Mund të na dërgoni kërkesën tuaj direkt në emailin tonë duke
                 e shkruar kërkesën e juaj më poshtë.</p>
-            <form method="post" style=" margin-bottom: 100px;">
+            <form method="post" style=" margin-bottom: 100px;" id="remove">
                 <textarea
                         class="container-fluid" name="name" placeholder="Kerkesa juaj" rows="5" cols="60"
                         style="margin-bottom: 20px; width: 700px; height: 150px; border: black; color:#d62217; box-shadow:
+                        0 0 1px rgba(0, 0, 0, 0.3),
+                        0 3px 7px rgba(0, 0, 0, 0.3),
+                        inset 0 1px rgba(255,255,255,1),
+                        inset 0 -3px 2px rgba(0,0,0,0.25); border-radius: 5px;
+                        background: linear-gradient(#eeefef, #ffffff 10%);" required
+                ></textarea><br>
+                <input type="submit" name="submit" value="Dërgo" style="color: #d62217;">
+            </form>
+            <form method="post" style=" margin-bottom: 100px;" id="remove1">
+                <textarea
+                        class="container-fluid" name="name" placeholder="Kerkesa juaj" rows="5" cols="60"
+                        style="margin-bottom: 20px; width: 430px; height: 150px; border: black; color:#d62217; box-shadow:
                         0 0 1px rgba(0, 0, 0, 0.3),
                         0 3px 7px rgba(0, 0, 0, 0.3),
                         inset 0 1px rgba(255,255,255,1),
