@@ -6,7 +6,7 @@ from flask_mail import Mail, Message
 app = Flask(__name__)
 
 app.secret_key = "eol"
-app.permanent_session_lifetime = timedelta(days=7)
+app.permanent_session_lifetime = timedelta(weeks=42)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///lists.sqlite3'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config.update(
@@ -785,6 +785,11 @@ def tower():
                 prices.append(price)
 
     return render_template('tower.html', orders=orders, prices=prices, total=("%.2f" % round(sum(prices), 2)))
+
+
+@app.route("/kërko")
+def search():
+    return render_template('test.html')
 
 
 if __name__ == "__main__":

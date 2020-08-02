@@ -125,24 +125,38 @@ transform: rotate(45deg);
 
 
 
-
-
-
-
-
-
-
 </style>
 <body>
 <div class="main" id="section1" style="margin: 0px 0px 0px 0px;">
     <p style="font-family: 'stencil'; text-align: center; color: #d62217; font-size: 65px; margin: 0px 0px 0px 0px; padding-top: 30px;"
-       id="btngroup">
-        <img src="static/images/logo1.png" height="150px"> <img src="static/images/cart.png" height="140px"
-                                                                style="margin-bottom: 30px;"></p>
-    <p style="font-family: 'stencil'; text-align: center; color: #d62217; font-size: 65px; margin: 0px 0px 0px 0px; padding-top: 30px;"
        id="btngroup1">
         <img src="static/images/logo1.png" height="80px"> <img src="static/images/cart.png" height="70px"
                                                                style="margin-bottom: 30px;"></p>
+    <div style="text-align: right; margin-top: 20px; margin-right: 20px;">
+        <div class="dropdown" style="text-align: left;" id="search">
+            <input onclick="mysearchFunction()" type="text" placeholder="Kërko..." id="myInput" onkeyup="filtersearchFunction()" class="borderbox">
+            <div id="myDropdown" class="dropdown-content">
+                <a href="home">Market Egzoni</a>
+                <a href="ushqime#qipsa">Qipsa</a>
+                <a href="ushqime#keksa">Keksa</a>
+                <a href="ushqime#qokollada">Qokollada</a>
+                <a href="ushqime#embelsira">Ëmbëlsirat</a>
+                <a href="pije#gazuara">Pije të gazuara</a>
+                <a href="pije#lengje">Pije lëngje</a>
+                <a href="pije#alkoolike">Pije alkoolike</a>
+                <a href="higjienë#detergjenta">Detergjenta për rroba</a>
+                <a href="higjienë#paste">Pastë e dhëmbëve</a>
+                <a href="higjienë#domestos">Domestos</a>
+            </div>
+        </div>
+    </div>
+
+    <p style="font-family: 'stencil'; text-align: center; color: #d62217; font-size: 65px; margin: -80px 0px 0px 0px; padding-top: 30px;"
+       id="btngroup">
+        <img src="static/images/logo1.png" height="150px"> <img src="static/images/cart.png" height="140px"
+                                                                style="margin-bottom: 30px;"></p>
+
+
     <div class="container-fluid" style="color: #d62217; margin-top: 25px;">
         <h2>Çka është Market Egzoni?</h2>
         <div id="example1">

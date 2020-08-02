@@ -155,12 +155,52 @@ box-shadow: 0 1px rgba(0, 0, 0, 0.3),
             border-radius: 5px;
             background: linear-gradient(#eeefef, #ffffff 10%);
 }
-::placeholder {
-  color:  #D63D17;
-  opacity: 0.95;
 
+#myInput {
+  box-sizing: border-box;
+  font-size: 16px;
+  padding: 14px 20px 12px 20px;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  width: 250px;
+  color: #D63D17;
 
+}
 
+#myInput:focus {outline: 3px solid #ddd;}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  color: #D63D17;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f6f6f6;
+  min-width: 230px;
+  overflow: auto;
+  border: 1px solid #ddd;
+  z-index: 1;
+  width: 248px;
+
+}
+
+.dropdown-content a {
+  color: #D63D17;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {background-color: #D63D17; color: white;}
+
+.show {display: block;}
+
+::placeholder{
+color: #D63D17;
+}
 
 </style>
 <body>
@@ -189,11 +229,35 @@ function topFunction() {
 
 
 
+
 </script>
 <div style="padding-top: 50px;">
     {% block content %}
     {% endblock %}
 </div>
+<script>
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function mysearchFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+function filtersearchFunction() {
+  var input, filter, ul, li, a, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  div = document.getElementById("myDropdown");
+  a = div.getElementsByTagName("a");
+  for (i = 0; i < a.length; i++) {
+    txtValue = a[i].textContent || a[i].innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      a[i].style.display = "";
+    } else {
+      a[i].style.display = "none";
+    }
+  }
+}
+</script>
 <div class="topnav" id="myTopnav">
     <a style="background-color:#D63D17;" href="/"><img src="static/images/cart.png" alt="Logo" height="30"></a>
     <a href="/home" style="color: white; font-size: 20px;">Market Egzoni</a>
@@ -215,8 +279,12 @@ function topFunction() {
         {% endif %}
     </div>
     <div style="float: right;">
-        <a href="/order" style="font-size: 20px;">Porosit <img src="static/images/order1.png" alt="Logo" height="29"></a>
+        <a href="/order" style="font-size: 20px;">Porosit <img src="static/images/order1.png" alt="Logo"
+                                                               height="29"></a>
     </div>
+
+
+
 
 </div>
 
@@ -233,7 +301,9 @@ function myFunction() {
 
 
 
+
 </script>
+
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>

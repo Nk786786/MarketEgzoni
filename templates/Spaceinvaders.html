@@ -20,8 +20,25 @@ img {vertical-align: middle;}
 
 </style>
 <body>
-
-<p style="text-align: center; color: #d62217; font-size: 65px; margin: 0px 0px 0px 0px">
+<div style="text-align: right; margin-top: 20px; margin-right: 20px;">
+        <div class="dropdown" style="text-align: left;" id="search">
+            <input onclick="mysearchFunction()" type="text" placeholder="Kërko..." id="myInput" onkeyup="filtersearchFunction()" class="borderbox">
+            <div id="myDropdown" class="dropdown-content">
+                <a href="home">Market Egzoni</a>
+                <a href="ushqime#qipsa">Qipsa</a>
+                <a href="ushqime#keksa">Keksa</a>
+                <a href="ushqime#qokollada">Qokollada</a>
+                <a href="ushqime#embelsira">Ëmbëlsirat</a>
+                <a href="pije#gazuara">Pije të gazuara</a>
+                <a href="pije#lengje">Pije lëngje</a>
+                <a href="pije#alkoolike">Pije alkoolike</a>
+                <a href="higjienë#detergjenta">Detergjenta për rroba</a>
+                <a href="higjienë#paste">Pastë e dhëmbëve</a>
+                <a href="higjienë#domestos">Domestos</a>
+            </div>
+        </div>
+    </div>
+<p style="text-align: center; color: #d62217; font-size: 65px; margin: -80px 0px 0px 0px">
     Ushqime</p>
 
 
@@ -33,7 +50,7 @@ img {vertical-align: middle;}
             Më poshtë janë disa slideshow të cilat tregojnë produktet të cilat gjenden ne depot tona. Në pjesën e lartë te fotos është emri i produktit si dhe cmimi i atij produkti.<br>
             Për të gjithë produktet që ju keni nevojë, shkruaj sasinë për aq sa ju keni nevojë dhe shtypni <strong>"Shto në listë"</strong>.<br>
         </p>
-        <h3 style="margin-bottom: 25px; margin-top: 75px;">Kategoria : Qipsat</h3>
+        <h3 style="margin-bottom: 25px; margin-top: 75px;" id="qipsa">Kategoria : Qipsat</h3>
 
 
     </div>
@@ -169,7 +186,7 @@ img {vertical-align: middle;}
         <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
     </div>
 
-    <div class="container-fluid" style="color: #d62217; margin-top: 95px; margin-bottom: 25px;">
+    <div class="container-fluid" style="color: #d62217; margin-top: 95px; margin-bottom: 25px;" id="keksa">
         <h3>Kategoria : Keksa</h3>
     </div>
     <div class="slideshow-container" style="color: white;">
@@ -177,7 +194,7 @@ img {vertical-align: middle;}
         <div class="mySlides2" style="text-align: center;">
             <p style="color: #d62217;">Plazma 150g - cmimi 1.7 €</p>
             <img src="static/images/plazma.png" style="height:400px;">
-            <p><input class="container-fluid borderbox" type="number" id="keksa" name="quantity"
+            <p><input class="container-fluid borderbox" type="number" id="keksaa" name="quantity"
                                                   pattern="[0-9]*" min="1"
                                                   placeholder="Sasia"
                                                   style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
@@ -252,7 +269,7 @@ img {vertical-align: middle;}
 
 
 
-    <div class="container-fluid" style="color: #d62217; margin-top: 95px; margin-bottom: 25px;">
+    <div class="container-fluid" style="color: #d62217; margin-top: 95px; margin-bottom: 25px;" id="qokollada">
         <h3>Kategoria : Qokollada</h3>
     </div>
     <div class="slideshow-container" style="color: white;">
@@ -337,7 +354,7 @@ img {vertical-align: middle;}
 
 
 
-    <div class="container-fluid" style="color: #d62217; margin-top: 95px; margin-bottom: 25px;">
+    <div class="container-fluid" style="color: #d62217; margin-top: 95px; margin-bottom: 25px;" id="embelsira">
         <h3>Kategoria : Ëmbëlsirat</h3>
     </div>
     <div class="slideshow-container" style="color: white;">
