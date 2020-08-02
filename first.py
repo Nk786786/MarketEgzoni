@@ -50,8 +50,9 @@ orders = []
 prices = [0]
 if len(orders) == 0:
     prices.clear()
-
-
+length = len(orders)
+def base():
+    return render_template("base.html", orders=orders, length=length)
 @app.route("/order", methods=["POST", "GET"])
 def order():
     if not "user" in session:
@@ -249,7 +250,8 @@ def home():
         else:
             flash(f"Ju lutem kyçuni!")
             return redirect(url_for('login'))
-    return render_template('index.html')
+    length=len(orders)
+    return render_template('index.html', length=length)
 
 
 @app.route("/ushqime", methods=["POST", "GET"])
@@ -453,8 +455,9 @@ def space():
                     Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
                           price=("%.2f" % round(price, 2)), qmimi=qmimi))
                 prices.append(price)
+    length = len(orders)
 
-    return render_template('Spaceinvaders.html', orders=orders, prices=prices, total=("%.2f" % round(sum(prices), 2)))
+    return render_template('Spaceinvaders.html', orders=orders, prices=prices, total=("%.2f" % round(sum(prices), 2)), length=length)
 
 
 @app.route("/pije", methods=["POST", "GET"])
@@ -650,12 +653,14 @@ def dino():
                     Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
                           price=("%.2f" % round(price, 2)), qmimi=qmimi))
                 prices.append(price)
+    length = len(orders)
 
-    return render_template('dino.html', orders=orders, prices=prices, total=("%.2f" % round(sum(prices), 2)))
+    return render_template('dino.html', orders=orders, prices=prices, total=("%.2f" % round(sum(prices), 2)), length=length)
 
 
 @app.route("/higjienë", methods=["POST", "GET"])
 def tower():
+
     if not "user" in session:
         flash(f"Ju lutem kyçuni!")
         return redirect(url_for('login'))
@@ -783,13 +788,11 @@ def tower():
                     Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
                           price=("%.2f" % round(price, 2)), qmimi=qmimi))
                 prices.append(price)
+    length = len(orders)
 
-    return render_template('tower.html', orders=orders, prices=prices, total=("%.2f" % round(sum(prices), 2)))
+    return render_template('tower.html', orders=orders, prices=prices, total=("%.2f" % round(sum(prices), 2)), length=length)
 
 
-@app.route("/kërko")
-def search():
-    return render_template('test.html')
 
 
 if __name__ == "__main__":

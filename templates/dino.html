@@ -17,12 +17,21 @@ img {vertical-align: middle;}
   position: relative;
   margin: auto;
 }
-
+@media only screen and (max-width: 750px) {
+    #searchremove {
+        display: none;
+    }
+}
+@media only screen and (min-width: 750px) {
+    #searchremove1 {
+        display: none;
+    }
+}
 </style>
 <body>
 <div style="text-align: right; margin-top: 20px; margin-right: 20px;">
         <div class="dropdown" style="text-align: left;" id="search">
-            <input onclick="mysearchFunction()" type="text" placeholder="Kërko..." id="myInput" onkeyup="filtersearchFunction()" class="borderbox">
+            <input onclick="mysearchFunction()" type="text" placeholder="Kërko..." id="myInput" onkeyup="filtersearchFunction()" class="borderbox1">
             <div id="myDropdown" class="dropdown-content">
                 <a href="home">Market Egzoni</a>
                 <a href="ushqime#qipsa">Qipsa</a>
@@ -38,8 +47,10 @@ img {vertical-align: middle;}
             </div>
         </div>
     </div>
-<p style="text-align: center; color: #d62217; font-size: 65px; margin: -80px 0px 0px 0px">
-    Pije</p>
+<div id="searchremove"><p style="text-align: center; color: #d62217; font-size: 65px; margin: -70px 0px 0px 0px">
+    Pije</p></div>
+<div id="searchremove1"><p style="text-align: center; color: #d62217; font-size: 65px; margin: 0px 0px 0px 0px">
+    Pije</p></div>
 
 
 <div class="main" id="section1" style="margin: 0px 0px 0px 0px; padding-bottom: 100px;">
