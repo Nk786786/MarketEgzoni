@@ -8,7 +8,7 @@
   font-size: 20px;
 }
 * {box-sizing: border-box}
-.mySlides1, .mySlides2, .mySlides3, .mySlides4 {display: none}
+.mySlides1, .mySlides2, .mySlides3, .mySlides4, .mySlides5, .mySlides6, .mySlides7, .mySlides8, .mySlides9 {display: none}
 img {vertical-align: middle;}
 
 /* Slideshow container */
@@ -27,26 +27,44 @@ img {vertical-align: middle;}
         display: none;
     }
 }
+
 </style>
 <body>
 <div style="text-align: right; margin-top: 20px; margin-right: 20px;">
-        <div class="dropdown" style="text-align: left;" id="search">
-            <input onclick="mysearchFunction()" type="text" placeholder="Kërko..." id="myInput" onkeyup="filtersearchFunction()" class="borderbox1">
-            <div id="myDropdown" class="dropdown-content">
-                <a href="home">Market Egzoni</a>
-                <a href="ushqime#qipsa">Qipsa</a>
-                <a href="ushqime#keksa">Keksa</a>
-                <a href="ushqime#qokollada">Qokollada</a>
-                <a href="ushqime#embelsira">Ëmbëlsirat</a>
-                <a href="pije#gazuara">Pije të gazuara</a>
-                <a href="pije#lengje">Pije lëngje</a>
-                <a href="pije#alkoolike">Pije alkoolike</a>
-                <a href="higjienë#detergjenta">Detergjenta për rroba</a>
-                <a href="higjienë#paste">Pastë e dhëmbëve</a>
-                <a href="higjienë#domestos">Domestos</a>
-            </div>
+    <div class="dropdown" style="text-align: left;" id="search">
+        <input onclick="mysearchFunction()" type="text" placeholder="Kërko..." id="myInput"
+               onkeyup="filtersearchFunction()" class="borderbox1">
+        <div id="myDropdown" class="dropdown-content">
+            <a href="home">Market Egzoni</a>
+            <a href="ushqime#bisfino">Bisfino</a>
+            <a href="pije#shkupi">Birra Shkupi</a>
+            <a href="pije#peja">Birra Peja</a>
+            <a href="pije#lasko">Birra Lasko</a>
+            <a href="higjienë#brushë">Brushë e dhëmbëve Colgate</a>
+            <a href="pije#cola">Coca Cola</a>
+            <a href="higjienë#detergjenta">Detergjent për rroba ABC</a>
+            <a href="higjienë#domestos">Domestos</a>
+            <a href="ushqime#doritos">Doritos</a>
+            <a href="pije#fanta">Fanta</a>
+            <a href="pije#frutti">Frutti</a>
+            <a href="pije#daniels">Jack Daniels</a>
+            <a href="ushqime#mars">Mars</a>
+            <a href="ushqime#merci">Merci</a>
+            <a href="ushqime#milky">Milky Way</a>
+            <a href="higjienë#paste">Pastë e dhëmbëve Colgate</a>
+            <a href="ushqime#patos">Patos</a>
+            <a href="pije#pepsi">Pepsi</a>
+            <a href="ushqime#plazma">Plazma</a>
+            <a href="ushqime#samba">Samba</a>
+            <a href="ushqime#snickers">Snickers</a>
+            <a href="pije#smirnoff">Smirnoff</a>
+            <a href="pije#sprite">Sprite</a>
+            <a href="ushqime#raffaello">Raffaello</a>
+            <a href="ushqime#romantic">Romantic</a>
+            <a href="ushqime#twix">Twix</a>
         </div>
     </div>
+</div>
 <div id="searchremove"><p style="text-align: center; color: #d62217; font-size: 65px; margin: -70px 0px 0px 0px">
     Pije</p></div>
 <div id="searchremove1"><p style="text-align: center; color: #d62217; font-size: 65px; margin: 0px 0px 0px 0px">
@@ -57,222 +75,399 @@ img {vertical-align: middle;}
     <div class="container-fluid" style="color: #d62217;">
         <h2>Cilat produkte përfshihen ne sektorin Pije?</h2>
         <p style="font-size: 25px; color:black; opacity: 0.7;">
-            Ne sektorin <strong>Pije</strong> përfshihen artikuj të ndryshëm si : <strong>pije te gazuara, lengje, alkoolike</strong>, si dhe shumë artikuj të tjerë të ngjashëm me këto.<br>
-            Më poshtë janë disa slideshow të cilat tregojnë produktet të cilat gjenden ne depot tona. Në pjesën e lartë te fotos është emri i produktit si dhe cmimi i atij produkti.<br>
-            Për të gjithë produktet që ju keni nevojë, shkruaj sasinë për aq sa ju keni nevojë dhe shtypni <strong>"Shto në listë"</strong>.<br>
+            Ne sektorin <strong>Pije</strong> përfshihen artikuj të ndryshëm si : <strong>pije te gazuara, lengje,
+            alkoolike</strong>, si dhe shumë artikuj të tjerë të ngjashëm me këto.<br>
+            Më poshtë janë disa slideshow të cilat tregojnë produktet të cilat gjenden ne depot tona. Në pjesën e lartë
+            te fotos është emri i produktit si dhe cmimi i atij produkti.<br>
+            Për të gjithë produktet që ju keni nevojë, shkruaj sasinë për aq sa ju keni nevojë dhe shtypni <strong>"Shto
+            në listë"</strong>.<br>
         </p>
-        <h3 style="margin-bottom: 25px; margin-top: 75px;" id="gazuara">Kategoria : Të gazuara</h3>
+        <h3 style="margin-bottom: 25px; margin-top: 75px;" id="cola">Produkti : Coca Cola</h3>
 
 
     </div>
 
     <div class="slideshow-container" style="color: white;">
         <form method="post">
-        <div class="mySlides1" style="text-align: center;">
-            <p style="color: #d62217;">Coca Cola kanace - cmimi 0.5 €</p>
-            <img src="static/images/cola.png" style="height:400px;">
-            <p><input class="container-fluid borderbox" type="number" id="number" name="quantity"
-                                                  pattern="[0-9]*" min="1"
-                                                  placeholder="Sasia"
-                                                  style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
-                      required><br><input class="eoli" type="submit" name="submit"
-                      style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;" value="Shto në listë">
-            </p>
-        </div>
-            </form>
-        <form method="post">
-
-
-        <div class="mySlides1" style="text-align: center;">
-
-            <p style="color: #d62217;">Coca Cola 2l - cmimi 1.3 €</p>
-            <img src="static/images/cola1.png" style="height:400px;">
-            <p><input class="container-fluid borderbox" type="number" id="number1" name="quantity"
-                                                  pattern="[0-9]*" min="1"
-                                                  placeholder="Sasia"
-                                                  style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
-                      required><br><input class="eoli" type="submit" name="submit1"
-                      style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;" value="Shto në listë">
-            </p>
-        </div>
+            <div class="mySlides1" style="text-align: center;">
+                <p style="color: #d62217;">Coca Cola kanace - cmimi 0.5 €</p>
+                <img src="static/images/cola.png" style="height:400px;">
+                <p><input class="container-fluid borderbox" type="number" id="number" name="quantity"
+                          pattern="[0-9]*" min="1"
+                          placeholder="Sasia"
+                          style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
+                          required><br><input class="eoli" type="submit" name="submit"
+                                              style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;"
+                                              value="Shto në listë">
+                </p>
+            </div>
         </form>
         <form method="post">
 
 
-        <div class="mySlides1" style="text-align: center;">
-            <p style="color: #d62217;">Coca Cola 1.5l - cmimi 0.95 €</p>
-            <img src="static/images/cola2.png" style="height:400px;">
-            <p><input class="container-fluid borderbox" type="number" id="number2" name="quantity"
-                                                  pattern="[0-9]*" min="1"
-                                                  placeholder="Sasia"
-                                                  style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
-                      required><br><input class="eoli" type="submit" name="submit2"
-                      style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;" value="Shto në listë">
-            </p>
-        </div>
-        </form>
-        <form method="post">
-        <div class="mySlides1" style="text-align: center;">
-            <p style="color: #d62217;">Fanta Orange 2l - cmimi 1.3 €</p>
-            <img src="static/images/fanta1.png" style="height:400px;">
-            <p><input class="container-fluid borderbox" type="number" id="number3" name="quantity"
-                                                  pattern="[0-9]*" min="1"
-                                                  placeholder="Sasia"
-                                                  style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
-                      required><br><input class="eoli" type="submit" name="submit3"
-                      style="background-color:#D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;" value="Shto në listë">
-            </p>
-        </div>
-        </form>
-        <form method="post">
-        <div class="mySlides1" style="text-align: center;">
-            <p style="color: #d62217;">Fanta Exotic Ks 2l - cmimi 1.3 €</p>
-            <img src="static/images/fanta2.png" style="height:400px;">
-            <p><input class="container-fluid borderbox" type="number" id="number4" name="quantity"
-                                                  pattern="[0-9]*" min="1"
-                                                  placeholder="Sasia"
-                                                  style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
-                      required><br><input class="eoli" type="submit" name="submit4"
-                      style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;" value="Shto në listë">
-            </p>
-        </div>
-        </form>
-        <form method="post">
-        <div class="mySlides1" style="text-align: center;">
-            <p style="color: #d62217;">Fanta Exotic Al 2l - cmimi 1.3 €</p>
-            <img src="static/images/fanta3.png" style="height:400px;">
-            <p><input class="container-fluid borderbox" type="number" id="number5" name="quantity"
-                                                  pattern="[0-9]*" min="1"
-                                                  placeholder="Sasia"
-                                                  style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
-                      required><br><input class="eoli" type="submit" name="submit5"
-                      style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;" value="Shto në listë">
-            </p>
-        </div>
-        </form>
-        <form method="post">
-        <div class="mySlides1" style="text-align: center;">
-            <p style="color: #d62217;">Fanta Shokata 2l - cmimi 1.3 €</p>
-            <img src="static/images/fanta4.png" style="height:400px;">
-            <p><input class="container-fluid borderbox" type="number" id="number6" name="quantity"
-                                                  pattern="[0-9]*" min="1"
-                                                  placeholder="Sasia"
-                                                  style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
-                      required><br><input class="eoli" type="submit" name="submit6"
-                      style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;" value="Shto në listë">
-            </p>
-        </div>
-        </form>
-        <form method="post">
-        <div class="mySlides1" style="text-align: center;">
-            <p style="color: #d62217;">Fanta Orange kanace - cmimi 0.5 €</p>
-            <img src="static/images/fanta.png" style="height:400px;">
-            <p><input class="container-fluid borderbox" type="number" id="number7" name="quantity"
-                                                  pattern="[0-9]*" min="1"
-                                                  placeholder="Sasia"
-                                                  style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
-                      required><br><input class="eoli" type="submit" name="submit7"
-                      style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;" value="Shto në listë">
-            </p>
-        </div>
-        </form>
-        <form method="post">
-        <div class="mySlides1" style="text-align: center;">
-            <p style="color: #d62217;">Fanta Exotic Al kanace - cmimi 0.7 €</p>
-            <img src="static/images/fanta5.png" style="height:400px;">
-            <p><input class="container-fluid borderbox" type="number" id="number8" name="quantity"
-                                                  pattern="[0-9]*" min="1"
-                                                  placeholder="Sasia"
-                                                  style="margin-bottom: 0px; width: 130px; height: 36px; border: none;color: #d62217;"
-                      required><br><input class="eoli" type="submit" name="submit8"
-                      style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;" value="Shto në listë">
-            </p>
-        </div>
-        </form>
+            <div class="mySlides1" style="text-align: center;">
 
+                <p style="color: #d62217;">Coca Cola 2l - cmimi 1.3 €</p>
+                <img src="static/images/cola1.png" style="height:400px;">
+                <p><input class="container-fluid borderbox" type="number" id="number1" name="quantity"
+                          pattern="[0-9]*" min="1"
+                          placeholder="Sasia"
+                          style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
+                          required><br><input class="eoli" type="submit" name="submit1"
+                                              style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;"
+                                              value="Shto në listë">
+                </p>
+            </div>
+        </form>
+        <form method="post">
+
+
+            <div class="mySlides1" style="text-align: center;">
+                <p style="color: #d62217;">Coca Cola 1.5l - cmimi 0.95 €</p>
+                <img src="static/images/cola2.png" style="height:400px;">
+                <p><input class="container-fluid borderbox" type="number" id="number2" name="quantity"
+                          pattern="[0-9]*" min="1"
+                          placeholder="Sasia"
+                          style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
+                          required><br><input class="eoli" type="submit" name="submit2"
+                                              style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;"
+                                              value="Shto në listë">
+                </p>
+            </div>
+        </form>
 
 
         <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
         <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
     </div>
+    <div class="container-fluid" style="color: #d62217; margin-top: 95px; margin-bottom: 25px;" id="fanta">
+        <h3>Produkti : Fanta</h3>
+    </div>
+    <div class="slideshow-container" style="color: white;">
+        <form method="post">
+            <div class="mySlides4" style="text-align: center;">
+                <p style="color: #d62217;">Fanta Orange kanace - cmimi 0.5 €</p>
+                <img src="static/images/fanta.png" style="height:400px;">
+                <p><input class="container-fluid borderbox" type="number" id="number7" name="quantity"
+                          pattern="[0-9]*" min="1"
+                          placeholder="Sasia"
+                          style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
+                          required><br><input class="eoli" type="submit" name="submit7"
+                                              style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;"
+                                              value="Shto në listë">
+                </p>
+            </div>
+        </form>
+        <form method="post">
+            <div class="mySlides4" style="text-align: center;">
+                <p style="color: #d62217;">Fanta Orange 2l - cmimi 1.3 €</p>
+                <img src="static/images/fanta1.png" style="height:400px;">
+                <p><input class="container-fluid borderbox" type="number" id="number3" name="quantity"
+                          pattern="[0-9]*" min="1"
+                          placeholder="Sasia"
+                          style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
+                          required><br><input class="eoli" type="submit" name="submit3"
+                                              style="background-color:#D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;"
+                                              value="Shto në listë">
+                </p>
+            </div>
+        </form>
+        <form method="post">
+            <div class="mySlides4" style="text-align: center;">
+                <p style="color: #d62217;">Fanta Exotic Ks 2l - cmimi 1.3 €</p>
+                <img src="static/images/fanta2.png" style="height:400px;">
+                <p><input class="container-fluid borderbox" type="number" id="number4" name="quantity"
+                          pattern="[0-9]*" min="1"
+                          placeholder="Sasia"
+                          style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
+                          required><br><input class="eoli" type="submit" name="submit4"
+                                              style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;"
+                                              value="Shto në listë">
+                </p>
+            </div>
+        </form>
+        <form method="post">
+            <div class="mySlides4" style="text-align: center;">
+                <p style="color: #d62217;">Fanta Exotic Al 2l - cmimi 1.3 €</p>
+                <img src="static/images/fanta3.png" style="height:400px;">
+                <p><input class="container-fluid borderbox" type="number" id="number5" name="quantity"
+                          pattern="[0-9]*" min="1"
+                          placeholder="Sasia"
+                          style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
+                          required><br><input class="eoli" type="submit" name="submit5"
+                                              style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;"
+                                              value="Shto në listë">
+                </p>
+            </div>
+        </form>
+        <form method="post">
+            <div class="mySlides4" style="text-align: center;">
+                <p style="color: #d62217;">Fanta Shokata 2l - cmimi 1.3 €</p>
+                <img src="static/images/fanta4.png" style="height:400px;">
+                <p><input class="container-fluid borderbox" type="number" id="number6" name="quantity"
+                          pattern="[0-9]*" min="1"
+                          placeholder="Sasia"
+                          style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
+                          required><br><input class="eoli" type="submit" name="submit6"
+                                              style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;"
+                                              value="Shto në listë">
+                </p>
+            </div>
+        </form>
 
-    <div class="container-fluid" style="color: #d62217; margin-top: 95px; margin-bottom: 25px;" id="lengje">
-        <h3>Kategoria : Lëngje</h3>
+        <form method="post">
+            <div class="mySlides4" style="text-align: center;">
+                <p style="color: #d62217;">Fanta Exotic Al kanace - cmimi 0.7 €</p>
+                <img src="static/images/fanta5.png" style="height:400px;">
+                <p><input class="container-fluid borderbox" type="number" id="number8" name="quantity"
+                          pattern="[0-9]*" min="1"
+                          placeholder="Sasia"
+                          style="margin-bottom: 0px; width: 130px; height: 36px; border: none;color: #d62217;"
+                          required><br><input class="eoli" type="submit" name="submit8"
+                                              style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;"
+                                              value="Shto në listë">
+                </p>
+            </div>
+        </form>
+        <a class="prev" onclick="plusSlides(-1, 3)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1, 3)">&#10095;</a>
+    </div>
+    <div class="container-fluid" style="color: #d62217; margin-top: 95px; margin-bottom: 25px;" id="pepsi">
+        <h3>Produkti : Pepsi</h3>
+    </div>
+    <div class="slideshow-container" style="color: white;">
+        <form method="post">
+            <div class="mySlides8" style="text-align: center;">
+                <p style="color: #d62217;">Pepsi kanace - cmimi 0.5 €</p>
+                <img src="static/images/pepsi.png" style="height:400px;">
+                <p><input class="container-fluid borderbox" type="number" id="pepsiid" name="quantity"
+                          pattern="[0-9]*" min="1"
+                          placeholder="Sasia"
+                          style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
+                          required><br><input class="eoli" type="submit" name="submit28"
+                                              style="background-color:#D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;"
+                                              value="Shto në listë">
+                </p>
+            </div>
+        </form>
+        <form method="post">
+            <div class="mySlides8" style="text-align: center;">
+                <p style="color: #d62217;">Pepsi Zero Sugar kanace - cmimi 0.8 €</p>
+                <img src="static/images/pepsi1.png" style="height:400px;">
+                <p><input class="container-fluid borderbox" type="number" id="pepsiid1" name="quantity"
+                          pattern="[0-9]*" min="1"
+                          placeholder="Sasia"
+                          style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
+                          required><br><input class="eoli" type="submit" name="submit29"
+                                              style="background-color:#D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;"
+                                              value="Shto në listë">
+                </p>
+            </div>
+        </form>
+        <form method="post">
+            <div class="mySlides8" style="text-align: center;">
+                <p style="color: #d62217;">Pepsi 2l - cmimi 1.3 €</p>
+                <img src="static/images/pepsi3.png" style="height:400px;">
+                <p><input class="container-fluid borderbox" type="number" id="pepsiid2" name="quantity"
+                          pattern="[0-9]*" min="1"
+                          placeholder="Sasia"
+                          style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
+                          required><br><input class="eoli" type="submit" name="submit30"
+                                              style="background-color:#D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;"
+                                              value="Shto në listë">
+                </p>
+            </div>
+        </form>
+        <form method="post">
+            <div class="mySlides8" style="text-align: center;">
+                <p style="color: #d62217;">Pepsi 600 ml - cmimi 0.6 €</p>
+                <img src="static/images/pepsi2.png" style="height:400px;">
+                <p><input class="container-fluid borderbox" type="number" id="pepsiid3" name="quantity"
+                          pattern="[0-9]*" min="1"
+                          placeholder="Sasia"
+                          style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
+                          required><br><input class="eoli" type="submit" name="submit31"
+                                              style="background-color:#D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;"
+                                              value="Shto në listë">
+                </p>
+            </div>
+        </form>
+        <form method="post">
+            <div class="mySlides8" style="text-align: center;">
+                <p style="color: #d62217;">Pepsi Diet kanace - cmimi 0.7 €</p>
+                <img src="static/images/pepsi4.png" style="height:400px;">
+                <p><input class="container-fluid borderbox" type="number" id="pepsiid4" name="quantity"
+                          pattern="[0-9]*" min="1"
+                          placeholder="Sasia"
+                          style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
+                          required><br><input class="eoli" type="submit" name="submit32"
+                                              style="background-color:#D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;"
+                                              value="Shto në listë">
+                </p>
+            </div>
+        </form>
+        <form method="post">
+            <div class="mySlides8" style="text-align: center;">
+                <p style="color: #d62217;">Pepsi Diet 2l - cmimi 1.4 €</p>
+                <img src="static/images/pepsi5.png" style="height:400px;">
+                <p><input class="container-fluid borderbox" type="number" id="pepsiid5" name="quantity"
+                          pattern="[0-9]*" min="1"
+                          placeholder="Sasia"
+                          style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
+                          required><br><input class="eoli" type="submit" name="submit33"
+                                              style="background-color:#D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;"
+                                              value="Shto në listë">
+                </p>
+            </div>
+        </form>
+        <a class="prev" onclick="plusSlides(-1, 7)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1, 7)">&#10095;</a>
+    </div>
+    <div class="container-fluid" style="color: #d62217; margin-top: 95px; margin-bottom: 25px;" id="sprite">
+        <h3>Produkti : Sprite</h3>
+    </div>
+    <div class="slideshow-container" style="color: white;">
+        <form method="post">
+            <div class="mySlides9" style="text-align: center;">
+                <p style="color: #d62217;">Sprite kanace - cmimi 0.5 €</p>
+                <img src="static/images/sprite1.png" style="height:400px;">
+                <p><input class="container-fluid borderbox" type="number" id="spriteid" name="quantity"
+                          pattern="[0-9]*" min="1"
+                          placeholder="Sasia"
+                          style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
+                          required><br><input class="eoli" type="submit" name="submit34"
+                                              style="background-color:#D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;"
+                                              value="Shto në listë">
+                </p>
+            </div>
+        </form>
+        <form method="post">
+            <div class="mySlides9" style="text-align: center;">
+                <p style="color: #d62217;">Sprite 2l - cmimi 1.3 €</p>
+                <img src="static/images/sprite.png" style="height:400px;">
+                <p><input class="container-fluid borderbox" type="number" id="spriteid1" name="quantity"
+                          pattern="[0-9]*" min="1"
+                          placeholder="Sasia"
+                          style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
+                          required><br><input class="eoli" type="submit" name="submit35"
+                                              style="background-color:#D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;"
+                                              value="Shto në listë">
+                </p>
+            </div>
+        </form>
+        <form method="post">
+            <div class="mySlides9" style="text-align: center;">
+                <p style="color: #d62217;">Sprite Lemon Lime 2l - cmimi 1.3 €</p>
+                <img src="static/images/sprite2.png" style="height:400px;">
+                <p><input class="container-fluid borderbox" type="number" id="spriteid2" name="quantity"
+                          pattern="[0-9]*" min="1"
+                          placeholder="Sasia"
+                          style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
+                          required><br><input class="eoli" type="submit" name="submit36"
+                                              style="background-color:#D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;"
+                                              value="Shto në listë">
+                </p>
+            </div>
+        </form>
+        <form method="post">
+            <div class="mySlides9" style="text-align: center;">
+                <p style="color: #d62217;">Sprite 0.5l - cmimi 0.6 €</p>
+                <img src="static/images/sprite3.png" style="height:400px;">
+                <p><input class="container-fluid borderbox" type="number" id="spriteid3" name="quantity"
+                          pattern="[0-9]*" min="1"
+                          placeholder="Sasia"
+                          style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
+                          required><br><input class="eoli" type="submit" name="submit37"
+                                              style="background-color:#D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;"
+                                              value="Shto në listë">
+                </p>
+            </div>
+        </form>
+        <a class="prev" onclick="plusSlides(-1, 8)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1, 8)">&#10095;</a>
+    </div>
+
+    <div class="container-fluid" style="color: #d62217; margin-top: 95px; margin-bottom: 25px;" id="frutti">
+        <h3>Produkti : Frutti</h3>
     </div>
     <div class="slideshow-container" style="color: white;">
         <form method="post">
 
 
-        <div class="mySlides2" style="text-align: center;">
+            <div class="mySlides2" style="text-align: center;">
 
-            <p style="color: #d62217;">Frutti Dredhëz 1l - cmimi 0.75 €</p>
-            <img src="static/images/fruti1.png" style="height:400px;">
-            <p><input class="container-fluid borderbox" type="number" id="keksa1" name="quantity"
-                                                  pattern="[0-9]*" min="1"
-                                                  placeholder="Sasia"
-                                                  style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
-                      required><br><input class="eoli" type="submit" name="submit10"
-                      style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;" value="Shto në listë">
-            </p>
-        </div>
+                <p style="color: #d62217;">Frutti Dredhëz 1l - cmimi 0.75 €</p>
+                <img src="static/images/fruti1.png" style="height:400px;">
+                <p><input class="container-fluid borderbox" type="number" id="keksa1" name="quantity"
+                          pattern="[0-9]*" min="1"
+                          placeholder="Sasia"
+                          style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
+                          required><br><input class="eoli" type="submit" name="submit10"
+                                              style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;"
+                                              value="Shto në listë">
+                </p>
+            </div>
         </form>
 
 
         <form method="post">
 
 
-        <div class="mySlides2" style="text-align: center;">
-            <p style="color: #d62217;">Frutti Portokall 1l - cmimi 0.9 €</p>
-            <img src="static/images/fruti2.png" style="height:400px;">
-            <p><input class="container-fluid borderbox" type="number" id="keksa2" name="quantity"
-                                                  pattern="[0-9]*" min="1"
-                                                  placeholder="Sasia"
-                                                  style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217"
-                      required><br><input class="eoli" type="submit" name="submit11"
-                      style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;" value="Shto në listë">
-            </p>
-        </div>
+            <div class="mySlides2" style="text-align: center;">
+                <p style="color: #d62217;">Frutti Portokall 1l - cmimi 0.9 €</p>
+                <img src="static/images/fruti2.png" style="height:400px;">
+                <p><input class="container-fluid borderbox" type="number" id="keksa2" name="quantity"
+                          pattern="[0-9]*" min="1"
+                          placeholder="Sasia"
+                          style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217"
+                          required><br><input class="eoli" type="submit" name="submit11"
+                                              style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;"
+                                              value="Shto në listë">
+                </p>
+            </div>
         </form>
         <form method="post">
-        <div class="mySlides2" style="text-align: center;">
-            <p style="color: #d62217;">Frutti Dardhë 1l - cmimi 0.75 €</p>
-            <img src="static/images/fruti3.png" style="height:400px;">
-            <p><input class="container-fluid borderbox" type="number" id="keksa3" name="quantity"
-                                                  pattern="[0-9]*" min="1"
-                                                  placeholder="Sasia"
-                                                  style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
-                      required><br><input class="eoli" type="submit" name="submit12"
-                      style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;" value="Shto në listë">
-            </p>
-        </div>
+            <div class="mySlides2" style="text-align: center;">
+                <p style="color: #d62217;">Frutti Dardhë 1l - cmimi 0.75 €</p>
+                <img src="static/images/fruti3.png" style="height:400px;">
+                <p><input class="container-fluid borderbox" type="number" id="keksa3" name="quantity"
+                          pattern="[0-9]*" min="1"
+                          placeholder="Sasia"
+                          style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
+                          required><br><input class="eoli" type="submit" name="submit12"
+                                              style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;"
+                                              value="Shto në listë">
+                </p>
+            </div>
         </form>
         <form method="post">
-        <div class="mySlides2" style="text-align: center;">
-            <p style="color: #d62217;">Frutti Pjeshkë 1l - cmimi 0.75 €</p>
-            <img src="static/images/fruti4.png" style="height:400px;">
-            <p><input class="container-fluid borderbox" type="number" id="keksa4" name="quantity"
-                                                  pattern="[0-9]*" min="1"
-                                                  placeholder="Sasia"
-                                                  style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
-                      required><br><input class="eoli" type="submit" name="submit13"
-                      style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;" value="Shto në listë">
-            </p>
-        </div>
+            <div class="mySlides2" style="text-align: center;">
+                <p style="color: #d62217;">Frutti Pjeshkë 1l - cmimi 0.75 €</p>
+                <img src="static/images/fruti4.png" style="height:400px;">
+                <p><input class="container-fluid borderbox" type="number" id="keksa4" name="quantity"
+                          pattern="[0-9]*" min="1"
+                          placeholder="Sasia"
+                          style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
+                          required><br><input class="eoli" type="submit" name="submit13"
+                                              style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;"
+                                              value="Shto në listë">
+                </p>
+            </div>
         </form>
         <form method="post">
-        <div class="mySlides2" style="text-align: center;">
-            <p style="color: #d62217;">Frutti Molle 1l - cmimi 0.75 €</p>
-            <img src="static/images/fruti.png" style="height:400px;">
-            <p><input class="container-fluid borderbox" type="number" id="keksa" name="quantity"
-                                                  pattern="[0-9]*" min="1"
-                                                  placeholder="Sasia"
-                                                  style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
-                      required><br><input class="eoli" type="submit" name="submit9"
-                      style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;" value="Shto në listë">
-            </p>
-        </div>
-            </form>
-
+            <div class="mySlides2" style="text-align: center;">
+                <p style="color: #d62217;">Frutti Molle 1l - cmimi 0.75 €</p>
+                <img src="static/images/fruti.png" style="height:400px;">
+                <p><input class="container-fluid borderbox" type="number" id="keksa" name="quantity"
+                          pattern="[0-9]*" min="1"
+                          placeholder="Sasia"
+                          style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
+                          required><br><input class="eoli" type="submit" name="submit9"
+                                              style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;"
+                                              value="Shto në listë">
+                </p>
+            </div>
+        </form>
 
 
         <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
@@ -280,152 +475,186 @@ img {vertical-align: middle;}
     </div>
 
 
-
-    <div class="container-fluid" style="color: #d62217; margin-top: 95px; margin-bottom: 25px;" id="alkoolike">
-        <h3>Kategoria : Alkoolike</h3>
+    <div class="container-fluid" style="color: #d62217; margin-top: 95px; margin-bottom: 25px;" id="peja">
+        <h3>Produkti : Birra Peja</h3>
     </div>
     <div class="slideshow-container" style="color: white;">
-        <form method="post">
-        <div class="mySlides3" style="text-align: center;">
-            <p style="color: #d62217;">Smirnoff - cmimi 1.4 €</p>
-            <img src="static/images/smirnof.png" style="height:400px;">
-            <p><input class="container-fluid borderbox" type="number" id="qoko" name="quantity"
-                                                  pattern="[0-9]*" min="1"
-                                                  placeholder="Sasia"
-                                                  style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
-                      required><br><input class="eoli" type="submit" name="submit14"
-                      style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;" value="Shto në listë">
-            </p>
-        </div>
-            </form>
+
         <form method="post">
 
 
-        <div class="mySlides3" style="text-align: center;">
-            <p style="color: #d62217;">Birra Peja kanace - cmimi 0.7 €</p>
-            <img src="static/images/birra.png" style="height:400px;">
-            <p><input class="container-fluid borderbox" type="number" id="qoko1" name="quantity"
-                                                  pattern="[0-9]*" min="1"
-                                                  placeholder="Sasia"
-                                                  style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
-                      required><br><input class="eoli" type="submit" name="submit15"
-                      style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;" value="Shto në listë">
-            </p>
-        </div>
+            <div class="mySlides3" style="text-align: center;">
+                <p style="color: #d62217;">Birra Peja kanace - cmimi 0.7 €</p>
+                <img src="static/images/birra.png" style="height:400px;">
+                <p><input class="container-fluid borderbox" type="number" id="qoko1" name="quantity"
+                          pattern="[0-9]*" min="1"
+                          placeholder="Sasia"
+                          style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
+                          required><br><input class="eoli" type="submit" name="submit15"
+                                              style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;"
+                                              value="Shto në listë">
+                </p>
+            </div>
         </form>
         <form method="post">
 
 
-        <div class="mySlides3" style="text-align: center;">
-            <p style="color: #d62217;">Birra Peja shishe xhami - cmimi 1 €</p>
-            <img src="static/images/birra1.png" style="height:400px;">
-            <p><input class="container-fluid borderbox" type="number" id="qoko2" name="quantity"
-                                                  pattern="[0-9]*" min="1"
-                                                  placeholder="Sasia"
-                                                  style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
-                      required><br><input class="eoli" type="submit" name="submit16"
-                      style="background-color:#D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;" value="Shto në listë">
-            </p>
-        </div>
-            </form>
-        <form method="post">
-        <div class="mySlides3" style="text-align: center;">
-            <p style="color: #d62217;">Birra Shkupi kanace - cmimi 0.7 €</p>
-            <img src="static/images/birra3.png" style="height:400px;">
-            <p><input class="container-fluid borderbox" type="number" id="qoko3" name="quantity"
-                                                  pattern="[0-9]*" min="1"
-                                                  placeholder="Sasia"
-                                                  style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
-                      required><br><input class="eoli" type="submit" name="submit17"
-                      style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;" value="Shto në listë">
-            </p>
-        </div>
+            <div class="mySlides3" style="text-align: center;">
+                <p style="color: #d62217;">Birra Peja shishe xhami - cmimi 1 €</p>
+                <img src="static/images/birra1.png" style="height:400px;">
+                <p><input class="container-fluid borderbox" type="number" id="qoko2" name="quantity"
+                          pattern="[0-9]*" min="1"
+                          placeholder="Sasia"
+                          style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
+                          required><br><input class="eoli" type="submit" name="submit16"
+                                              style="background-color:#D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;"
+                                              value="Shto në listë">
+                </p>
+            </div>
         </form>
-        <form method="post">
-        <div class="mySlides3" style="text-align: center;">
-            <p style="color: #d62217;">Birra Shkupi shishe xhami - cmimi 1 €</p>
-            <img src="static/images/birra2.png" style="height:400px;">
-            <p><input class="container-fluid borderbox" type="number" id="qoko5" name="quantity"
-                                                  pattern="[0-9]*" min="1"
-                                                  placeholder="Sasia"
-                                                  style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
-                      required><br><input class="eoli" type="submit" name="submit18"
-                      style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;" value="Shto në listë">
-            </p>
-        </div>
-        </form>
-        <form method="post">
-        <div class="mySlides3" style="text-align: center;">
-            <p style="color: #d62217;">Jack Daniels Birrë - cmimi 0.8 €</p>
-            <img src="static/images/birra4.png" style="height:400px;">
-            <p><input class="container-fluid borderbox" type="number" id="qoko6" name="quantity"
-                                                  pattern="[0-9]*" min="1"
-                                                  placeholder="Sasia"
-                                                  style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
-                      required><br><input class="eoli" type="submit" name="submit24"
-                      style="background-color:#D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;" value="Shto në listë">
-            </p>
-        </div>
-        </form>
-        <form method="post">
-        <div class="mySlides3" style="text-align: center;">
-            <p style="color: #d62217;">Jack Daniels Alkool - cmimi 4.2 €</p>
-            <img src="static/images/birra5.png" style="height:400px;">
-            <p><input class="container-fluid borderbox" type="number" id="qoko7" name="quantity"
-                                                  pattern="[0-9]*" min="1"
-                                                  placeholder="Sasia"
-                                                  style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
-                      required><br><input class="eoli" type="submit" name="submit25"
-                      style="background-color:#D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;" value="Shto në listë">
-            </p>
-        </div>
-        </form>
-        <form method="post">
-        <div class="mySlides3" style="text-align: center;">
-            <p style="color: #d62217;">Birra Lasko shishe xhami - cmimi 1 €</p>
-            <img src="static/images/birra6.png" style="height:400px;">
-            <p><input class="container-fluid borderbox" type="number" id="qoko8" name="quantity"
-                                                  pattern="[0-9]*" min="1"
-                                                  placeholder="Sasia"
-                                                  style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
-                      required><br><input class="eoli" type="submit" name="submit26"
-                      style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;" value="Shto në listë">
-            </p>
-        </div>
-        </form>
-        <form method="post">
-        <div class="mySlides3" style="text-align: center;">
-            <p style="color: #d62217;">Birra Lasko kanace - cmimi 0.7 €</p>
-            <img src="static/images/birra7.png" style="height:400px;">
-            <p><input class="container-fluid borderbox" type="number" id="qoko9" name="quantity"
-                                                  pattern="[0-9]*" min="1"
-                                                  placeholder="Sasia"
-                                                  style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
-                      required><br><input class="eoli" type="submit" name="submit27"
-                      style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;" value="Shto në listë">
-            </p>
-        </div>
-        </form>
-
 
 
         <a class="prev" onclick="plusSlides(-1, 2)">&#10094;</a>
         <a class="next" onclick="plusSlides(1, 2)">&#10095;</a>
     </div>
-
-
-
-
-
-
+    <div class="container-fluid" style="color: #d62217; margin-top: 95px; margin-bottom: 25px;" id="shkupi">
+        <h3>Produkti : Birra Shkupi</h3>
+    </div>
+    <div class="slideshow-container" style="color: white;">
+        <form method="post">
+            <div class="mySlides5" style="text-align: center;">
+                <p style="color: #d62217;">Birra Shkupi kanace - cmimi 0.7 €</p>
+                <img src="static/images/birra3.png" style="height:400px;">
+                <p><input class="container-fluid borderbox" type="number" id="qoko3" name="quantity"
+                          pattern="[0-9]*" min="1"
+                          placeholder="Sasia"
+                          style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
+                          required><br><input class="eoli" type="submit" name="submit17"
+                                              style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;"
+                                              value="Shto në listë">
+                </p>
+            </div>
+        </form>
+        <form method="post">
+            <div class="mySlides5" style="text-align: center;">
+                <p style="color: #d62217;">Birra Shkupi shishe xhami - cmimi 1 €</p>
+                <img src="static/images/birra2.png" style="height:400px;">
+                <p><input class="container-fluid borderbox" type="number" id="qoko5" name="quantity"
+                          pattern="[0-9]*" min="1"
+                          placeholder="Sasia"
+                          style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
+                          required><br><input class="eoli" type="submit" name="submit18"
+                                              style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;"
+                                              value="Shto në listë">
+                </p>
+            </div>
+        </form>
+        <a class="prev" onclick="plusSlides(-1, 4)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1, 4)">&#10095;</a>
+    </div>
+    <div class="container-fluid" style="color: #d62217; margin-top: 95px; margin-bottom: 25px;" id="lasko">
+        <h3>Produkti : Birra Lasko</h3>
+    </div>
+    <div class="slideshow-container" style="color: white;">
+        <form method="post">
+            <div class="mySlides6" style="text-align: center;">
+                <p style="color: #d62217;">Birra Lasko shishe xhami - cmimi 1 €</p>
+                <img src="static/images/birra6.png" style="height:400px;">
+                <p><input class="container-fluid borderbox" type="number" id="qoko8" name="quantity"
+                          pattern="[0-9]*" min="1"
+                          placeholder="Sasia"
+                          style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
+                          required><br><input class="eoli" type="submit" name="submit26"
+                                              style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;"
+                                              value="Shto në listë">
+                </p>
+            </div>
+        </form>
+        <form method="post">
+            <div class="mySlides6" style="text-align: center;">
+                <p style="color: #d62217;">Birra Lasko kanace - cmimi 0.7 €</p>
+                <img src="static/images/birra7.png" style="height:400px;">
+                <p><input class="container-fluid borderbox" type="number" id="qoko9" name="quantity"
+                          pattern="[0-9]*" min="1"
+                          placeholder="Sasia"
+                          style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
+                          required><br><input class="eoli" type="submit" name="submit27"
+                                              style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;"
+                                              value="Shto në listë">
+                </p>
+            </div>
+        </form>
+        <a class="prev" onclick="plusSlides(-1, 5)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1, 5)">&#10095;</a>
+    </div>
+    <div class="container-fluid" style="color: #d62217; margin-top: 95px; margin-bottom: 25px;" id="daniels">
+        <h3>Produkti : Jack Daniels</h3>
+    </div>
+    <div class="slideshow-container" style="color: white;">
+        <form method="post">
+            <div class="mySlides7" style="text-align: center;">
+                <p style="color: #d62217;">Jack Daniels Birrë - cmimi 0.8 €</p>
+                <img src="static/images/birra4.png" style="height:400px;">
+                <p><input class="container-fluid borderbox" type="number" id="qoko6" name="quantity"
+                          pattern="[0-9]*" min="1"
+                          placeholder="Sasia"
+                          style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
+                          required><br><input class="eoli" type="submit" name="submit24"
+                                              style="background-color:#D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;"
+                                              value="Shto në listë">
+                </p>
+            </div>
+        </form>
+        <form method="post">
+            <div class="mySlides7" style="text-align: center;">
+                <p style="color: #d62217;">Jack Daniels Alkool - cmimi 4.2 €</p>
+                <img src="static/images/birra5.png" style="height:400px;">
+                <p><input class="container-fluid borderbox" type="number" id="qoko7" name="quantity"
+                          pattern="[0-9]*" min="1"
+                          placeholder="Sasia"
+                          style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
+                          required><br><input class="eoli" type="submit" name="submit25"
+                                              style="background-color:#D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;"
+                                              value="Shto në listë">
+                </p>
+            </div>
+        </form>
+        <a class="prev" onclick="plusSlides(-1, 6)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1, 6)">&#10095;</a>
+    </div>
+    <div class="container-fluid" style="color: #d62217; margin-top: 95px; margin-bottom: 25px;" id="smirnoff">
+        <h3>Produkti : Smirnoff</h3>
+    </div>
+    <div style="color: white;">
+        <form method="post">
+            <div class="mySlides88" style="text-align: center;">
+                <p style="color: #d62217;">Smirnoff - cmimi 1.4 €</p>
+                <img src="static/images/smirnof.png" style="height:400px;">
+                <p><input class="container-fluid borderbox" type="number" id="qoko" name="quantity"
+                          pattern="[0-9]*" min="1"
+                          placeholder="Sasia"
+                          style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
+                          required><br><input class="eoli" type="submit" name="submit14"
+                                              style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;"
+                                              value="Shto në listë">
+                </p>
+            </div>
+        </form>
+    </div>
 
 
     <script>
-var slideIndex = [1,1,1];
-var slideId = ["mySlides1", "mySlides2", "mySlides3"]
+var slideIndex = [1,1,1,1,1,1,1,1,1];
+var slideId = ["mySlides1", "mySlides2", "mySlides3", "mySlides4", "mySlides5", "mySlides6", "mySlides7", "mySlides8", "mySlides9"]
 showSlides(1, 0);
 showSlides(1, 1);
 showSlides(1, 2);
+showSlides(1, 3);
+showSlides(1, 4);
+showSlides(1, 5);
+showSlides(1, 6);
+showSlides(1, 7);
+showSlides(1, 8);
 
 function plusSlides(n, no) {
   showSlides(slideIndex[no] += n, no);
@@ -441,6 +670,7 @@ function showSlides(n, no) {
   }
   x[slideIndex[no]-1].style.display = "block";
 }
+
 
 
 

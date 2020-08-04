@@ -16,7 +16,7 @@ app.config.update(
     MAIL_PORT=465,
     MAIL_USE_SSL=True,
     MAIL_USERNAME='eol.nuha22@gmail.com',
-    MAIL_PASSWORD='haxherja'
+    MAIL_PASSWORD='h******a'
 )
 mail = Mail(app)
 db = SQLAlchemy(app)
@@ -648,6 +648,86 @@ def dino():
             elif 'submit27' in request.form:
                 product = "Birra Lasko kanace"
                 qmimi = 0.7
+                price = int(quantity) * qmimi
+                orders.append(
+                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                prices.append(price)
+            elif 'submit28' in request.form:
+                product = "Pepsi kanace"
+                qmimi = 0.5
+                price = int(quantity) * qmimi
+                orders.append(
+                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                prices.append(price)
+            elif 'submit29' in request.form:
+                product = "Pepsi Zero Sugar kanace"
+                qmimi = 0.8
+                price = int(quantity) * qmimi
+                orders.append(
+                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                prices.append(price)
+            elif 'submit30' in request.form:
+                product = "Pepsi 2l"
+                qmimi = 1.3
+                price = int(quantity) * qmimi
+                orders.append(
+                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                prices.append(price)
+            elif 'submit31' in request.form:
+                product = "Pepsi 600 ml"
+                qmimi = 0.6
+                price = int(quantity) * qmimi
+                orders.append(
+                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                prices.append(price)
+            elif 'submit32' in request.form:
+                product = "Pepsi Diet kanace"
+                qmimi = 0.7
+                price = int(quantity) * qmimi
+                orders.append(
+                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                prices.append(price)
+            elif 'submit33' in request.form:
+                product = "Pepsi Diet 2l"
+                qmimi = 1.4
+                price = int(quantity) * qmimi
+                orders.append(
+                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                prices.append(price)
+            elif 'submit34' in request.form:
+                product = "Sprite kanace"
+                qmimi = 0.5
+                price = int(quantity) * qmimi
+                orders.append(
+                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                prices.append(price)
+            elif 'submit35' in request.form:
+                product = "Sprite 2l"
+                qmimi = 1.3
+                price = int(quantity) * qmimi
+                orders.append(
+                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                prices.append(price)
+            elif 'submit36' in request.form:
+                product = "Sprite Lemon Lime 2l"
+                qmimi = 1.3
+                price = int(quantity) * qmimi
+                orders.append(
+                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                prices.append(price)
+            elif 'submit37' in request.form:
+                product = "Sprite 0.5l"
+                qmimi = 0.6
                 price = int(quantity) * qmimi
                 orders.append(
                     Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),

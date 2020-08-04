@@ -11,8 +11,8 @@
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
 </head>
 
@@ -170,8 +170,11 @@ box-shadow: 0 0px rgba(0, 0, 0, 0.3),
 
 #myInput {
   box-sizing: border-box;
+  background-image: url('static/images/searchbar4.png');
+  background-position: 0px -2px;
+  background-repeat: no-repeat;
   font-size: 16px;
-  padding: 14px 20px 12px 20px;
+  padding: 14px 20px 14px 40px;
   border: none;
   border-bottom: 1px solid #ddd;
   width: 250px;
@@ -196,6 +199,7 @@ box-shadow: 0 0px rgba(0, 0, 0, 0.3),
   border: 1px solid #ddd;
   z-index: 1;
   width: 248px;
+  height: 260px;
 
 }
 
@@ -208,11 +212,13 @@ box-shadow: 0 0px rgba(0, 0, 0, 0.3),
 
 .dropdown a:hover {background-color: #D63D17; color: white;}
 
-.show {display: block;}
+.show {display: inline-block;}
 
 ::placeholder{
 color: #D63D17;
 }
+
+
 
 </style>
 <body>
@@ -237,6 +243,8 @@ function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
+
+
 
 
 
@@ -269,6 +277,8 @@ function filtersearchFunction() {
     }
   }
 }
+
+
 </script>
 
 <div class="topnav" id="myTopnav">
@@ -292,11 +302,13 @@ function filtersearchFunction() {
         {% endif %}
     </div>
     <div style="float: right;">
-        <a href="/order" style="font-size: 20px;">Porosi {% if length == 0 %}<img src="static/images/order1.png" alt="Logo"
-                                                               height="25">{% endif %}{% if not length == 0 %}<span class="badge" style="background-color: white; color: #D63D17; height: 23px; width: auto; border-radius: 50%; font-size: 17px;">{{length}}</span>{% endif %}</a>
+        <a href="/order" style="font-size: 20px;">Porosi {% if length == 0 %}<img src="static/images/order1.png"
+                                                                                  alt="Logo"
+                                                                                  height="25">{% endif %}{% if not
+            length == 0 %}<span class="badge"
+                                style="background-color: white; color: #D63D17; height: 23px; width: auto; border-radius: 50%; font-size: 17px;">{{length}}</span>{%
+            endif %}</a>
     </div>
-
-
 
 
 </div>
@@ -310,6 +322,8 @@ function myFunction() {
     x.className = "topnav";
   }
 }
+
+
 
 
 
