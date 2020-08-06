@@ -17,7 +17,7 @@ app.config.update(
     MAIL_PORT=465,
     MAIL_USE_SSL=True,
     MAIL_USERNAME='eol.nuha22@gmail.com',
-    MAIL_PASSWORD='haxherja'
+    MAIL_PASSWORD='h******a'
 )
 mail = Mail(app)
 db = SQLAlchemy(app)
