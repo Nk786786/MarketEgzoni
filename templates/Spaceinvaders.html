@@ -28,6 +28,25 @@ img {vertical-align: middle;}
     }
 }
 
+@media only screen and (max-width: 1000px) {
+    #pic {
+        display: none;
+    }
+}
+@media only screen and (min-width: 1000px) {
+    #pic1 {
+        display: none;
+    }
+}
+
+.badge{
+background-color: #D63D17;
+height: 23px;
+width: auto;
+border-radius: 50%;
+font-size: 17px;
+}
+
 </style>
 <body>
 <div style="text-align: right; margin-top: 20px; margin-right: 20px;">
@@ -56,6 +75,8 @@ img {vertical-align: middle;}
             <a href="pije#pepsi">Pepsi</a>
             <a href="ushqime#plazma">Plazma</a>
             <a href="ushqime#samba">Samba</a>
+            <a href="higjienë#schaumavajza">Shampon Schauma për vajza</a>
+            <a href="higjienë#schaumaburra">Shampon Schauma për djem</a>
             <a href="ushqime#snickers">Snickers</a>
             <a href="pije#smirnoff">Smirnoff</a>
             <a href="pije#sprite">Sprite</a>
@@ -77,11 +98,20 @@ img {vertical-align: middle;}
         <p style="font-size: 25px; color:black; opacity: 0.7">
             Ne sektorin <strong>Ushqime</strong> përfshihen artikuj të ndryshëm si : <strong>Qipsa, Smoka,
             Ëmbëlsira</strong>, si dhe shumë artikuj të tjerë të ngjashëm me këto.<br>
-            Më poshtë janë disa slideshow të cilat tregojnë produktet të cilat gjenden ne depot tona. Në pjesën e lartë
+            Më poshtë janë të gjitha produktet të cilat gjenden ne depot tona. Në pjesën e lartë
             te fotos është emri i produktit si dhe cmimi i atij produkti.<br>
             Për të gjithë produktet që ju keni nevojë, shkruaj sasinë për aq sa ju keni nevojë dhe shtypni <strong>"Shto
-            në listë"</strong>.<br>
+            në listë"</strong>. Pastaj për të porositur shkoni në linkun e rrumbullaksuar më poshtë dhe
+            <strong>porosit.</strong>
         </p>
+        <div id="pic">
+            <img src="static/images/tell2.png"
+                 style="display: block; margin-left: auto; margin-right: auto;width: 70%; opacity: 0.9; border-radius: 12px;">
+        </div>
+        <div id="pic1">
+            <img src="static/images/tell2.png"
+                 style="display: block; margin-left: auto; margin-right: auto;width: 100%; opacity: 0.9; border-radius: 12px;">
+        </div>
         <h3 style="margin-bottom: 25px; margin-top: 75px;" id="doritos">Produkti : Doritos</h3>
 
 
@@ -92,6 +122,8 @@ img {vertical-align: middle;}
         <form method="post">
             <div class="mySlides1" style="text-align: center;">
                 <p style="color: #d62217;">Doritos Cool Ranch - cmimi 0.90 €</p>
+                <p style="color: #d62217;">Sasia në depo - <span class="badge">{{sasia}}</span>
+                </p>
                 <img src="static/images/doritos1.png" style="height:400px;">
                 <p><input class="container-fluid borderbox" type="number" id="number" name="quantity"
                           pattern="[0-9]*" min="1"
@@ -109,6 +141,7 @@ img {vertical-align: middle;}
             <div class="mySlides1" style="text-align: center;">
 
                 <p style="color: #d62217;">Doritos Cheese Supreme - cmimi 0.90 €</p>
+                <p style="color: #d62217;">Sasia në depo - <span class="badge">{{sasia1}}</span></p>
                 <img src="static/images/doritos.png" style="height:400px;">
                 <p><input class="container-fluid borderbox" type="number" id="number1" name="quantity"
                           pattern="[0-9]*" min="1"
@@ -125,6 +158,7 @@ img {vertical-align: middle;}
 
             <div class="mySlides1" style="text-align: center;">
                 <p style="color: #d62217;">Doritos Nacho Cheese - cmimi 0.90 €</p>
+                <p style="color: #d62217;">Sasia në depo - <span class="badge">{{sasia2}}</span></p>
                 <img src="static/images/doritos2.png" style="height:400px;">
                 <p><input class="container-fluid borderbox" type="number" id="number2" name="quantity"
                           pattern="[0-9]*" min="1"
@@ -139,6 +173,7 @@ img {vertical-align: middle;}
         <form method="post">
             <div class="mySlides1" style="text-align: center;">
                 <p style="color: #d62217;">Doritos Spicy Sweet Chili - cmimi 0.90 €</p>
+                <p style="color: #d62217;">Sasia në depo - <span class="badge">{{sasia3}}</span></p>
                 <img src="static/images/doritos3.png" style="height:400px;">
                 <p><input class="container-fluid borderbox" type="number" id="number3" name="quantity"
                           pattern="[0-9]*" min="1"
@@ -153,6 +188,7 @@ img {vertical-align: middle;}
         <form method="post">
             <div class="mySlides1" style="text-align: center;">
                 <p style="color: #d62217;">Doritos Chilli - cmimi 0.90 €</p>
+                <p style="color: #d62217;">Sasia në depo - <span class="badge">{{sasia4}}</span></p>
                 <img src="static/images/doritos4.png" style="height:400px;">
                 <p><input class="container-fluid borderbox" type="number" id="number4" name="quantity"
                           pattern="[0-9]*" min="1"
@@ -176,6 +212,7 @@ img {vertical-align: middle;}
         <form method="post">
             <div class="mySlides5" style="text-align: center;">
                 <p style="color: #d62217;">Patos Bahrati - cmimi 1.1 €</p>
+                <p style="color: #d62217;">Sasia në depo - <span class="badge">{{sasia5}}</span></p>
                 <img src="static/images/patos4.png" style="height:400px;">
                 <p><input class="container-fluid borderbox" type="number" id="number5" name="quantity"
                           pattern="[0-9]*" min="1"
@@ -190,6 +227,7 @@ img {vertical-align: middle;}
         <form method="post">
             <div class="mySlides5" style="text-align: center;">
                 <p style="color: #d62217;">Patos Rolls - cmimi 1.1 €</p>
+                <p style="color: #d62217;">Sasia në depo - <span class="badge">{{sasia6}}</span></p>
                 <img src="static/images/patos1.png" style="height:400px;">
                 <p><input class="container-fluid borderbox" type="number" id="number6" name="quantity"
                           pattern="[0-9]*" min="1"
@@ -204,6 +242,7 @@ img {vertical-align: middle;}
         <form method="post">
             <div class="mySlides5" style="text-align: center;">
                 <p style="color: #d62217;">Patos Classic - cmimi 1.1 €</p>
+                <p style="color: #d62217;">Sasia në depo - <span class="badge">{{sasia7}}</span></p>
                 <img src="static/images/patos2.png" style="height:400px;">
                 <p><input class="container-fluid borderbox" type="number" id="number7" name="quantity"
                           pattern="[0-9]*" min="1"
@@ -218,6 +257,7 @@ img {vertical-align: middle;}
         <form method="post">
             <div class="mySlides5" style="text-align: center;">
                 <p style="color: #d62217;">Patos Critos - cmimi 1.1 €</p>
+                <p style="color: #d62217;">Sasia në depo - <span class="badge">{{sasia8}}</span></p>
                 <img src="static/images/patos3.png" style="height:400px;">
                 <p><input class="container-fluid borderbox" type="number" id="number8" name="quantity"
                           pattern="[0-9]*" min="1"
@@ -240,6 +280,7 @@ img {vertical-align: middle;}
         <form method="post">
             <div class="mySlides2" style="text-align: center;">
                 <p style="color: #d62217;">Plazma 150g - cmimi 1.7 €</p>
+                <p style="color: #d62217;">Sasia në depo - <span class="badge">{{sasia9}}</span></p>
                 <img src="static/images/plazma.png" style="height:400px;">
                 <p><input class="container-fluid borderbox" type="number" id="keksaa" name="quantity"
                           pattern="[0-9]*" min="1"
@@ -257,6 +298,7 @@ img {vertical-align: middle;}
             <div class="mySlides2" style="text-align: center;">
 
                 <p style="color: #d62217;">Plazma 300g - cmimi 3.2 €</p>
+                <p style="color: #d62217;">Sasia në depo - <span class="badge">{{sasia10}}</span></p>
                 <img src="static/images/plazma1.png" style="height:400px;">
                 <p><input class="container-fluid borderbox" type="number" id="keksa1" name="quantity"
                           pattern="[0-9]*" min="1"
@@ -273,6 +315,7 @@ img {vertical-align: middle;}
 
             <div class="mySlides2" style="text-align: center;">
                 <p style="color: #d62217;">Plazma 600g - cmimi 6 €</p>
+                <p style="color: #d62217;">Sasia në depo - <span class="badge">{{sasia11}}</span></p>
                 <img src="static/images/plazma2.png" style="height:400px;">
                 <p><input class="container-fluid borderbox" type="number" id="keksa2" name="quantity"
                           pattern="[0-9]*" min="1"
@@ -287,6 +330,7 @@ img {vertical-align: middle;}
         <form method="post">
             <div class="mySlides2" style="text-align: center;">
                 <p style="color: #d62217;">Plazma të bluar 300g - cmimi 3.5 €</p>
+                <p style="color: #d62217;">Sasia në depo - <span class="badge">{{sasia12}}</span></p>
                 <img src="static/images/plazma3.png" style="height:400px;">
                 <p><input class="container-fluid borderbox" type="number" id="keksa3" name="quantity"
                           pattern="[0-9]*" min="1"
@@ -301,6 +345,7 @@ img {vertical-align: middle;}
         <form method="post">
             <div class="mySlides2" style="text-align: center;">
                 <p style="color: #d62217;">Plazma të bluar 800g - cmimi 7.5 €</p>
+                <p style="color: #d62217;">Sasia në depo - <span class="badge">{{sasia13}}</span></p>
                 <img src="static/images/plazma4.png" style="height:400px;">
                 <p><input class="container-fluid borderbox" type="number" id="keksa4" name="quantity"
                           pattern="[0-9]*" min="1"
@@ -324,6 +369,7 @@ img {vertical-align: middle;}
         <form method="post">
             <div class="mySlides4" style="text-align: center;">
                 <p style="color: #d62217;">Bisfino - cmimi 1 €</p>
+                <p style="color: #d62217;">Sasia në depo - <span class="badge">{{sasia19}}</span></p>
                 <img src="static/images/bisfino.png" style="height:400px;">
                 <p><input class="container-fluid borderbox" type="number" id="last" name="quantity"
                           pattern="[0-9]*" min="1"
@@ -340,6 +386,7 @@ img {vertical-align: middle;}
 
             <div class="mySlides4" style="text-align: center;">
                 <p style="color: #d62217;">Bisfino e vogël - cmimi 0.8 €</p>
+                <p style="color: #d62217;">Sasia në depo - <span class="badge">{{sasia20}}</span></p>
                 <img src="static/images/bisfino1.png" style="height:400px;">
                 <p><input class="container-fluid borderbox" type="number" id="last1" name="quantity"
                           pattern="[0-9]*" min="1"
@@ -363,6 +410,7 @@ img {vertical-align: middle;}
         <form method="post">
             <div class="mySlides9" style="text-align: center;">
                 <p style="color: #d62217;">Merci - cmimi 2.1 €</p>
+                <p style="color: #d62217;">Sasia në depo - <span class="badge">{{sasia23}}</span></p>
                 <img src="static/images/merci.png" style="height:400px;">
                 <p><input class="container-fluid borderbox" type="number" id="last4" name="quantity"
                           pattern="[0-9]*" min="1"
@@ -382,6 +430,7 @@ img {vertical-align: middle;}
         <form method="post">
             <div class="mySlides9" style="text-align: center;">
                 <p style="color: #d62217;">Raffaello - cmimi 1.5 €</p>
+                <p style="color: #d62217;">Sasia në depo - <span class="badge">{{sasia18}}</span></p>
                 <img src="static/images/raffaello.png" style="height:400px;">
                 <p><input class="container-fluid borderbox" type="number" id="last44" name="quantity"
                           pattern="[0-9]*" min="1"
@@ -403,6 +452,7 @@ img {vertical-align: middle;}
         <form method="post">
             <div class="mySlides9" style="text-align: center;">
                 <p style="color: #d62217;">Snickers - cmimi 0.5 €</p>
+                <p style="color: #d62217;">Sasia në depo - <span class="badge">{{sasia14}}</span></p>
                 <img src="static/images/snickers.png" style="height:400px;">
                 <p><input class="container-fluid borderbox" type="number" id="qoko" name="quantity"
                           pattern="[0-9]*" min="1"
@@ -424,6 +474,7 @@ img {vertical-align: middle;}
 
             <div class="mySlides9" style="text-align: center;">
                 <p style="color: #d62217;">Mars - cmimi 0.5 €</p>
+                <p style="color: #d62217;">Sasia në depo - <span class="badge">{{sasia15}}</span></p>
                 <img src="static/images/mars.png" style="height:400px;">
                 <p><input class="container-fluid borderbox" type="number" id="qoko1" name="quantity"
                           pattern="[0-9]*" min="1"
@@ -445,6 +496,7 @@ img {vertical-align: middle;}
 
             <div class="mySlides9" style="text-align: center;">
                 <p style="color: #d62217;">Milky Way - cmimi 0.5 €</p>
+                <p style="color: #d62217;">Sasia në depo - <span class="badge">{{sasia16}}</span></p>
                 <img src="static/images/milkyway.png" style="height:400px;">
                 <p><input class="container-fluid borderbox" type="number" id="qoko2" name="quantity"
                           pattern="[0-9]*" min="1"
@@ -464,6 +516,7 @@ img {vertical-align: middle;}
         <form method="post">
             <div class="mySlides9" style="text-align: center;">
                 <p style="color: #d62217;">Twix - cmimi 1 €</p>
+                <p style="color: #d62217;">Sasia në depo - <span class="badge">{{sasia17}}</span></p>
                 <img src="static/images/twix.png" style="height:400px;">
                 <p><input class="container-fluid borderbox" type="number" id="qoko3" name="quantity"
                           pattern="[0-9]*" min="1"
@@ -485,6 +538,7 @@ img {vertical-align: middle;}
         <form method="post">
             <div class="mySlides9" style="text-align: center;">
                 <p style="color: #d62217;">Romantic - cmimi 1.1 €</p>
+                <p style="color: #d62217;">Sasia në depo - <span class="badge">{{sasia21}}</span></p>
                 <img src="static/images/romantic.png" style="height:400px;">
                 <p><input class="container-fluid borderbox" type="number" id="last2" name="quantity"
                           pattern="[0-9]*" min="1"
@@ -504,6 +558,7 @@ img {vertical-align: middle;}
         <form method="post">
             <div class="mySlides9" style="text-align: center;">
                 <p style="color: #d62217;">Samba - cmimi 1.2 €</p>
+                <p style="color: #d62217;">Sasia në depo - <span class="badge">{{sasia22}}</span></p>
                 <img src="static/images/romantic1.png" style="height:400px;">
                 <p><input class="container-fluid borderbox" type="number" id="last3" name="quantity"
                           pattern="[0-9]*" min="1"
@@ -540,6 +595,8 @@ function showSlides(n, no) {
   }
   x[slideIndex[no]-1].style.display = "block";
 }
+
+
 
 
 

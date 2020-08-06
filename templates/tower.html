@@ -8,7 +8,7 @@
   font-size: 20px;
 }
 * {box-sizing: border-box}
-.mySlides1, .mySlides2, .mySlides3, .mySlides4 {display: none}
+.mySlides1, .mySlides2, .mySlides3, .mySlides4, .mySlides5, .mySlides6 {display: none}
 img {vertical-align: middle;}
 
 /* Slideshow container */
@@ -27,7 +27,23 @@ img {vertical-align: middle;}
         display: none;
     }
 }
-
+@media only screen and (max-width: 1000px) {
+    #pic {
+        display: none;
+    }
+}
+@media only screen and (min-width: 1000px) {
+    #pic1 {
+        display: none;
+    }
+}
+.badge{
+background-color: #D63D17;
+height: 23px;
+width: auto;
+border-radius: 50%;
+font-size: 17px;
+}
 </style>
 <body>
 <div style="text-align: right; margin-top: 20px; margin-right: 20px;">
@@ -56,6 +72,8 @@ img {vertical-align: middle;}
             <a href="pije#pepsi">Pepsi</a>
             <a href="ushqime#plazma">Plazma</a>
             <a href="ushqime#samba">Samba</a>
+            <a href="higjienë#schaumavajza">Shampon Schauma për vajza</a>
+            <a href="higjienë#schaumaburra">Shampon Schauma për djem</a>
             <a href="ushqime#snickers">Snickers</a>
             <a href="pije#smirnoff">Smirnoff</a>
             <a href="pije#sprite">Sprite</a>
@@ -77,20 +95,222 @@ img {vertical-align: middle;}
         <p style="font-size: 25px; color:black; opacity: 0.7;">
             Ne sektorin <strong>Higjienë</strong> përfshihen artikuj të ndryshëm si : <strong>detergjenta, pastë të
             dhëmbëve, kimikale për tualet</strong>, si dhe shumë artikuj të tjerë të ngjashëm me këto.<br>
-            Më poshtë janë disa slideshow të cilat tregojnë produktet të cilat gjenden ne depot tona. Në pjesën e lartë
+            Më poshtë janë të gjitha produktet të cilat gjenden ne depot tona. Në pjesën e lartë
             te fotos është emri i produktit si dhe cmimi i atij produkti.<br>
             Për të gjithë produktet që ju keni nevojë, shkruaj sasinë për aq sa ju keni nevojë dhe shtypni <strong>"Shto
-            në listë"</strong>.<br>
+            në listë"</strong>. Pastaj për të porositur shkoni në linkun e rrumbullaksuar më poshtë dhe <strong>porosit.</strong>
         </p>
-        <h3 style="margin-bottom: 25px; margin-top: 75px;" id="detergjenta">Produkti : Detergjent për rroba ABC</h3>
+        <div id="pic">
+            <img src="static/images/tell2.png" style="display: block; margin-left: auto; margin-right: auto;width: 70%; opacity: 0.9; border-radius: 12px;">
+        </div>
+        <div id="pic1">
+            <img src="static/images/tell2.png" style="display: block; margin-left: auto; margin-right: auto;width: 100%; opacity: 0.9; border-radius: 12px;">
+        </div>
+
 
 
     </div>
+    <div class="container-fluid" style="color: #d62217; margin-top: 95px; margin-bottom: 25px;" id="schaumavajza">
+        <h3>Produkti : Shampon Schauma për vajza</h3>
+    </div>
+    <div class="slideshow-container" style="color: white;">
+        <form method="post">
+            <div class="mySlides5" style="text-align: center;">
+                <p style="color: #d62217;">Schauma Repair and Pflege - cmimi 2.2 €</p>
+                <p style="color: #d62217;">Sasia në depo - <span class="badge">{{sasia18}}</span></p>
+                <img src="static/images/schauma.png" style="height:400px;">
+                <p><input class="container-fluid borderbox" type="number" id="schaumaa" name="quantity"
+                          pattern="[0-9]*" min="1"
+                          placeholder="Sasia"
+                          style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
+                          required><br><input class="eoli" type="submit" name="submit18"
+                                              style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;"
+                                              value="Shto në listë">
+                </p>
+            </div>
+        </form>
+        <form method="post">
+            <div class="mySlides5" style="text-align: center;">
+                <p style="color: #d62217;">Schauma Frucht and Vitamin - cmimi 2.2 €</p>
+                <p style="color: #d62217;">Sasia në depo - <span class="badge">{{sasia19}}</span></p>
+                <img src="static/images/schauma1.png" style="height:400px;">
+                <p><input class="container-fluid borderbox" type="number" id="schaumaa1" name="quantity"
+                          pattern="[0-9]*" min="1"
+                          placeholder="Sasia"
+                          style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
+                          required><br><input class="eoli" type="submit" name="submit19"
+                                              style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;"
+                                              value="Shto në listë">
+                </p>
+            </div>
+        </form>
+        <form method="post">
+            <div class="mySlides5" style="text-align: center;">
+                <p style="color: #d62217;">Schauma Herbs - cmimi 2.2 €</p>
+                <p style="color: #d62217;">Sasia në depo - <span class="badge">{{sasia20}}</span></p>
+                <img src="static/images/schauma2.png" style="height:400px;">
+                <p><input class="container-fluid borderbox" type="number" id="schaumaa2" name="quantity"
+                          pattern="[0-9]*" min="1"
+                          placeholder="Sasia"
+                          style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
+                          required><br><input class="eoli" type="submit" name="submit20"
+                                              style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;"
+                                              value="Shto në listë">
+                </p>
+            </div>
+        </form>
+        <form method="post">
+            <div class="mySlides5" style="text-align: center;">
+                <p style="color: #d62217;">Schauma Blossom Oil - cmimi 2.2 €</p>
+                <p style="color: #d62217;">Sasia në depo - <span class="badge">{{sasia21}}</span></p>
+                <img src="static/images/schauma3.png" style="height:400px;">
+                <p><input class="container-fluid borderbox" type="number" id="schaumaa3" name="quantity"
+                          pattern="[0-9]*" min="1"
+                          placeholder="Sasia"
+                          style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
+                          required><br><input class="eoli" type="submit" name="submit21"
+                                              style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;"
+                                              value="Shto në listë">
+                </p>
+            </div>
+        </form>
+        <form method="post">
+            <div class="mySlides5" style="text-align: center;">
+                <p style="color: #d62217;">Schauma Almond Milk - cmimi 2.2 €</p>
+                <p style="color: #d62217;">Sasia në depo - <span class="badge">{{sasia22}}</span></p>
+                <img src="static/images/schauma4.png" style="height:400px;">
+                <p><input class="container-fluid borderbox" type="number" id="schaumaa4" name="quantity"
+                          pattern="[0-9]*" min="1"
+                          placeholder="Sasia"
+                          style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
+                          required><br><input class="eoli" type="submit" name="submit22"
+                                              style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;"
+                                              value="Shto në listë">
+                </p>
+            </div>
+        </form>
+        <form method="post">
+            <div class="mySlides5" style="text-align: center;">
+                <p style="color: #d62217;">Schauma Sea Buckthorn - cmimi 2.2 €</p>
+                <p style="color: #d62217;">Sasia në depo - <span class="badge">{{sasia23}}</span></p>
+                <img src="static/images/schauma5.png" style="height:400px;">
+                <p><input class="container-fluid borderbox" type="number" id="schaumaa5" name="quantity"
+                          pattern="[0-9]*" min="1"
+                          placeholder="Sasia"
+                          style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
+                          required><br><input class="eoli" type="submit" name="submit23"
+                                              style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;"
+                                              value="Shto në listë">
+                </p>
+            </div>
+        </form>
+        <form method="post">
+            <div class="mySlides5" style="text-align: center;">
+                <p style="color: #d62217;">Schauma Color Glanz - cmimi 2.2 €</p>
+                <p style="color: #d62217;">Sasia në depo - <span class="badge">{{sasia24}}</span></p>
+                <img src="static/images/schauma6.png" style="height:400px;">
+                <p><input class="container-fluid borderbox" type="number" id="schaumaa6" name="quantity"
+                          pattern="[0-9]*" min="1"
+                          placeholder="Sasia"
+                          style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
+                          required><br><input class="eoli" type="submit" name="submit24"
+                                              style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;"
+                                              value="Shto në listë">
+                </p>
+            </div>
+        </form>
+        <a class="prev" onclick="plusSlides(-1, 4)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1, 4)">&#10095;</a>
+    </div>
+    <div class="container-fluid" style="color: #d62217; margin-top: 95px; margin-bottom: 25px;" id="schaumaburra">
+        <h3>Produkti : Shampon Schauma për djem</h3>
+    </div>
+    <div class="slideshow-container" style="color: white;">
+        <form method="post">
+            <div class="mySlides6" style="text-align: center;">
+                <p style="color: #d62217;">Schauma for men shampoo - cmimi 2.2 €</p>
+                <p style="color: #d62217;">Sasia në depo - <span class="badge">{{sasia25}}</span></p>
+                <img src="static/images/schaumamen.png" style="height:400px;">
+                <p><input class="container-fluid borderbox" type="number" id="schaumamen" name="quantity"
+                          pattern="[0-9]*" min="1"
+                          placeholder="Sasia"
+                          style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
+                          required><br><input class="eoli" type="submit" name="submit25"
+                                              style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;"
+                                              value="Shto në listë">
+                </p>
+            </div>
+        </form>
+        <form method="post">
+            <div class="mySlides6" style="text-align: center;">
+                <p style="color: #d62217;">Schauma Sports Power - cmimi 2.2 €</p>
+                <p style="color: #d62217;">Sasia në depo - <span class="badge">{{sasia26}}</span></p>
+                <img src="static/images/schaumamen1.png" style="height:400px;">
+                <p><input class="container-fluid borderbox" type="number" id="schaumamen1" name="quantity"
+                          pattern="[0-9]*" min="1"
+                          placeholder="Sasia"
+                          style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
+                          required><br><input class="eoli" type="submit" name="submit26"
+                                              style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;"
+                                              value="Shto në listë">
+                </p>
+            </div>
+        </form>
+        <form method="post">
+            <div class="mySlides6" style="text-align: center;">
+                <p style="color: #d62217;">Schauma Anti Schuppen - cmimi 2.2 €</p>
+                <p style="color: #d62217;">Sasia në depo - <span class="badge">{{sasia27}}</span></p>
+                <img src="static/images/schaumamen2.png" style="height:400px;">
+                <p><input class="container-fluid borderbox" type="number" id="schaumamen2" name="quantity"
+                          pattern="[0-9]*" min="1"
+                          placeholder="Sasia"
+                          style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
+                          required><br><input class="eoli" type="submit" name="submit27"
+                                              style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;"
+                                              value="Shto në listë">
+                </p>
+            </div>
+        </form>
+        <form method="post">
+            <div class="mySlides6" style="text-align: center;">
+                <p style="color: #d62217;">Schauma Hair Activator - cmimi 2.2 €</p>
+                <p style="color: #d62217;">Sasia në depo - <span class="badge">{{sasia28}}</span></p>
+                <img src="static/images/schaumamen3.png" style="height:400px;">
+                <p><input class="container-fluid borderbox" type="number" id="schaumamen3" name="quantity"
+                          pattern="[0-9]*" min="1"
+                          placeholder="Sasia"
+                          style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
+                          required><br><input class="eoli" type="submit" name="submit28"
+                                              style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;"
+                                              value="Shto në listë">
+                </p>
+            </div>
+        </form>
+        <form method="post">
+            <div class="mySlides6" style="text-align: center;">
+                <p style="color: #d62217;">Schauma Carbon Force - cmimi 2.2 €</p>
+                <p style="color: #d62217;">Sasia në depo - <span class="badge">{{sasia29}}</span></p>
+                <img src="static/images/schaumamen4.png" style="height:400px;">
+                <p><input class="container-fluid borderbox" type="number" id="schaumamen4" name="quantity"
+                          pattern="[0-9]*" min="1"
+                          placeholder="Sasia"
+                          style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
+                          required><br><input class="eoli" type="submit" name="submit29"
+                                              style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;"
+                                              value="Shto në listë">
+                </p>
+            </div>
+        </form>
+        <a class="prev" onclick="plusSlides(-1, 5)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1, 5)">&#10095;</a>
+    </div>
+    <h3 style="color: #d62217; margin-top: 95px; margin-bottom: 25px;" id="detergjenta">Produkti : Detergjent për rroba ABC</h3>
 
     <div class="slideshow-container" style="color: white;">
         <form method="post">
             <div class="mySlides1" style="text-align: center;">
                 <p style="color: #d62217;">Abc i lëngjshëm i zi - cmimi 2.2 €</p>
+                <p style="color: #d62217;">Sasia në depo - <span class="badge">{{sasia}}</span></p>
                 <img src="static/images/abc.png" style="height:400px;">
                 <p><input class="container-fluid borderbox" type="number" id="number" name="quantity"
                           pattern="[0-9]*" min="1"
@@ -108,6 +328,7 @@ img {vertical-align: middle;}
             <div class="mySlides1" style="text-align: center;">
 
                 <p style="color: #d62217;">Abc i lëngjshëm i bardhë - cmimi 2.2 €</p>
+                <p style="color: #d62217;">Sasia në depo - <span class="badge">{{sasia1}}</span></p>
                 <img src="static/images/abc1.png" style="height:400px;">
                 <p><input class="container-fluid borderbox" type="number" id="number1" name="quantity"
                           pattern="[0-9]*" min="1"
@@ -124,6 +345,7 @@ img {vertical-align: middle;}
 
             <div class="mySlides1" style="text-align: center;">
                 <p style="color: #d62217;">Abc powder detergjent - cmimi 1.8 € €</p>
+                <p style="color: #d62217;">Sasia në depo - <span class="badge">{{sasia2}}</span></p>
                 <img src="static/images/abc2.png" style="height:400px;">
                 <p><input class="container-fluid borderbox" type="number" id="number2" name="quantity"
                           pattern="[0-9]*" min="1"
@@ -138,6 +360,7 @@ img {vertical-align: middle;}
         <form method="post">
             <div class="mySlides1" style="text-align: center;">
                 <p style="color: #d62217;">Abc detergjent për rroba matik - cmimi 2 €</p>
+                <p style="color: #d62217;">Sasia në depo - <span class="badge">{{sasia3}}</span></p>
                 <img src="static/images/abc3.png" style="height:400px;">
                 <p><input class="container-fluid borderbox" type="number" id="number3" name="quantity"
                           pattern="[0-9]*" min="1"
@@ -165,6 +388,7 @@ img {vertical-align: middle;}
             <div class="mySlides2" style="text-align: center;">
 
                 <p style="color: #d62217;">Colgate MaxWhite - cmimi 2.8 €</p>
+                <p style="color: #d62217;">Sasia në depo - <span class="badge">{{sasia10}}</span></p>
                 <img src="static/images/colgate.png" style="height:400px;">
                 <p><input class="container-fluid borderbox" type="number" id="keksa1" name="quantity"
                           pattern="[0-9]*" min="1"
@@ -183,6 +407,7 @@ img {vertical-align: middle;}
 
             <div class="mySlides2" style="text-align: center;">
                 <p style="color: #d62217;">Colgate MaxFresh Blue - cmimi 1.7 €</p>
+                <p style="color: #d62217;">Sasia në depo - <span class="badge">{{sasia11}}</span></p>
                 <img src="static/images/colgate1.png" style="height:400px;">
                 <p><input class="container-fluid borderbox" type="number" id="keksa2" name="quantity"
                           pattern="[0-9]*" min="1"
@@ -197,6 +422,7 @@ img {vertical-align: middle;}
         <form method="post">
             <div class="mySlides2" style="text-align: center;">
                 <p style="color: #d62217;">Colgate MaxFresh Green - cmimi 1.7 €</p>
+                <p style="color: #d62217;">Sasia në depo - <span class="badge">{{sasia12}}</span></p>
                 <img src="static/images/colgate3.png" style="height:400px;">
                 <p><input class="container-fluid borderbox" type="number" id="keksa3" name="quantity"
                           pattern="[0-9]*" min="1"
@@ -211,6 +437,7 @@ img {vertical-align: middle;}
         <form method="post">
             <div class="mySlides2" style="text-align: center;">
                 <p style="color: #d62217;">Colgate Herbal - cmimi 1.5 €</p>
+                <p style="color: #d62217;">Sasia në depo - <span class="badge">{{sasia13}}</span></p>
                 <img src="static/images/colgate2.png" style="height:400px;">
                 <p><input class="container-fluid borderbox" type="number" id="keksa4" name="quantity"
                           pattern="[0-9]*" min="1"
@@ -234,6 +461,7 @@ img {vertical-align: middle;}
         <form method="post">
             <div class="mySlides4" style="text-align: center;">
                 <p style="color: #d62217;">Brush e dhëmbëve Colgate - cmimi 1.3 €</p>
+                <p style="color: #d62217;">Sasia në depo - <span class="badge">{{sasia9}}</span></p>
                 <img src="static/images/brush.png" style="height:400px;">
                 <p><input class="container-fluid borderbox" type="number" id="keksa" name="quantity"
                           pattern="[0-9]*" min="1"
@@ -248,6 +476,7 @@ img {vertical-align: middle;}
         <form method="post">
             <div class="mySlides4" style="text-align: center;">
                 <p style="color: #d62217;">Brush e dhëmbëve për fëmijë Colgate - cmimi 0.8 €</p>
+                <p style="color: #d62217;">Sasia në depo - <span class="badge">{{sasia4}}</span></p>
                 <img src="static/images/brush1.png" style="height:400px;">
                 <p><input class="container-fluid borderbox" type="number" id="keksa01" name="quantity"
                           pattern="[0-9]*" min="1"
@@ -262,6 +491,7 @@ img {vertical-align: middle;}
         <form method="post">
             <div class="mySlides4" style="text-align: center;">
                 <p style="color: #d62217;">Brush e dhëmbëve Colgate Double - cmimi 2.4 €</p>
+                <p style="color: #d62217;">Sasia në depo - <span class="badge">{{sasia5}}</span></p>
                 <img src="static/images/brush2.png" style="height:400px;">
                 <p><input class="container-fluid borderbox" type="number" id="keksa02" name="quantity"
                           pattern="[0-9]*" min="1"
@@ -287,6 +517,7 @@ img {vertical-align: middle;}
         <form method="post">
             <div class="mySlides3" style="text-align: center;">
                 <p style="color: #d62217;">Domestos i gjelbër - cmimi 1.6 €</p>
+                <p style="color: #d62217;">Sasia në depo - <span class="badge">{{sasia14}}</span></p>
                 <img src="static/images/domestos.png" style="height:400px;">
                 <p><input class="container-fluid borderbox" type="number" id="qoko" name="quantity"
                           pattern="[0-9]*" min="1"
@@ -303,6 +534,7 @@ img {vertical-align: middle;}
 
             <div class="mySlides3" style="text-align: center;">
                 <p style="color: #d62217;">Domestos i kaltër - cmimi 1.6 €</p>
+                <p style="color: #d62217;">Sasia në depo - <span class="badge">{{sasia15}}</span></p>
                 <img src="static/images/domestos1.png" style="height:400px;">
                 <p><input class="container-fluid borderbox" type="number" id="qoko1" name="quantity"
                           pattern="[0-9]*" min="1"
@@ -319,6 +551,7 @@ img {vertical-align: middle;}
 
             <div class="mySlides3" style="text-align: center;">
                 <p style="color: #d62217;">Domestos i bardhë - cmimi 1.6 €</p>
+                <p style="color: #d62217;">Sasia në depo - <span class="badge">{{sasia16}}</span></p>
                 <img src="static/images/domestos2.png" style="height:400px;">
                 <p><input class="container-fluid borderbox" type="number" id="qoko2" name="quantity"
                           pattern="[0-9]*" min="1"
@@ -333,6 +566,7 @@ img {vertical-align: middle;}
         <form method="post">
             <div class="mySlides3" style="text-align: center;">
                 <p style="color: #d62217;">Domestos i verdhë - cmimi 1.6 €</p>
+                <p style="color: #d62217;">Sasia në depo - <span class="badge">{{sasia17}}</span></p>
                 <img src="static/images/domestos3.png" style="height:400px;">
                 <p><input class="container-fluid borderbox" type="number" id="qoko3" name="quantity"
                           pattern="[0-9]*" min="1"
@@ -352,12 +586,14 @@ img {vertical-align: middle;}
 
 
     <script>
-var slideIndex = [1,1,1,1];
-var slideId = ["mySlides1", "mySlides2", "mySlides3", "mySlides4"]
+var slideIndex = [1,1,1,1,1,1];
+var slideId = ["mySlides1", "mySlides2", "mySlides3", "mySlides4", "mySlides5", "mySlides6"]
 showSlides(1, 0);
 showSlides(1, 1);
 showSlides(1, 2);
 showSlides(1, 3);
+showSlides(1, 4);
+showSlides(1, 5);
 
 function plusSlides(n, no) {
   showSlides(slideIndex[no] += n, no);

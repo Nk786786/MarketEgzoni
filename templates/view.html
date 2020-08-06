@@ -5,5 +5,9 @@
     {% for item in values %}
     <p class="container-fluid">Name: {{item.name}}, Email: {{item.email}}, Phone: {{item.phone}}, Password: {{item.password}}</p>
     {% endfor %}
+    {% for item in values1 %}
+    <p class="container-fluid">Product: {{item.product}}, Quantity: {{item.quantity}}</p>
+    {% endfor %}
+
 </div>
 {% endblock %}
