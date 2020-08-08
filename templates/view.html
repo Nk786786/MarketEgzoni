@@ -1,13 +1,35 @@
 {% extends "base.html" %}
 {% block title %}user{% endblock %}
 {% block content %}
-<div style="margin-top: 50px;">
-    {% for item in values %}
-    <p class="container-fluid">Name: {{item.name}}, Email: {{item.email}}, Phone: {{item.phone}}, Password: {{item.password}}</p>
-    {% endfor %}
-    {% for item in values1 %}
-    <p class="container-fluid">Product: {{item.product}}, Quantity: {{item.quantity}}</p>
-    {% endfor %}
+<div style="margin-top: 50px;" class="container">
+
+    <table class="table" style="color: white;">
+                    <thead style="color: black;">
+                    <tr>
+                        <td><strong style="font-size: 30px;">Produkti</strong></td>
+
+                        <td><strong style="font-size: 30px;">Sasia në depo</strong></td>
+
+                    </tr>
+                    </thead>
+        {% for item in values1 %}
+
+                    <tbody style="color: black">
+
+                    <tr>
+                        <td><strong><i>{{item.product}}</i></strong></td>
+
+                        <td><strong><i>{{item.quantity}}</i></strong></td>
+                        <td>
+
+
+                        </td>
+                    </tr>
+
+                    </tbody>
+        {% endfor %}
+                </table>
+
 
 </div>
 {% endblock %}

@@ -44,6 +44,32 @@ width: auto;
 border-radius: 50%;
 font-size: 17px;
 }
+.alert {
+  padding: 5px;
+  background-color: black;
+  color: white;
+  height: 40px;
+  text-align: center;
+  display: block
+   margin-left: auto;
+   margin-right: auto;
+   width: 98%;
+}
+
+.closebtn {
+  padding: 5px;
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: grey;
 </style>
 <body>
 <div style="text-align: right; margin-top: 20px; margin-right: 20px;">
@@ -82,6 +108,16 @@ font-size: 17px;
             <a href="ushqime#twix">Twix</a>
         </div>
     </div>
+</div>
+<div class="container-fluid" style="position: fixed; margin: -65px 0px 0px 0px; display: block; cursor: pointer; z-index: 99;">
+    {% with messages = get_flashed_messages() %}
+    {% for msg in messages %}
+    <div class="alert" style="position: absolute;">
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+     <strong>{{msg}}</strong>
+      </div>
+    {% endfor %}
+    {% endwith %}
 </div>
 <div id="searchremove"><p style="text-align: center; color: #d62217; font-size: 65px; margin: -70px 0px 0px 0px">
     Higjienë</p></div>

@@ -68,12 +68,14 @@ def base():
     return render_template("base.html", orders=orders, length=length)
 
 
-@app.route("/view")
+@app.route("/view-products")
 def view():
-    return render_template("view.html", values1=stocks.query.all(), values=lists.query.all())
+    return render_template("view.html", values1=stocks.query.all())
 
-
-@app.route("/write", methods=["POST", "GET"])
+@app.route("/view-users")
+def viewUsers():
+    return render_template("view-users.html", values=lists.query.all())
+@app.route("/admin-write", methods=["POST", "GET"])
 def write():
     if request.method == "POST":
         product = request.form["product"]
@@ -298,197 +300,282 @@ def space():
             category = "Ushqime"
             quantity = request.form["quantity"]
             if 'submit' in request.form:
-                product = "Doritos Cool Ranch"
-                qmimi = 0.9
-                price = int(quantity) * qmimi
-                orders.append(
-                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
-                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
-                prices.append(price)
+                if int(sasia) >= int(quantity):
+                    product = "Doritos Cool Ranch"
+                    qmimi = 0.9
+                    price = int(quantity) * qmimi
+                    orders.append(
+                        Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                              price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                    prices.append(price)
+                else:
+                    flash(f"Nuk ka sasi të mjaftueshme ne depo!")
             elif 'submit1' in request.form:
-                product = "Doritos Cheese Supreme"
-                qmimi = 0.9
-                price = int(quantity) * qmimi
-                orders.append(
-                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
-                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
-                prices.append(price)
+                if int(sasia1) >= int(quantity):
+                    product = "Doritos Cheese Supreme"
+                    qmimi = 0.9
+                    price = int(quantity) * qmimi
+                    orders.append(
+                        Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                              price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                    prices.append(price)
+                else:
+                    flash(f"Nuk ka sasi të mjaftueshme ne depo!")
             elif 'submit2' in request.form:
-                product = "Doritos Nacho Cheese"
-                qmimi = 0.9
-                price = int(quantity) * qmimi
-                orders.append(
-                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
-                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
-                prices.append(price)
+                if int(sasia2) >= int(quantity):
+                    product = "Doritos Nacho Cheese"
+                    qmimi = 0.9
+                    price = int(quantity) * qmimi
+                    orders.append(
+                        Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                              price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                    prices.append(price)
+                else:
+                    flash(f"Nuk ka sasi të mjaftueshme ne depo!")
             elif 'submit3' in request.form:
-                product = "Doritos Spicy Sweet Chili"
-                qmimi = 0.9
-                price = int(quantity) * qmimi
-                orders.append(
-                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
-                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
-                prices.append(price)
+                if int(sasia3) >= int(quantity):
+                    product = "Doritos Spicy Sweet Chili"
+                    qmimi = 0.9
+                    price = int(quantity) * qmimi
+                    orders.append(
+                        Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                              price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                    prices.append(price)
+                else:
+                    flash(f"Nuk ka sasi të mjaftueshme ne depo!")
             elif 'submit4' in request.form:
-                product = "Doritos Chilli"
-                qmimi = 0.9
-                price = int(quantity) * qmimi
-                orders.append(
-                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
-                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
-                prices.append(price)
+                if int(sasia4) >= int(quantity):
+                    product = "Doritos Chilli"
+                    qmimi = 0.9
+                    price = int(quantity) * qmimi
+                    orders.append(
+                        Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                              price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                    prices.append(price)
+                else:
+                    flash(f"Nuk ka sasi të mjaftueshme ne depo!")
             elif 'submit5' in request.form:
-                product = "Patos Bahrati"
-                qmimi = 1.1
-                price = int(quantity) * qmimi
-                orders.append(
-                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
-                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
-                prices.append(price)
+                if int(sasia5) >= int(quantity):
+                    product = "Patos Bahrati"
+                    qmimi = 1.1
+                    price = int(quantity) * qmimi
+                    orders.append(
+                        Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                              price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                    prices.append(price)
+                else:
+                    flash(f"Nuk ka sasi të mjaftueshme ne depo!")
             elif 'submit6' in request.form:
-                product = "Patos Rolls"
-                qmimi = 1.1
-                price = int(quantity) * qmimi
-                orders.append(
-                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
-                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
-                prices.append(price)
+                if int(sasia6) >= int(quantity):
+                    product = "Patos Rolls"
+                    qmimi = 1.1
+                    price = int(quantity) * qmimi
+                    orders.append(
+                        Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                              price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                    prices.append(price)
+                else:
+                    flash(f"Nuk ka sasi të mjaftueshme ne depo!")
             elif 'submit7' in request.form:
-                product = "Patos Classic"
-                qmimi = 1.1
-                price = int(quantity) * qmimi
-                orders.append(
-                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
-                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
-                prices.append(price)
+                if int(sasia7) >= int(quantity):
+                    product = "Patos Classic"
+                    qmimi = 1.1
+                    price = int(quantity) * qmimi
+                    orders.append(
+                        Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                              price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                    prices.append(price)
+                else:
+                    flash(f"Nuk ka sasi të mjaftueshme ne depo!")
             elif 'submit8' in request.form:
-                product = "Patos Critos"
-                qmimi = 1.1
-                price = int(quantity) * qmimi
-                orders.append(
-                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
-                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
-                prices.append(price)
+                if int(sasia8) >= int(quantity):
+                    product = "Patos Critos"
+                    qmimi = 1.1
+                    price = int(quantity) * qmimi
+                    orders.append(
+                        Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                              price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                    prices.append(price)
+                else:
+                    flash(f"Nuk ka sasi të mjaftueshme ne depo!")
+
             elif 'submit9' in request.form:
-                product = "Plazma 150g"
-                qmimi = 1.7
-                price = int(quantity) * qmimi
-                orders.append(
-                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
-                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
-                prices.append(price)
+                if int(sasia9) >= int(quantity):
+                    product = "Plazma 150g"
+                    qmimi = 1.7
+                    price = int(quantity) * qmimi
+                    orders.append(
+                        Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                              price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                    prices.append(price)
+                else:
+                    flash(f"Nuk ka sasi të mjaftueshme ne depo!")
+
             elif 'submit10' in request.form:
-                product = "Plazma 300g"
-                qmimi = 3.2
-                price = int(quantity) * qmimi
-                orders.append(
-                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
-                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
-                prices.append(price)
+                if int(sasia10) >= int(quantity):
+                    product = "Plazma 300g"
+                    qmimi = 3.2
+                    price = int(quantity) * qmimi
+                    orders.append(
+                        Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                              price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                    prices.append(price)
+                else:
+                    flash(f"Nuk ka sasi të mjaftueshme ne depo!")
+
             elif 'submit11' in request.form:
-                product = "Plazma 600g"
-                qmimi = 6
-                price = int(quantity) * qmimi
-                orders.append(
-                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
-                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
-                prices.append(price)
+                if int(sasia11) >= int(quantity):
+                    product = "Plazma 600g"
+                    qmimi = 6
+                    price = int(quantity) * qmimi
+                    orders.append(
+                        Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                              price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                    prices.append(price)
+                else:
+                    flash(f"Nuk ka sasi të mjaftueshme ne depo!")
             elif 'submit12' in request.form:
-                product = "Plazma të bluar 300g"
-                qmimi = 3.5
-                price = int(quantity) * qmimi
-                orders.append(
-                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
-                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
-                prices.append(price)
+                if int(sasia12) >= int(quantity):
+                    product = "Plazma të bluar 300g"
+                    qmimi = 3.5
+                    price = int(quantity) * qmimi
+                    orders.append(
+                        Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                              price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                    prices.append(price)
+                else:
+                    flash(f"Nuk ka sasi të mjaftueshme ne depo!")
             elif 'submit13' in request.form:
-                product = "Plazma të bluar 800g"
-                qmimi = 7.5
-                price = int(quantity) * qmimi
-                orders.append(
-                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
-                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
-                prices.append(price)
+                if int(sasia13) >= int(quantity):
+                    product = "Plazma të bluar 800g"
+                    qmimi = 7.5
+                    price = int(quantity) * qmimi
+                    orders.append(
+                        Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                              price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                    prices.append(price)
+                else:
+                    flash(f"Nuk ka sasi të mjaftueshme ne depo!")
+
             elif 'submit14' in request.form:
-                product = "Snickers"
-                qmimi = 0.5
-                price = int(quantity) * qmimi
-                orders.append(
-                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
-                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
-                prices.append(price)
+                if int(sasia14) >= int(quantity):
+                    product = "Snickers"
+                    qmimi = 0.5
+                    price = int(quantity) * qmimi
+                    orders.append(
+                        Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                              price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                    prices.append(price)
+                else:
+                    flash(f"Nuk ka sasi të mjaftueshme ne depo!")
+
             elif 'submit15' in request.form:
-                product = "Mars"
-                qmimi = 0.5
-                price = int(quantity) * qmimi
-                orders.append(
-                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
-                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
-                prices.append(price)
+                if int(sasia15) >= int(quantity):
+                    product = "Mars"
+                    qmimi = 0.5
+                    price = int(quantity) * qmimi
+                    orders.append(
+                        Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                              price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                    prices.append(price)
+                else:
+                    flash(f"Nuk ka sasi të mjaftueshme ne depo!")
+
             elif 'submit16' in request.form:
-                product = "Milky Way"
-                qmimi = 0.5
-                price = int(quantity) * qmimi
-                orders.append(
-                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
-                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
-                prices.append(price)
+                if int(sasia16) >= int(quantity):
+                    product = "Milky Way"
+                    qmimi = 0.5
+                    price = int(quantity) * qmimi
+                    orders.append(
+                        Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                              price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                    prices.append(price)
+                else:
+                    flash(f"Nuk ka sasi të mjaftueshme ne depo!")
+
             elif 'submit17' in request.form:
-                product = "Twix"
-                qmimi = 1
-                price = int(quantity) * qmimi
-                orders.append(
-                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
-                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
-                prices.append(price)
+                if int(sasia17) >= int(quantity):
+                    product = "Twix"
+                    qmimi = 1
+                    price = int(quantity) * qmimi
+                    orders.append(
+                        Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                              price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                    prices.append(price)
+                else:
+                    flash(f"Nuk ka sasi të mjaftueshme ne depo!")
+
             elif 'submit18' in request.form:
-                product = "Raffaello"
-                qmimi = 1.5
-                price = int(quantity) * qmimi
-                orders.append(
-                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
-                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
-                prices.append(price)
+                if int(sasia18) >= int(quantity):
+                    product = "Raffaello"
+                    qmimi = 1.5
+                    price = int(quantity) * qmimi
+                    orders.append(
+                        Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                              price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                    prices.append(price)
+                else:
+                    flash(f"Nuk ka sasi të mjaftueshme ne depo!")
+
             elif 'submit19' in request.form:
-                product = "Bisfino"
-                qmimi = 1
-                price = int(quantity) * qmimi
-                orders.append(
-                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
-                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
-                prices.append(price)
+                if int(sasia19) >= int(quantity):
+                    product = "Bisfino"
+                    qmimi = 1
+                    price = int(quantity) * qmimi
+                    orders.append(
+                        Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                              price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                    prices.append(price)
+                else:
+                    flash(f"Nuk ka sasi të mjaftueshme ne depo!")
+
             elif 'submit20' in request.form:
-                product = "Bisfino e vogël"
-                qmimi = 0.8
-                price = int(quantity) * qmimi
-                orders.append(
-                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
-                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
-                prices.append(price)
+                if int(sasia20) >= int(quantity):
+                    product = "Bisfino e vogël"
+                    qmimi = 0.8
+                    price = int(quantity) * qmimi
+                    orders.append(
+                        Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                              price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                    prices.append(price)
+                else:
+                    flash(f"Nuk ka sasi të mjaftueshme ne depo!")
+
             elif 'submit21' in request.form:
-                product = "Romantic"
-                qmimi = 1.1
-                price = int(quantity) * qmimi
-                orders.append(
-                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
-                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
-                prices.append(price)
+                if int(sasia21) >= int(quantity):
+                    product = "Romantic"
+                    qmimi = 1.1
+                    price = int(quantity) * qmimi
+                    orders.append(
+                        Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                              price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                    prices.append(price)
+                else:
+                    flash(f"Nuk ka sasi të mjaftueshme ne depo!")
+
             elif 'submit22' in request.form:
-                product = "Samba"
-                qmimi = 1.2
-                price = int(quantity) * qmimi
-                orders.append(
-                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
-                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
-                prices.append(price)
+                if int(sasia22) >= int(quantity):
+                    product = "Samba"
+                    qmimi = 1.2
+                    price = int(quantity) * qmimi
+                    orders.append(
+                        Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                              price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                    prices.append(price)
+                else:
+                    flash(f"Nuk ka sasi të mjaftueshme ne depo!")
+
             elif 'submit23' in request.form:
-                product = "Merci"
-                qmimi = 2.1
-                price = int(quantity) * qmimi
-                orders.append(
-                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
-                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
-                prices.append(price)
+                if int(sasia23) >= int(quantity):
+                    product = "Merci"
+                    qmimi = 2.1
+                    price = int(quantity) * qmimi
+                    orders.append(
+                        Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                              price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                    prices.append(price)
+                else:
+                    flash(f"Nuk ka sasi të mjaftueshme ne depo!")
     length = len(orders)
 
     return render_template('Spaceinvaders.html', orders=orders, prices=prices, total=("%.2f" % round(sum(prices), 2)),
@@ -575,269 +662,370 @@ def dino():
             category = "Pije"
             quantity = request.form["quantity"]
             if 'submit' in request.form:
-                product = "Coca Cola kanace"
-                qmimi = 0.5
-                price = int(quantity) * qmimi
-                orders.append(
-                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
-                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
-                prices.append(price)
+                if int(sasia) >= int(quantity):
+                    product = "Coca Cola kanace"
+                    qmimi = 0.5
+                    price = int(quantity) * qmimi
+                    orders.append(
+                        Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                              price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                    prices.append(price)
+                else:
+                    flash(f"Nuk ka sasi të mjaftueshme ne depo!")
+
             elif 'submit1' in request.form:
-                product = "Coca Cola 2l"
-                qmimi = 1.3
-                price = int(quantity) * qmimi
-                orders.append(
-                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
-                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
-                prices.append(price)
+                if int(sasia1) >= int(quantity):
+                    product = "Coca Cola 2l"
+                    qmimi = 1.3
+                    price = int(quantity) * qmimi
+                    orders.append(
+                        Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                              price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                    prices.append(price)
+                else:
+                    flash(f"Nuk ka sasi të mjaftueshme ne depo!")
+
             elif 'submit2' in request.form:
-                product = "Coca Cola 1.5l"
-                qmimi = 0.95
-                price = int(quantity) * qmimi
-                orders.append(
-                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
-                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
-                prices.append(price)
+                if int(sasia2) >= int(quantity):
+                    product = "Coca Cola 1.5l"
+                    qmimi = 0.95
+                    price = int(quantity) * qmimi
+                    orders.append(
+                        Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                              price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                    prices.append(price)
+                else:
+                    flash(f"Nuk ka sasi të mjaftueshme ne depo!")
             elif 'submit3' in request.form:
-                product = "Fanta Orangje 2l"
-                qmimi = 1.3
-                price = int(quantity) * qmimi
-                orders.append(
-                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
-                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
-                prices.append(price)
+                if int(sasia3) >= int(quantity):
+                    product = "Fanta Orangje 2l"
+                    qmimi = 1.3
+                    price = int(quantity) * qmimi
+                    orders.append(
+                        Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                              price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                    prices.append(price)
+
+
             elif 'submit4' in request.form:
-                product = "Fanta Exotic Ks 2l"
-                qmimi = 1.3
-                price = int(quantity) * qmimi
-                orders.append(
-                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
-                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
-                prices.append(price)
+                if int(sasia4) >= int(quantity):
+                    product = "Fanta Exotic Ks 2l"
+                    qmimi = 1.3
+                    price = int(quantity) * qmimi
+                    orders.append(
+                        Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                              price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                    prices.append(price)
+                else:
+                    flash(f"Nuk ka sasi të mjaftueshme ne depo!")
             elif 'submit5' in request.form:
-                product = "Fanta Exotic Al 2l"
-                qmimi = 1.3
-                price = int(quantity) * qmimi
-                orders.append(
-                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
-                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
-                prices.append(price)
+                if int(sasia5) >= int(quantity):
+                    product = "Fanta Exotic Al 2l"
+                    qmimi = 1.3
+                    price = int(quantity) * qmimi
+                    orders.append(
+                        Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                              price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                    prices.append(price)
+                else:
+                    flash(f"Nuk ka sasi të mjaftueshme ne depo!")
             elif 'submit6' in request.form:
-                product = "Fanta Shokata 2l"
-                qmimi = 1.3
-                price = int(quantity) * qmimi
-                orders.append(
-                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
-                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
-                prices.append(price)
+                if int(sasia6) >= int(quantity):
+                    product = "Fanta Shokata 2l"
+                    qmimi = 1.3
+                    price = int(quantity) * qmimi
+                    orders.append(
+                        Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                              price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                    prices.append(price)
+                else:
+                    flash(f"Nuk ka sasi të mjaftueshme ne depo!")
             elif 'submit7' in request.form:
-                product = "Fanta Orangje kanace"
-                qmimi = 0.5
-                price = int(quantity) * qmimi
-                orders.append(
-                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
-                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
-                prices.append(price)
+                if int(sasia7) >= int(quantity):
+                    product = "Fanta Orangje kanace"
+                    qmimi = 0.5
+                    price = int(quantity) * qmimi
+                    orders.append(
+                        Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                              price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                    prices.append(price)
+                else:
+                    flash(f"Nuk ka sasi të mjaftueshme ne depo!")
             elif 'submit8' in request.form:
-                product = "Fanta Exotic Al kanace"
-                qmimi = 0.7
-                price = int(quantity) * qmimi
-                orders.append(
-                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
-                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
-                prices.append(price)
+                if int(sasia8) >= int(quantity):
+                    product = "Fanta Exotic Al kanace"
+                    qmimi = 0.7
+                    price = int(quantity) * qmimi
+                    orders.append(
+                        Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                              price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                    prices.append(price)
+                else:
+                    flash(f"Nuk ka sasi të mjaftueshme ne depo!")
             elif 'submit9' in request.form:
-                product = "Frutti Mollë 1l"
-                qmimi = 0.75
-                price = int(quantity) * qmimi
-                orders.append(
-                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
-                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
-                prices.append(price)
+                if int(sasia9) >= int(quantity):
+                    product = "Frutti Mollë 1l"
+                    qmimi = 0.75
+                    price = int(quantity) * qmimi
+                    orders.append(
+                        Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                              price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                    prices.append(price)
+                else:
+                    flash(f"Nuk ka sasi të mjaftueshme ne depo!")
             elif 'submit10' in request.form:
-                product = "Frutti Dredhëz 1l"
-                qmimi = 0.75
-                price = int(quantity) * qmimi
-                orders.append(
-                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
-                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
-                prices.append(price)
+                if int(sasia10) >= int(quantity):
+                    product = "Frutti Dredhëz 1l"
+                    qmimi = 0.75
+                    price = int(quantity) * qmimi
+                    orders.append(
+                        Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                              price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                    prices.append(price)
+                else:
+                    flash(f"Nuk ka sasi të mjaftueshme ne depo!")
             elif 'submit11' in request.form:
-                product = "Frutti Portokall 1l"
-                qmimi = 0.9
-                price = int(quantity) * qmimi
-                orders.append(
-                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
-                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
-                prices.append(price)
+                if int(sasia11) >= int(quantity):
+                    product = "Frutti Portokall 1l"
+                    qmimi = 0.9
+                    price = int(quantity) * qmimi
+                    orders.append(
+                        Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                              price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                    prices.append(price)
+                else:
+                    flash(f"Nuk ka sasi të mjaftueshme ne depo!")
             elif 'submit12' in request.form:
-                product = "Frutti Dardhë 1l"
-                qmimi = 0.75
-                price = int(quantity) * qmimi
-                orders.append(
-                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
-                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
-                prices.append(price)
+                if int(sasia12) >= int(quantity):
+                    product = "Frutti Dardhë 1l"
+                    qmimi = 0.75
+                    price = int(quantity) * qmimi
+                    orders.append(
+                        Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                              price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                    prices.append(price)
+                else:
+                    flash(f"Nuk ka sasi të mjaftueshme ne depo!")
             elif 'submit13' in request.form:
-                product = "Frutti Pjeshkë 1l"
-                qmimi = 0.75
-                price = int(quantity) * qmimi
-                orders.append(
-                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
-                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
-                prices.append(price)
+                if int(sasia13) >= int(quantity):
+                    product = "Frutti Pjeshkë 1l"
+                    qmimi = 0.75
+                    price = int(quantity) * qmimi
+                    orders.append(
+                        Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                              price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                    prices.append(price)
+                else:
+                    flash(f"Nuk ka sasi të mjaftueshme ne depo!")
             elif 'submit14' in request.form:
-                product = "Smirnoff"
-                qmimi = 1.4
-                price = int(quantity) * qmimi
-                orders.append(
-                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
-                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
-                prices.append(price)
+                if int(sasia14) >= int(quantity):
+                    product = "Smirnoff"
+                    qmimi = 1.4
+                    price = int(quantity) * qmimi
+                    orders.append(
+                        Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                              price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                    prices.append(price)
+                else:
+                    flash(f"Nuk ka sasi të mjaftueshme ne depo!")
             elif 'submit15' in request.form:
-                product = "Birra Peja kanace"
-                qmimi = 0.7
-                price = int(quantity) * qmimi
-                orders.append(
-                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
-                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
-                prices.append(price)
+                if int(sasia15) >= int(quantity):
+                    product = "Birra Peja kanace"
+                    qmimi = 0.7
+                    price = int(quantity) * qmimi
+                    orders.append(
+                        Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                              price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                    prices.append(price)
+                else:
+                    flash(f"Nuk ka sasi të mjaftueshme ne depo!")
             elif 'submit16' in request.form:
-                product = "Birra Peja shishe xhami"
-                qmimi = 1
-                price = int(quantity) * qmimi
-                orders.append(
-                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
-                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
-                prices.append(price)
+                if int(sasia16) >= int(quantity):
+                    product = "Birra Peja shishe xhami"
+                    qmimi = 1
+                    price = int(quantity) * qmimi
+                    orders.append(
+                        Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                              price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                    prices.append(price)
+                else:
+                    flash(f"Nuk ka sasi të mjaftueshme ne depo!")
             elif 'submit17' in request.form:
-                product = "Birra Shkupi kanace"
-                qmimi = 0.7
-                price = int(quantity) * qmimi
-                orders.append(
-                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
-                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
-                prices.append(price)
+                if int(sasia17) >= int(quantity):
+                    product = "Birra Shkupi kanace"
+                    qmimi = 0.7
+                    price = int(quantity) * qmimi
+                    orders.append(
+                        Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                              price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                    prices.append(price)
+                else:
+                    flash(f"Nuk ka sasi të mjaftueshme ne depo!")
             elif 'submit18' in request.form:
-                product = "Birra Shkupi shishe xhami"
-                qmimi = 1
-                price = int(quantity) * qmimi
-                orders.append(
-                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
-                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
-                prices.append(price)
+                if int(sasia18) >= int(quantity):
+                    product = "Birra Shkupi shishe xhami"
+                    qmimi = 1
+                    price = int(quantity) * qmimi
+                    orders.append(
+                        Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                              price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                    prices.append(price)
+                else:
+                    flash(f"Nuk ka sasi të mjaftueshme ne depo!")
             elif 'submit24' in request.form:
-                product = "Jack Daniels Birrë"
-                qmimi = 0.8
-                price = int(quantity) * qmimi
-                orders.append(
-                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
-                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
-                prices.append(price)
+                if int(sasia24) >= int(quantity):
+                    product = "Jack Daniels Birrë"
+                    qmimi = 0.8
+                    price = int(quantity) * qmimi
+                    orders.append(
+                        Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                              price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                    prices.append(price)
+                else:
+                    flash(f"Nuk ka sasi të mjaftueshme ne depo!")
             elif 'submit25' in request.form:
-                product = "Jack Daniels Alkool"
-                qmimi = 4.2
-                price = int(quantity) * qmimi
-                orders.append(
-                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
-                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
-                prices.append(price)
+                if int(sasia25) >= int(quantity):
+                    product = "Jack Daniels Alkool"
+                    qmimi = 4.2
+                    price = int(quantity) * qmimi
+                    orders.append(
+                        Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                              price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                    prices.append(price)
+                else:
+                    flash(f"Nuk ka sasi të mjaftueshme ne depo!")
             elif 'submit26' in request.form:
-                product = "Birra Lasko shishe xhami"
-                qmimi = 1
-                price = int(quantity) * qmimi
-                orders.append(
-                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
-                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
-                prices.append(price)
+                if int(sasia26) >= int(quantity):
+                    product = "Birra Lasko shishe xhami"
+                    qmimi = 1
+                    price = int(quantity) * qmimi
+                    orders.append(
+                        Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                              price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                    prices.append(price)
+                else:
+                    flash(f"Nuk ka sasi të mjaftueshme ne depo!")
             elif 'submit27' in request.form:
-                product = "Birra Lasko kanace"
-                qmimi = 0.7
-                price = int(quantity) * qmimi
-                orders.append(
-                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
-                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
-                prices.append(price)
+                if int(sasia27) >= int(quantity):
+                    product = "Birra Lasko kanace"
+                    qmimi = 0.7
+                    price = int(quantity) * qmimi
+                    orders.append(
+                        Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                              price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                    prices.append(price)
+                else:
+                    flash(f"Nuk ka sasi të mjaftueshme ne depo!")
             elif 'submit28' in request.form:
-                product = "Pepsi kanace"
-                qmimi = 0.5
-                price = int(quantity) * qmimi
-                orders.append(
-                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
-                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
-                prices.append(price)
+                if int(sasia28) >= int(quantity):
+                    product = "Pepsi kanace"
+                    qmimi = 0.5
+                    price = int(quantity) * qmimi
+                    orders.append(
+                        Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                              price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                    prices.append(price)
+                else:
+                    flash(f"Nuk ka sasi të mjaftueshme ne depo!")
             elif 'submit29' in request.form:
-                product = "Pepsi Zero Sugar kanace"
-                qmimi = 0.8
-                price = int(quantity) * qmimi
-                orders.append(
-                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
-                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
-                prices.append(price)
+                if int(sasia29) >= int(quantity):
+                    product = "Pepsi Zero Sugar kanace"
+                    qmimi = 0.8
+                    price = int(quantity) * qmimi
+                    orders.append(
+                        Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                              price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                    prices.append(price)
+                else:
+                    flash(f"Nuk ka sasi të mjaftueshme ne depo!")
             elif 'submit30' in request.form:
-                product = "Pepsi 2l"
-                qmimi = 1.3
-                price = int(quantity) * qmimi
-                orders.append(
-                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
-                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
-                prices.append(price)
+                if int(sasia30) >= int(quantity):
+                    product = "Pepsi 2l"
+                    qmimi = 1.3
+                    price = int(quantity) * qmimi
+                    orders.append(
+                        Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                              price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                    prices.append(price)
+                else:
+                    flash(f"Nuk ka sasi të mjaftueshme ne depo!")
             elif 'submit31' in request.form:
-                product = "Pepsi 600 ml"
-                qmimi = 0.6
-                price = int(quantity) * qmimi
-                orders.append(
-                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
-                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
-                prices.append(price)
+                if int(sasia31) >= int(quantity):
+                    product = "Pepsi 600 ml"
+                    qmimi = 0.6
+                    price = int(quantity) * qmimi
+                    orders.append(
+                        Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                              price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                    prices.append(price)
+                else:
+                    flash(f"Nuk ka sasi të mjaftueshme ne depo!")
             elif 'submit32' in request.form:
-                product = "Pepsi Diet kanace"
-                qmimi = 0.7
-                price = int(quantity) * qmimi
-                orders.append(
-                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
-                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
-                prices.append(price)
+                if int(sasia32) >= int(quantity):
+                    product = "Pepsi Diet kanace"
+                    qmimi = 0.7
+                    price = int(quantity) * qmimi
+                    orders.append(
+                        Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                              price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                    prices.append(price)
+                else:
+                    flash(f"Nuk ka sasi të mjaftueshme ne depo!")
             elif 'submit33' in request.form:
-                product = "Pepsi Diet 2l"
-                qmimi = 1.4
-                price = int(quantity) * qmimi
-                orders.append(
-                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
-                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
-                prices.append(price)
+                if int(sasia33) >= int(quantity):
+                    product = "Pepsi Diet 2l"
+                    qmimi = 1.4
+                    price = int(quantity) * qmimi
+                    orders.append(
+                        Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                              price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                    prices.append(price)
+                else:
+                    flash(f"Nuk ka sasi të mjaftueshme ne depo!")
             elif 'submit34' in request.form:
-                product = "Sprite kanace"
-                qmimi = 0.5
-                price = int(quantity) * qmimi
-                orders.append(
-                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
-                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
-                prices.append(price)
+                if int(sasia34) >= int(quantity):
+                    product = "Sprite kanace"
+                    qmimi = 0.5
+                    price = int(quantity) * qmimi
+                    orders.append(
+                        Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                              price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                    prices.append(price)
+                else:
+                    flash(f"Nuk ka sasi të mjaftueshme ne depo!")
             elif 'submit35' in request.form:
-                product = "Sprite 2l"
-                qmimi = 1.3
-                price = int(quantity) * qmimi
-                orders.append(
-                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
-                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
-                prices.append(price)
+                if int(sasia35) >= int(quantity):
+                    product = "Sprite 2l"
+                    qmimi = 1.3
+                    price = int(quantity) * qmimi
+                    orders.append(
+                        Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                              price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                    prices.append(price)
+                else:
+                    flash(f"Nuk ka sasi të mjaftueshme ne depo!")
             elif 'submit36' in request.form:
-                product = "Sprite Lemon Lime 2l"
-                qmimi = 1.3
-                price = int(quantity) * qmimi
-                orders.append(
-                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
-                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
-                prices.append(price)
+                if int(sasia36) >= int(quantity):
+                    product = "Sprite Lemon Lime 2l"
+                    qmimi = 1.3
+                    price = int(quantity) * qmimi
+                    orders.append(
+                        Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                              price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                    prices.append(price)
+                else:
+                    flash(f"Nuk ka sasi të mjaftueshme ne depo!")
             elif 'submit37' in request.form:
-                product = "Sprite 0.5l"
-                qmimi = 0.6
-                price = int(quantity) * qmimi
-                orders.append(
-                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
-                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
-                prices.append(price)
+                if int(sasia37) >= int(quantity):
+                    product = "Sprite 0.5l"
+                    qmimi = 0.6
+                    price = int(quantity) * qmimi
+                    orders.append(
+                        Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                              price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                    prices.append(price)
+                else:
+                    flash(f"Nuk ka sasi të mjaftueshme ne depo!")
     length = len(orders)
 
     return render_template('dino.html', orders=orders, prices=prices, total=("%.2f" % round(sum(prices), 2)),
@@ -914,221 +1102,303 @@ def tower():
             category = "Higjienë"
             quantity = request.form["quantity"]
             if 'submit' in request.form:
-                product = "Abc i lëngjshëm i zi"
-                qmimi = 2.2
-                price = int(quantity) * qmimi
-                orders.append(
-                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
-                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
-                prices.append(price)
+                if int(sasia) >= int(quantity):
+                    product = "Abc i lëngjshëm i zi"
+                    qmimi = 2.2
+                    price = int(quantity) * qmimi
+                    orders.append(
+                        Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                              price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                    prices.append(price)
+                else:
+                    flash(f"Nuk ka sasi të mjaftueshme ne depo!")
             elif 'submit1' in request.form:
-                product = "Abc i lëngjshëm i bardhë"
-                qmimi = 2.2
-                price = int(quantity) * qmimi
-                orders.append(
-                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
-                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
-                prices.append(price)
+                if int(sasia1) >= int(quantity):
+                    product = "Abc i lëngjshëm i bardhë"
+                    qmimi = 2.2
+                    price = int(quantity) * qmimi
+                    orders.append(
+                        Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                              price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                    prices.append(price)
+                else:
+                    flash(f"Nuk ka sasi të mjaftueshme ne depo!")
             elif 'submit2' in request.form:
-                product = "Abc powder detergjent"
-                qmimi = 1.8
-                price = int(quantity) * qmimi
-                orders.append(
-                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
-                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
-                prices.append(price)
+                if int(sasia2) >= int(quantity):
+                    product = "Abc powder detergjent"
+                    qmimi = 1.8
+                    price = int(quantity) * qmimi
+                    orders.append(
+                        Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                              price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                    prices.append(price)
+                else:
+                    flash(f"Nuk ka sasi të mjaftueshme ne depo!")
             elif 'submit3' in request.form:
-                product = "Abc detergjent për rroba matik"
-                qmimi = 2
-                price = int(quantity) * qmimi
-                orders.append(
-                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
-                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
-                prices.append(price)
+                if int(sasia3) >= int(quantity):
+                    product = "Abc detergjent për rroba matik"
+                    qmimi = 2
+                    price = int(quantity) * qmimi
+                    orders.append(
+                        Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                              price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                    prices.append(price)
+                else:
+                    flash(f"Nuk ka sasi të mjaftueshme ne depo!")
             elif 'submit4' in request.form:
-                product = "Brush e dhëmbëve për fëmijë Colgate"
-                qmimi = 0.8
-                price = int(quantity) * qmimi
-                orders.append(
-                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
-                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
-                prices.append(price)
+                if int(sasia4) >= int(quantity):
+                    product = "Brush e dhëmbëve për fëmijë Colgate"
+                    qmimi = 0.8
+                    price = int(quantity) * qmimi
+                    orders.append(
+                        Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                              price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                    prices.append(price)
+                else:
+                    flash(f"Nuk ka sasi të mjaftueshme ne depo!")
             elif 'submit5' in request.form:
-                product = "Brush e dhëmbëve Colgate Double"
-                qmimi = 2.4
-                price = int(quantity) * qmimi
-                orders.append(
-                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
-                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
-                prices.append(price)
+                if int(sasia5) >= int(quantity):
+                    product = "Brush e dhëmbëve Colgate Double"
+                    qmimi = 2.4
+                    price = int(quantity) * qmimi
+                    orders.append(
+                        Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                              price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                    prices.append(price)
+                else:
+                    flash(f"Nuk ka sasi të mjaftueshme ne depo!")
             elif 'submit9' in request.form:
-                product = "Brush e dhëmbëve Colgate"
-                qmimi = 1.4
-                price = int(quantity) * qmimi
-                orders.append(
-                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
-                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
-                prices.append(price)
+                if int(sasia9) >= int(quantity):
+                    product = "Brush e dhëmbëve Colgate"
+                    qmimi = 1.4
+                    price = int(quantity) * qmimi
+                    orders.append(
+                        Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                              price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                    prices.append(price)
+                else:
+                    flash(f"Nuk ka sasi të mjaftueshme ne depo!")
             elif 'submit10' in request.form:
-                product = "Colgate MaxWhite"
-                qmimi = 2.8
-                price = int(quantity) * qmimi
-                orders.append(
-                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
-                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
-                prices.append(price)
+                if int(sasia10) >= int(quantity):
+                    product = "Colgate MaxWhite"
+                    qmimi = 2.8
+                    price = int(quantity) * qmimi
+                    orders.append(
+                        Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                              price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                    prices.append(price)
+                else:
+                    flash(f"Nuk ka sasi të mjaftueshme ne depo!")
             elif 'submit11' in request.form:
-                product = "Colgate MaxFresh Blue"
-                qmimi = 1.7
-                price = int(quantity) * qmimi
-                orders.append(
-                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
-                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
-                prices.append(price)
+                if int(sasia11) >= int(quantity):
+                    product = "Colgate MaxFresh Blue"
+                    qmimi = 1.7
+                    price = int(quantity) * qmimi
+                    orders.append(
+                        Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                              price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                    prices.append(price)
+                else:
+                    flash(f"Nuk ka sasi të mjaftueshme ne depo!")
             elif 'submit12' in request.form:
-                product = "Colgate MaxFresh Green"
-                qmimi = 0.75
-                price = int(quantity) * qmimi
-                orders.append(
-                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
-                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
-                prices.append(price)
+                if int(sasia12) >= int(quantity):
+                    product = "Colgate MaxFresh Green"
+                    qmimi = 0.75
+                    price = int(quantity) * qmimi
+                    orders.append(
+                        Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                              price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                    prices.append(price)
+                else:
+                    flash(f"Nuk ka sasi të mjaftueshme ne depo!")
             elif 'submit13' in request.form:
-                product = "Colgate Herbal"
-                qmimi = 1.3
-                price = int(quantity) * qmimi
-                orders.append(
-                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
-                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
-                prices.append(price)
+                if int(sasia13) >= int(quantity):
+                    product = "Colgate Herbal"
+                    qmimi = 1.3
+                    price = int(quantity) * qmimi
+                    orders.append(
+                        Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                              price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                    prices.append(price)
+                else:
+                    flash(f"Nuk ka sasi të mjaftueshme ne depo!")
             elif 'submit14' in request.form:
-                product = "Domestos i gjelbër"
-                qmimi = 1.6
-                price = int(quantity) * qmimi
-                orders.append(
-                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
-                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
-                prices.append(price)
+                if int(sasia14) >= int(quantity):
+                    product = "Domestos i gjelbër"
+                    qmimi = 1.6
+                    price = int(quantity) * qmimi
+                    orders.append(
+                        Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                              price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                    prices.append(price)
+                else:
+                    flash(f"Nuk ka sasi të mjaftueshme ne depo!")
             elif 'submit15' in request.form:
-                product = "Domestos i kaltër"
-                qmimi = 1.6
-                price = int(quantity) * qmimi
-                orders.append(
-                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
-                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
-                prices.append(price)
+                if int(sasia15) >= int(quantity):
+                    product = "Domestos i kaltër"
+                    qmimi = 1.6
+                    price = int(quantity) * qmimi
+                    orders.append(
+                        Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                              price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                    prices.append(price)
+                else:
+                    flash(f"Nuk ka sasi të mjaftueshme ne depo!")
             elif 'submit16' in request.form:
-                product = "Domestos i bardhë"
-                qmimi = 1.6
-                price = int(quantity) * qmimi
-                orders.append(
-                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
-                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
-                prices.append(price)
+                if int(sasia16) >= int(quantity):
+                    product = "Domestos i bardhë"
+                    qmimi = 1.6
+                    price = int(quantity) * qmimi
+                    orders.append(
+                        Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                              price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                    prices.append(price)
+                else:
+                    flash(f"Nuk ka sasi të mjaftueshme ne depo!")
             elif 'submit17' in request.form:
-                product = "Domestos i verdhë"
-                qmimi = 1.6
-                price = int(quantity) * qmimi
-                orders.append(
-                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
-                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
-                prices.append(price)
+                if int(sasia17) >= int(quantity):
+                    product = "Domestos i verdhë"
+                    qmimi = 1.6
+                    price = int(quantity) * qmimi
+                    orders.append(
+                        Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                              price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                    prices.append(price)
+                else:
+                    flash(f"Nuk ka sasi të mjaftueshme ne depo!")
             elif 'submit18' in request.form:
-                product = "Schauma Repair and Pflege"
-                qmimi = 2.2
-                price = int(quantity) * qmimi
-                orders.append(
-                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
-                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
-                prices.append(price)
+                if int(sasia18) >= int(quantity):
+                    product = "Schauma Repair and Pflege"
+                    qmimi = 2.2
+                    price = int(quantity) * qmimi
+                    orders.append(
+                        Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                              price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                    prices.append(price)
+                else:
+                    flash(f"Nuk ka sasi të mjaftueshme ne depo!")
             elif 'submit19' in request.form:
-                product = "Schauma Frucht and Vitamin"
-                qmimi = 2.2
-                price = int(quantity) * qmimi
-                orders.append(
-                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
-                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
-                prices.append(price)
+                if int(sasia19) >= int(quantity):
+                    product = "Schauma Frucht and Vitamin"
+                    qmimi = 2.2
+                    price = int(quantity) * qmimi
+                    orders.append(
+                        Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                              price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                    prices.append(price)
+                else:
+                    flash(f"Nuk ka sasi të mjaftueshme ne depo!")
             elif 'submit20' in request.form:
-                product = "Schauma Herbs"
-                qmimi = 2.2
-                price = int(quantity) * qmimi
-                orders.append(
-                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
-                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
-                prices.append(price)
+                if int(sasia20) >= int(quantity):
+                    product = "Schauma Herbs"
+                    qmimi = 2.2
+                    price = int(quantity) * qmimi
+                    orders.append(
+                        Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                              price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                    prices.append(price)
+                else:
+                    flash(f"Nuk ka sasi të mjaftueshme ne depo!")
             elif 'submit21' in request.form:
-                product = "Schauma Blossom Oil"
-                qmimi = 2.2
-                price = int(quantity) * qmimi
-                orders.append(
-                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
-                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
-                prices.append(price)
+                if int(sasia21) >= int(quantity):
+                    product = "Schauma Blossom Oil"
+                    qmimi = 2.2
+                    price = int(quantity) * qmimi
+                    orders.append(
+                        Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                              price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                    prices.append(price)
+                else:
+                    flash(f"Nuk ka sasi të mjaftueshme ne depo!")
             elif 'submit22' in request.form:
-                product = "Schauma Almond Milk"
-                qmimi = 2.2
-                price = int(quantity) * qmimi
-                orders.append(
-                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
-                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
-                prices.append(price)
+                if int(sasia22) >= int(quantity):
+                    product = "Schauma Almond Milk"
+                    qmimi = 2.2
+                    price = int(quantity) * qmimi
+                    orders.append(
+                        Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                              price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                    prices.append(price)
+                else:
+                    flash(f"Nuk ka sasi të mjaftueshme ne depo!")
             elif 'submit23' in request.form:
-                product = "Schauma Sea Buckthorn"
-                qmimi = 2.2
-                price = int(quantity) * qmimi
-                orders.append(
-                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
-                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
-                prices.append(price)
+                if int(sasia23) >= int(quantity):
+                    product = "Schauma Sea Buckthorn"
+                    qmimi = 2.2
+                    price = int(quantity) * qmimi
+                    orders.append(
+                        Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                              price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                    prices.append(price)
+                else:
+                    flash(f"Nuk ka sasi të mjaftueshme ne depo!")
             elif 'submit24' in request.form:
-                product = "Schauma Color Glanz"
-                qmimi = 2.2
-                price = int(quantity) * qmimi
-                orders.append(
-                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
-                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
-                prices.append(price)
+                if int(sasia24) >= int(quantity):
+                    product = "Schauma Color Glanz"
+                    qmimi = 2.2
+                    price = int(quantity) * qmimi
+                    orders.append(
+                        Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                              price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                    prices.append(price)
+                else:
+                    flash(f"Nuk ka sasi të mjaftueshme ne depo!")
             elif 'submit25' in request.form:
-                product = "Schauma for men shampoo"
-                qmimi = 2.2
-                price = int(quantity) * qmimi
-                orders.append(
-                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
-                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
-                prices.append(price)
+                if int(sasia25) >= int(quantity):
+                    product = "Schauma for men shampoo"
+                    qmimi = 2.2
+                    price = int(quantity) * qmimi
+                    orders.append(
+                        Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                              price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                    prices.append(price)
+                else:
+                    flash(f"Nuk ka sasi të mjaftueshme ne depo!")
             elif 'submit26' in request.form:
-                product = "Schauma Sports Power"
-                qmimi = 2.2
-                price = int(quantity) * qmimi
-                orders.append(
-                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
-                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
-                prices.append(price)
+                if int(sasia26) >= int(quantity):
+                    product = "Schauma Sports Power"
+                    qmimi = 2.2
+                    price = int(quantity) * qmimi
+                    orders.append(
+                        Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                              price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                    prices.append(price)
+                else:
+                    flash(f"Nuk ka sasi të mjaftueshme ne depo!")
             elif 'submit27' in request.form:
-                product = "Schauma Anti Schuppen"
-                qmimi = 2.2
-                price = int(quantity) * qmimi
-                orders.append(
-                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
-                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
-                prices.append(price)
+                if int(sasia27) >= int(quantity):
+                    product = "Schauma Anti Schuppen"
+                    qmimi = 2.2
+                    price = int(quantity) * qmimi
+                    orders.append(
+                        Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                              price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                    prices.append(price)
+                else:
+                    flash(f"Nuk ka sasi të mjaftueshme ne depo!")
             elif 'submit28' in request.form:
-                product = "Schauma Hair Activator"
-                qmimi = 2.2
-                price = int(quantity) * qmimi
-                orders.append(
-                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
-                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
-                prices.append(price)
+                if int(sasia28) >= int(quantity):
+                    product = "Schauma Hair Activator"
+                    qmimi = 2.2
+                    price = int(quantity) * qmimi
+                    orders.append(
+                        Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                              price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                    prices.append(price)
+                else:
+                    flash(f"Nuk ka sasi të mjaftueshme ne depo!")
             elif 'submit29' in request.form:
-                product = "Schauma Carbon Force"
-                qmimi = 2.2
-                price = int(quantity) * qmimi
-                orders.append(
-                    Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
-                          price=("%.2f" % round(price, 2)), qmimi=qmimi))
-                prices.append(price)
+                if int(sasia29) >= int(quantity):
+                    product = "Schauma Carbon Force"
+                    qmimi = 2.2
+                    price = int(quantity) * qmimi
+                    orders.append(
+                        Order(id=len(orders) + 1, category=category, product=product, quantity=int(quantity),
+                              price=("%.2f" % round(price, 2)), qmimi=qmimi))
+                    prices.append(price)
+
+                else:
+                    flash(f"Nuk ka sasi të mjaftueshme ne depo!")
     length = len(orders)
 
     return render_template('tower.html', orders=orders, prices=prices, total=("%.2f" % round(sum(prices), 2)),
@@ -1171,6 +1441,7 @@ def order():
                 if len(orders) == 0:
                     flash("Porosia është e zbrazët!")
                 else:
+
                     for item in orders:
                         product = item.product
                         found_product = stocks.query.filter_by(product=product).first()
@@ -1179,25 +1450,21 @@ def order():
                         if new >= 0:
                             found_product.quantity = new
                             db.session.commit()
+                        else:
+                            found_product.quantity = 0
+                            db.session.commit()
 
-                    if new >= 0:
-                        msg = Message("Market Egzoni!",
-                                      sender=email,
-                                      recipients=["eol.nuha22@gmail.com"])
-                        msg.body = "Greetings"
-                        msg.html = render_template('client.html', client=client, email=email, phone=phone,
-                                                   orders=orders,
-                                                   total=("%.2f" % round(sum(prices), 2)))
-                        mail.send(msg)
-                        orders.clear()
-                        prices.clear()
-                        length = len(orders)
-                        flash(f"Porosia është dërguar me sukses!")
-                    else:
-                        flash(f"Nuk ka sasi të mjaftueshme në depo!")
-                        return redirect(url_for('order'))
-
-
+                    msg = Message("Market Egzoni!",
+                                  sender=email,
+                                  recipients=["eol.nuha22@gmail.com"])
+                    msg.body = "Greetings"
+                    msg.html = render_template('client.html', client=client, email=email, phone=phone, orders=orders,
+                                               total=("%.2f" % round(sum(prices), 2)))
+                    mail.send(msg)
+                    orders.clear()
+                    prices.clear()
+                    length = len(orders)
+                    flash(f"Porosia është dërguar me sukses!")
         return render_template("order.html", orders=orders, length=length, prices=prices,
                                total=("%.2f" % round(sum(prices), 2)))
 
