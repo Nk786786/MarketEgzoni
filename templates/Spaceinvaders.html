@@ -72,6 +72,8 @@ font-size: 17px;
 
 .closebtn:hover {
   color: grey;
+
+
 </style>
 <body>
 <div style="text-align: right; margin-top: 20px; margin-right: 20px;">
@@ -80,44 +82,25 @@ font-size: 17px;
                onkeyup="filtersearchFunction()" class="borderbox1">
         <div id="myDropdown" class="dropdown-content">
             <a href="home">Market Egzoni</a>
-            <a href="ushqime#bisfino">Bisfino</a>
-            <a href="pije#shkupi">Birra Shkupi</a>
-            <a href="pije#peja">Birra Peja</a>
-            <a href="pije#lasko">Birra Lasko</a>
-            <a href="higjienë#brushë">Brushë e dhëmbëve Colgate</a>
-            <a href="pije#cola">Coca Cola</a>
-            <a href="higjienë#detergjenta">Detergjent për rroba ABC</a>
-            <a href="higjienë#domestos">Domestos</a>
-            <a href="ushqime#doritos">Doritos</a>
-            <a href="pije#fanta">Fanta</a>
-            <a href="pije#frutti">Frutti</a>
-            <a href="pije#daniels">Jack Daniels</a>
-            <a href="ushqime#mars">Mars</a>
-            <a href="ushqime#merci">Merci</a>
-            <a href="ushqime#milky">Milky Way</a>
-            <a href="higjienë#paste">Pastë e dhëmbëve Colgate</a>
-            <a href="ushqime#patos">Patos</a>
-            <a href="pije#pepsi">Pepsi</a>
-            <a href="ushqime#plazma">Plazma</a>
-            <a href="ushqime#samba">Samba</a>
-            <a href="higjienë#schaumavajza">Shampon Schauma për vajza</a>
-            <a href="higjienë#schaumaburra">Shampon Schauma për djem</a>
-            <a href="ushqime#snickers">Snickers</a>
-            <a href="pije#smirnoff">Smirnoff</a>
-            <a href="pije#sprite">Sprite</a>
-            <a href="ushqime#raffaello">Raffaello</a>
-            <a href="ushqime#romantic">Romantic</a>
-            <a href="ushqime#twix">Twix</a>
+            {% for item in values1 %}
+            {% if item.category=="Ushqime" %}
+            <a href="ushqime#{{item.product}}">{{item.product}}</a>
+            {% endif %}
+            {% if item.category=="Pije" %}
+            <a href="pije#{{item.product}}">{{item.product}}</a>
+            {% endif %}
+            {% endfor %}
         </div>
     </div>
 </div>
-<div class="container-fluid" style="position: fixed; margin: -65px 0px 0px 0px; display: block; cursor: pointer; z-index: 99;">
+<div class="container-fluid"
+     style="position: fixed; margin: -65px 0px 0px 0px; display: block; cursor: pointer; z-index: 99;">
     {% with messages = get_flashed_messages() %}
     {% for msg in messages %}
     <div class="alert" style="position: absolute;">
-    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-     <strong>{{msg}}</strong>
-      </div>
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+        <strong>{{msg}}</strong>
+    </div>
     {% endfor %}
     {% endwith %}
 </div>
@@ -147,500 +130,35 @@ font-size: 17px;
             <img src="static/images/tell2.png"
                  style="display: block; margin-left: auto; margin-right: auto;width: 100%; opacity: 0.9; border-radius: 12px;">
         </div>
-        <h3 style="margin-bottom: 25px; margin-top: 75px;" id="doritos">Produkti : Doritos</h3>
 
 
     </div>
 
     <div class="slideshow-container" style="color: white;">
-
-        <form method="post">
-            <div class="mySlides1" style="text-align: center;">
-                <p style="color: #d62217;">Doritos Cool Ranch - cmimi 0.90 €</p>
-                <p style="color: #d62217;">Sasia në depo - <span class="badge">{{sasia}}</span>
-                </p>
-                <img src="static/images/doritos1.png" style="height:400px;">
-                <p><input class="container-fluid borderbox" type="number" id="number" name="quantity"
-                          pattern="[0-9]*" min="1"
-                          placeholder="Sasia"
-                          style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
-                          required><br><input class="eoli" type="submit" name="submit"
-                                              style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;"
-                                              value="Shto në listë">
-                </p>
-            </div>
-        </form>
-        <form method="post">
-
-
-            <div class="mySlides1" style="text-align: center;">
-
-                <p style="color: #d62217;">Doritos Cheese Supreme - cmimi 0.90 €</p>
-                <p style="color: #d62217;">Sasia në depo - <span class="badge">{{sasia1}}</span></p>
-                <img src="static/images/doritos.png" style="height:400px;">
-                <p><input class="container-fluid borderbox" type="number" id="number1" name="quantity"
-                          pattern="[0-9]*" min="1"
-                          placeholder="Sasia"
-                          style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
-                          required><br><input class="eoli" type="submit" name="submit1"
-                                              style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;"
-                                              value="Shto në listë">
-                </p>
-            </div>
-        </form>
-        <form method="post">
+        {% for item in values1 %}
+        {% if item.category=="Ushqime" %}
+        <div style="color: white; margin-top: 200px;" id="{{item.product}}">
+            <form method="post">
+                <div class="mySlides99" style="text-align: center;">
+                    <p style="color: #d62217;">{{item.product}} - cmimi {{item.price}} €</p>
+                    <p style="color: #d62217;">Sasia në depo - <span class="badge">{{item.quantity}}</span></p>
+                    <img src="static/images/{{item.product}}.png" style="height:400px;">
+                    <p><input class="container-fluid borderbox" type="number" name="quantity"
+                              pattern="[0-9]*" min="1"
+                              placeholder="Sasia"
+                              style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
+                              required><br><input class="eoli" type="submit" name="submit{{item.product}}"
+                                                  style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;"
+                                                  value="Shto në listë">
+                    </p>
+                </div>
+            </form>
+        </div>
+        {% endif %}
+        {% endfor %}
 
 
-            <div class="mySlides1" style="text-align: center;">
-                <p style="color: #d62217;">Doritos Nacho Cheese - cmimi 0.90 €</p>
-                <p style="color: #d62217;">Sasia në depo - <span class="badge">{{sasia2}}</span></p>
-                <img src="static/images/doritos2.png" style="height:400px;">
-                <p><input class="container-fluid borderbox" type="number" id="number2" name="quantity"
-                          pattern="[0-9]*" min="1"
-                          placeholder="Sasia"
-                          style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
-                          required><br><input class="eoli" type="submit" name="submit2"
-                                              style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;"
-                                              value="Shto në listë">
-                </p>
-            </div>
-        </form>
-        <form method="post">
-            <div class="mySlides1" style="text-align: center;">
-                <p style="color: #d62217;">Doritos Spicy Sweet Chili - cmimi 0.90 €</p>
-                <p style="color: #d62217;">Sasia në depo - <span class="badge">{{sasia3}}</span></p>
-                <img src="static/images/doritos3.png" style="height:400px;">
-                <p><input class="container-fluid borderbox" type="number" id="number3" name="quantity"
-                          pattern="[0-9]*" min="1"
-                          placeholder="Sasia"
-                          style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
-                          required><br><input class="eoli" type="submit" name="submit3"
-                                              style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;"
-                                              value="Shto në listë">
-                </p>
-            </div>
-        </form>
-        <form method="post">
-            <div class="mySlides1" style="text-align: center;">
-                <p style="color: #d62217;">Doritos Chilli - cmimi 0.90 €</p>
-                <p style="color: #d62217;">Sasia në depo - <span class="badge">{{sasia4}}</span></p>
-                <img src="static/images/doritos4.png" style="height:400px;">
-                <p><input class="container-fluid borderbox" type="number" id="number4" name="quantity"
-                          pattern="[0-9]*" min="1"
-                          placeholder="Sasia"
-                          style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
-                          required><br><input class="eoli" type="submit" name="submit4"
-                                              style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;"
-                                              value="Shto në listë">
-                </p>
-            </div>
-        </form>
-
-
-        <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
     </div>
-    <div class="container-fluid" style="color: #d62217; margin-top: 95px; margin-bottom: 25px;" id="patos">
-        <h3>Produkti : Patos</h3>
-    </div>
-    <div class="slideshow-container" style="color: white;">
-        <form method="post">
-            <div class="mySlides5" style="text-align: center;">
-                <p style="color: #d62217;">Patos Bahrati - cmimi 1.1 €</p>
-                <p style="color: #d62217;">Sasia në depo - <span class="badge">{{sasia5}}</span></p>
-                <img src="static/images/patos4.png" style="height:400px;">
-                <p><input class="container-fluid borderbox" type="number" id="number5" name="quantity"
-                          pattern="[0-9]*" min="1"
-                          placeholder="Sasia"
-                          style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
-                          required><br><input class="eoli" type="submit" name="submit5"
-                                              style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;"
-                                              value="Shto në listë">
-                </p>
-            </div>
-        </form>
-        <form method="post">
-            <div class="mySlides5" style="text-align: center;">
-                <p style="color: #d62217;">Patos Rolls - cmimi 1.1 €</p>
-                <p style="color: #d62217;">Sasia në depo - <span class="badge">{{sasia6}}</span></p>
-                <img src="static/images/patos1.png" style="height:400px;">
-                <p><input class="container-fluid borderbox" type="number" id="number6" name="quantity"
-                          pattern="[0-9]*" min="1"
-                          placeholder="Sasia"
-                          style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
-                          required><br><input class="eoli" type="submit" name="submit6"
-                                              style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;"
-                                              value="Shto në listë">
-                </p>
-            </div>
-        </form>
-        <form method="post">
-            <div class="mySlides5" style="text-align: center;">
-                <p style="color: #d62217;">Patos Classic - cmimi 1.1 €</p>
-                <p style="color: #d62217;">Sasia në depo - <span class="badge">{{sasia7}}</span></p>
-                <img src="static/images/patos2.png" style="height:400px;">
-                <p><input class="container-fluid borderbox" type="number" id="number7" name="quantity"
-                          pattern="[0-9]*" min="1"
-                          placeholder="Sasia"
-                          style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
-                          required><br><input class="eoli" type="submit" name="submit7"
-                                              style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;"
-                                              value="Shto në listë">
-                </p>
-            </div>
-        </form>
-        <form method="post">
-            <div class="mySlides5" style="text-align: center;">
-                <p style="color: #d62217;">Patos Critos - cmimi 1.1 €</p>
-                <p style="color: #d62217;">Sasia në depo - <span class="badge">{{sasia8}}</span></p>
-                <img src="static/images/patos3.png" style="height:400px;">
-                <p><input class="container-fluid borderbox" type="number" id="number8" name="quantity"
-                          pattern="[0-9]*" min="1"
-                          placeholder="Sasia"
-                          style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
-                          required><br><input class="eoli" type="submit" name="submit8"
-                                              style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;"
-                                              value="Shto në listë">
-                </p>
-            </div>
-        </form>
-        <a class="prev" onclick="plusSlides(-1, 3)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1, 3)">&#10095;</a>
-    </div>
-
-    <div class="container-fluid" style="color: #d62217; margin-top: 95px; margin-bottom: 25px;" id="plazma">
-        <h3>Produkti : Plazma</h3>
-    </div>
-    <div class="slideshow-container" style="color: white;">
-        <form method="post">
-            <div class="mySlides2" style="text-align: center;">
-                <p style="color: #d62217;">Plazma 150g - cmimi 1.7 €</p>
-                <p style="color: #d62217;">Sasia në depo - <span class="badge">{{sasia9}}</span></p>
-                <img src="static/images/plazma.png" style="height:400px;">
-                <p><input class="container-fluid borderbox" type="number" id="keksaa" name="quantity"
-                          pattern="[0-9]*" min="1"
-                          placeholder="Sasia"
-                          style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
-                          required><br><input class="eoli" type="submit" name="submit9"
-                                              style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;"
-                                              value="Shto në listë">
-                </p>
-            </div>
-        </form>
-        <form method="post">
-
-
-            <div class="mySlides2" style="text-align: center;">
-
-                <p style="color: #d62217;">Plazma 300g - cmimi 3.2 €</p>
-                <p style="color: #d62217;">Sasia në depo - <span class="badge">{{sasia10}}</span></p>
-                <img src="static/images/plazma1.png" style="height:400px;">
-                <p><input class="container-fluid borderbox" type="number" id="keksa1" name="quantity"
-                          pattern="[0-9]*" min="1"
-                          placeholder="Sasia"
-                          style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
-                          required><br><input class="eoli" type="submit" name="submit10"
-                                              style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;"
-                                              value="Shto në listë">
-                </p>
-            </div>
-        </form>
-        <form method="post">
-
-
-            <div class="mySlides2" style="text-align: center;">
-                <p style="color: #d62217;">Plazma 600g - cmimi 6 €</p>
-                <p style="color: #d62217;">Sasia në depo - <span class="badge">{{sasia11}}</span></p>
-                <img src="static/images/plazma2.png" style="height:400px;">
-                <p><input class="container-fluid borderbox" type="number" id="keksa2" name="quantity"
-                          pattern="[0-9]*" min="1"
-                          placeholder="Sasia"
-                          style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
-                          required><br><input class="eoli" type="submit" name="submit11"
-                                              style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;"
-                                              value="Shto në listë">
-                </p>
-            </div>
-        </form>
-        <form method="post">
-            <div class="mySlides2" style="text-align: center;">
-                <p style="color: #d62217;">Plazma të bluar 300g - cmimi 3.5 €</p>
-                <p style="color: #d62217;">Sasia në depo - <span class="badge">{{sasia12}}</span></p>
-                <img src="static/images/plazma3.png" style="height:400px;">
-                <p><input class="container-fluid borderbox" type="number" id="keksa3" name="quantity"
-                          pattern="[0-9]*" min="1"
-                          placeholder="Sasia"
-                          style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
-                          required><br><input class="eoli" type="submit" name="submit12"
-                                              style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;"
-                                              value="Shto në listë">
-                </p>
-            </div>
-        </form>
-        <form method="post">
-            <div class="mySlides2" style="text-align: center;">
-                <p style="color: #d62217;">Plazma të bluar 800g - cmimi 7.5 €</p>
-                <p style="color: #d62217;">Sasia në depo - <span class="badge">{{sasia13}}</span></p>
-                <img src="static/images/plazma4.png" style="height:400px;">
-                <p><input class="container-fluid borderbox" type="number" id="keksa4" name="quantity"
-                          pattern="[0-9]*" min="1"
-                          placeholder="Sasia"
-                          style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
-                          required><br><input class="eoli" type="submit" name="submit13"
-                                              style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;"
-                                              value="Shto në listë">
-                </p>
-            </div>
-        </form>
-
-
-        <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
-    </div>
-    <div class="container-fluid" style="color: #d62217; margin-top: 95px; margin-bottom: 25px;" id="bisfino">
-        <h3>Produkti : Bisfino</h3>
-    </div>
-    <div class="slideshow-container" style="color: white;">
-        <form method="post">
-            <div class="mySlides4" style="text-align: center;">
-                <p style="color: #d62217;">Bisfino - cmimi 1 €</p>
-                <p style="color: #d62217;">Sasia në depo - <span class="badge">{{sasia19}}</span></p>
-                <img src="static/images/bisfino.png" style="height:400px;">
-                <p><input class="container-fluid borderbox" type="number" id="last" name="quantity"
-                          pattern="[0-9]*" min="1"
-                          placeholder="Sasia"
-                          style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
-                          required><br><input class="eoli" type="submit" name="submit19"
-                                              style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;"
-                                              value="Shto në listë">
-                </p>
-            </div>
-        </form>
-        <form method="post">
-
-
-            <div class="mySlides4" style="text-align: center;">
-                <p style="color: #d62217;">Bisfino e vogël - cmimi 0.8 €</p>
-                <p style="color: #d62217;">Sasia në depo - <span class="badge">{{sasia20}}</span></p>
-                <img src="static/images/bisfino1.png" style="height:400px;">
-                <p><input class="container-fluid borderbox" type="number" id="last1" name="quantity"
-                          pattern="[0-9]*" min="1"
-                          placeholder="Sasia"
-                          style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
-                          required><br><input class="eoli" type="submit" name="submit20"
-                                              style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;"
-                                              value="Shto në listë">
-                </p>
-            </div>
-        </form>
-
-
-        <a class="prev" onclick="plusSlides(-1, 2)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1, 2)">&#10095;</a>
-    </div>
-    <div class="container-fluid" style="color: #d62217; margin-top: 95px; margin-bottom: 25px;" id="merci">
-        <h3>Produkti : Merci</h3>
-    </div>
-    <div style="color: white;">
-        <form method="post">
-            <div class="mySlides9" style="text-align: center;">
-                <p style="color: #d62217;">Merci - cmimi 2.1 €</p>
-                <p style="color: #d62217;">Sasia në depo - <span class="badge">{{sasia23}}</span></p>
-                <img src="static/images/merci.png" style="height:400px;">
-                <p><input class="container-fluid borderbox" type="number" id="last4" name="quantity"
-                          pattern="[0-9]*" min="1"
-                          placeholder="Sasia"
-                          style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
-                          required><br><input class="eoli" type="submit" name="submit23"
-                                              style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;"
-                                              value="Shto në listë">
-                </p>
-            </div>
-        </form>
-    </div>
-    <div class="container-fluid" style="color: #d62217; margin-top: 95px; margin-bottom: 25px;" id="raffaello">
-        <h3>Produkti : Raffaello</h3>
-    </div>
-    <div style="color: white;">
-        <form method="post">
-            <div class="mySlides9" style="text-align: center;">
-                <p style="color: #d62217;">Raffaello - cmimi 1.5 €</p>
-                <p style="color: #d62217;">Sasia në depo - <span class="badge">{{sasia18}}</span></p>
-                <img src="static/images/raffaello.png" style="height:400px;">
-                <p><input class="container-fluid borderbox" type="number" id="last44" name="quantity"
-                          pattern="[0-9]*" min="1"
-                          placeholder="Sasia"
-                          style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
-                          required><br><input class="eoli" type="submit" name="submit18"
-                                              style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;"
-                                              value="Shto në listë">
-                </p>
-            </div>
-        </form>
-    </div>
-
-
-    <div class="container-fluid" style="color: #d62217; margin-top: 95px; margin-bottom: 25px;" id="snickers">
-        <h3>Produkti : Snickers</h3>
-    </div>
-    <div style="color: white;">
-        <form method="post">
-            <div class="mySlides9" style="text-align: center;">
-                <p style="color: #d62217;">Snickers - cmimi 0.5 €</p>
-                <p style="color: #d62217;">Sasia në depo - <span class="badge">{{sasia14}}</span></p>
-                <img src="static/images/snickers.png" style="height:400px;">
-                <p><input class="container-fluid borderbox" type="number" id="qoko" name="quantity"
-                          pattern="[0-9]*" min="1"
-                          placeholder="Sasia"
-                          style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
-                          required><br><input class="eoli" type="submit" name="submit14"
-                                              style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;"
-                                              value="Shto në listë">
-                </p>
-            </div>
-        </form>
-    </div>
-    <div class="container-fluid" style="color: #d62217; margin-top: 95px; margin-bottom: 25px;" id="mars">
-        <h3>Produkti : Mars</h3>
-    </div>
-    <div style="color: white;">
-        <form method="post">
-
-
-            <div class="mySlides9" style="text-align: center;">
-                <p style="color: #d62217;">Mars - cmimi 0.5 €</p>
-                <p style="color: #d62217;">Sasia në depo - <span class="badge">{{sasia15}}</span></p>
-                <img src="static/images/mars.png" style="height:400px;">
-                <p><input class="container-fluid borderbox" type="number" id="qoko1" name="quantity"
-                          pattern="[0-9]*" min="1"
-                          placeholder="Sasia"
-                          style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
-                          required><br><input class="eoli" type="submit" name="submit15"
-                                              style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;"
-                                              value="Shto në listë">
-                </p>
-            </div>
-        </form>
-    </div>
-    <div class="container-fluid" style="color: #d62217; margin-top: 95px; margin-bottom: 25px;" id="milky">
-        <h3>Produkti : Milky Way</h3>
-    </div>
-    <div style="color: white;">
-        <form method="post">
-
-
-            <div class="mySlides9" style="text-align: center;">
-                <p style="color: #d62217;">Milky Way - cmimi 0.5 €</p>
-                <p style="color: #d62217;">Sasia në depo - <span class="badge">{{sasia16}}</span></p>
-                <img src="static/images/milkyway.png" style="height:400px;">
-                <p><input class="container-fluid borderbox" type="number" id="qoko2" name="quantity"
-                          pattern="[0-9]*" min="1"
-                          placeholder="Sasia"
-                          style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
-                          required><br><input class="eoli" type="submit" name="submit16"
-                                              style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;"
-                                              value="Shto në listë">
-                </p>
-            </div>
-        </form>
-    </div>
-    <div class="container-fluid" style="color: #d62217; margin-top: 95px; margin-bottom: 25px;" id="twix">
-        <h3>Produkti : Twix</h3>
-    </div>
-    <div style="color: white;">
-        <form method="post">
-            <div class="mySlides9" style="text-align: center;">
-                <p style="color: #d62217;">Twix - cmimi 1 €</p>
-                <p style="color: #d62217;">Sasia në depo - <span class="badge">{{sasia17}}</span></p>
-                <img src="static/images/twix.png" style="height:400px;">
-                <p><input class="container-fluid borderbox" type="number" id="qoko3" name="quantity"
-                          pattern="[0-9]*" min="1"
-                          placeholder="Sasia"
-                          style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
-                          required><br><input class="eoli" type="submit" name="submit17"
-                                              style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;"
-                                              value="Shto në listë">
-                </p>
-            </div>
-        </form>
-    </div>
-
-
-    <div class="container-fluid" style="color: #d62217; margin-top: 95px; margin-bottom: 25px;" id="romantic">
-        <h3>Produkti : Romantic</h3>
-    </div>
-    <div style="color: white;">
-        <form method="post">
-            <div class="mySlides9" style="text-align: center;">
-                <p style="color: #d62217;">Romantic - cmimi 1.1 €</p>
-                <p style="color: #d62217;">Sasia në depo - <span class="badge">{{sasia21}}</span></p>
-                <img src="static/images/romantic.png" style="height:400px;">
-                <p><input class="container-fluid borderbox" type="number" id="last2" name="quantity"
-                          pattern="[0-9]*" min="1"
-                          placeholder="Sasia"
-                          style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
-                          required><br><input class="eoli" type="submit" name="submit21"
-                                              style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;"
-                                              value="Shto në listë">
-                </p>
-            </div>
-        </form>
-    </div>
-    <div class="container-fluid" style="color: #d62217; margin-top: 95px; margin-bottom: 25px;" id="samba">
-        <h3>Produkti : Samba</h3>
-    </div>
-    <div style="color: white;">
-        <form method="post">
-            <div class="mySlides9" style="text-align: center;">
-                <p style="color: #d62217;">Samba - cmimi 1.2 €</p>
-                <p style="color: #d62217;">Sasia në depo - <span class="badge">{{sasia22}}</span></p>
-                <img src="static/images/romantic1.png" style="height:400px;">
-                <p><input class="container-fluid borderbox" type="number" id="last3" name="quantity"
-                          pattern="[0-9]*" min="1"
-                          placeholder="Sasia"
-                          style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
-                          required><br><input class="eoli" type="submit" name="submit22"
-                                              style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;"
-                                              value="Shto në listë">
-                </p>
-            </div>
-        </form>
-    </div>
-
-
-    <script>
-var slideIndex = [1,1,1,1];
-var slideId = ["mySlides1", "mySlides2", "mySlides4", "mySlides5"]
-showSlides(1, 0);
-showSlides(1, 1);
-showSlides(1, 2);
-showSlides(1, 3);
-
-function plusSlides(n, no) {
-  showSlides(slideIndex[no] += n, no);
-}
-
-function showSlides(n, no) {
-  var i;
-  var x = document.getElementsByClassName(slideId[no]);
-  if (n > x.length) {slideIndex[no] = 1}
-  if (n < 1) {slideIndex[no] = x.length}
-  for (i = 0; i < x.length; i++) {
-     x[i].style.display = "none";
-  }
-  x[slideIndex[no]-1].style.display = "block";
-}
-
-
-
-
-
-
-
-
-    </script>
-
-
 </div>
 </body>
 {% endblock %}
