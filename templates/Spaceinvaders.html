@@ -50,7 +50,7 @@ font-size: 17px;
   padding: 5px;
   background-color: black;
   color: white;
-  height: 40px;
+  height: auto;
   text-align: center;
   display: block
    margin-left: auto;
@@ -88,6 +88,9 @@ font-size: 17px;
             {% endif %}
             {% if item.category=="Pije" %}
             <a href="pije#{{item.product}}">{{item.product}}</a>
+            {% endif %}
+            {% if item.category=="Higjienë" %}
+            <a href="higjienë#{{item.product}}">{{item.product}}</a>
             {% endif %}
             {% endfor %}
         </div>

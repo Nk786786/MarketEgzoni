@@ -91,7 +91,8 @@ def write():
         quantity = request.form["quantity"]
         found = stocks.query.filter_by(product=product).first()
         if found:
-            stocks.query.filter_by(_id=found._id).delete()
+            found.price = price
+            found.quantity = quantity
             db.session.commit()
         else:
             stc = stocks(category, product, quantity, price)
@@ -99,7 +100,15 @@ def write():
             db.session.commit()
     return render_template("write.html")
 
-
+@app.route("/admin-delete", methods=["POST", "GET"])
+def delete():
+    if request.method == "POST":
+        product = request.form["product"]
+        found = stocks.query.filter_by(product=product).first()
+        if found:
+            stocks.query.filter_by(_id=found._id).delete()
+            db.session.commit()
+    return render_template("delete.html")
 @app.route("/login", methods=["POST", "GET"])
 def login():
     if request.method == "POST":

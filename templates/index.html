@@ -145,6 +145,9 @@ transform: rotate(45deg);
                 {% if item.category=="Pije" %}
                 <a href="pije#{{item.product}}">{{item.product}}</a>
                 {% endif %}
+                {% if item.category=="Higjienë" %}
+            <a href="higjienë#{{item.product}}">{{item.product}}</a>
+            {% endif %}
                 {% endfor %}
             </div>
         </div>
