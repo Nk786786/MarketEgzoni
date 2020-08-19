@@ -1,13 +1,15 @@
 {% extends "base.html" %}
 {% block title %}user{% endblock %}
 {% block content %}
-<div style="margin-top: 50px;" class="container">
+<div style="margin-top: 50px;" class="container-fluid">
 
     <table class="table" style="color: white;">
                     <thead style="color: black;">
                     <tr>
                         <td><strong style="font-size: 30px;">Nr</strong></td>
                         <td><strong style="font-size: 30px;">Kategoria</strong></td>
+                        <td><strong style="font-size: 30px;">Seksioni</strong></td>
+                        <td><strong style="font-size: 30px;">Kompania</strong></td>
                         <td><strong style="font-size: 30px;">Produkti</strong></td>
                         <td><strong style="font-size: 30px;">Cmimi</strong></td>
                         <td><strong style="font-size: 30px;">Sasia në depo</strong></td>
@@ -22,6 +24,8 @@
                     <tr>
                         <td><strong><i>{{item._id}}</i></strong></td>
                         <td><strong><i>{{item.category}}</i></strong></td>
+                        <td><strong><i>{{item.section}}</i></strong></td>
+                        <td><strong><i>{{item.company}}</i></strong></td>
                         <td><strong><i>{{item.product}}</i></strong></td>
                         <td><strong><i>{{item.price}}</i></strong></td>
                         <td><strong><i>{{item.quantity}}</i></strong></td>

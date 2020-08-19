@@ -14,7 +14,40 @@
   color:  #D63D17;
   opacity: 1.0;
 }
+.closebtn1 {
+  padding: 2px;
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 16px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.closebtn {
+padding: 3px;
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
 
+.closebtn:hover {
+  color: grey;
+
+
+.badge{
+background-color: #D63D17;
+height: 23px;
+width: auto;
+font-size: 17px;
+padding: 5px;
+}
 </style>
 <body style="background-color: #D63D17; color: white;">
 <div style="padding-bottom: 100px;">
@@ -59,7 +92,12 @@
         {% with messages = get_flashed_messages() %}
         {% if messages %}
         {% for msg in messages %}
-        <p style="color: black; opacity: 1.0; font-size: 22px;">{{msg}}</p>
+        <div style="text-align: center;">
+                <span class="badge" style="background-color: red; border: none;">
+                    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                    <span class="closebtn1">{{msg}}</span>
+                </span>
+        </div>
         {% endfor %}
         {% endif %}
         {% endwith %}

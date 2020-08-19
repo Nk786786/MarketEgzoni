@@ -133,29 +133,150 @@ font-size: 17px;
 
 
     </div>
-    <div class="slideshow-container" style="color: white;">
+    <div style="color: white;">
         {% for item in values1 %}
         {% if item.category=="Higjienë" %}
-        <div style="color: white; margin-top: 200px;" id="{{item.product}}">
-            <form method="post">
-                <div class="mySlides99" style="text-align: center;">
-                    <p style="color: #d62217;">{{item.product}} - cmimi {{item.price}} €</p>
-                    <p style="color: #d62217;">Sasia në depo - <span class="badge">{{item.quantity}}</span></p>
-                    <img src="static/images/{{item.product}}.png" style="height:400px;">
-                    <p><input class="container-fluid borderbox" type="number" name="quantity"
-                              pattern="[0-9]*" min="1"
-                              placeholder="Sasia"
-                              style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
-                              required><br><input class="eoli" type="submit" name="submit{{item.product}}"
-                                                  style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;"
-                                                  value="Shto në listë">
-                    </p>
-                </div>
-            </form>
+        {% if item.section=="Shampon" %}
+        {% if item.company=="Schauma" %}
+        <div class="slideshow-container">
+            <div style="color: white; margin-top: 200px;" id="{{item.product}}">
+                <form method="post">
+                    <div class="mySlides99" style="text-align: center;">
+                        <p style="color: #d62217;">{{item.product}} - çmimi {{item.price}} €</p>
+                        <p style="color: #d62217;">Sasia në depo - <span class="badge">{{item.quantity}}</span></p>
+                        <img src="static/images/{{item.product}}.png" style="height:400px;">
+                        <p><input class="container-fluid borderbox" type="number" name="quantity"
+                                  pattern="[0-9]*" min="1"
+                                  placeholder="Sasia"
+                                  style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
+                                  required><br><input class="eoli" type="submit" name="submit{{item.product}}"
+                                                      style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;"
+                                                      value="Shto në listë">
+                        </p>
+                    </div>
+                </form>
+            </div>
         </div>
         {% endif %}
+        {% endif %}
+        {% endif %}
         {% endfor %}
-
+    </div>
+    <div style="color: white;">
+        {% for item in values1 %}
+        {% if item.category=="Higjienë" %}
+        {% if item.section=="Detergjentë" %}
+        {% if item.company=="Abc" %}
+        <div class="slideshow-container">
+            <div style="color: white; margin-top: 200px;" id="{{item.product}}">
+                <form method="post">
+                    <div class="mySlides99" style="text-align: center;">
+                        <p style="color: #d62217;">{{item.product}} - çmimi {{item.price}} €</p>
+                        <p style="color: #d62217;">Sasia në depo - <span class="badge">{{item.quantity}}</span></p>
+                        <img src="static/images/{{item.product}}.png" style="height:400px;">
+                        <p><input class="container-fluid borderbox" type="number" name="quantity"
+                                  pattern="[0-9]*" min="1"
+                                  placeholder="Sasia"
+                                  style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
+                                  required><br><input class="eoli" type="submit" name="submit{{item.product}}"
+                                                      style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;"
+                                                      value="Shto në listë">
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+        {% endif %}
+        {% endif %}
+        {% endif %}
+        {% endfor %}
+    </div>
+    <div style="color: white;">
+        {% for item in values1 %}
+        {% if item.category=="Higjienë" %}
+        {% if item.section=="Pastë e dhëmbëve" %}
+        {% if item.company=="Colgate" %}
+        <div class="slideshow-container">
+            <div style="color: white; margin-top: 200px;" id="{{item.product}}">
+                <form method="post">
+                    <div class="mySlides99" style="text-align: center;">
+                        <p style="color: #d62217;">{{item.product}} - çmimi {{item.price}} €</p>
+                        <p style="color: #d62217;">Sasia në depo - <span class="badge">{{item.quantity}}</span></p>
+                        <img src="static/images/{{item.product}}.png" style="height:400px;">
+                        <p><input class="container-fluid borderbox" type="number" name="quantity"
+                                  pattern="[0-9]*" min="1"
+                                  placeholder="Sasia"
+                                  style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
+                                  required><br><input class="eoli" type="submit" name="submit{{item.product}}"
+                                                      style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;"
+                                                      value="Shto në listë">
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+        {% endif %}
+        {% endif %}
+        {% endif %}
+        {% endfor %}
+    </div>
+    <div style="color: white;">
+        {% for item in values1 %}
+        {% if item.category=="Higjienë" %}
+        {% if item.section=="Brushë e dhëmbëve" %}
+        {% if item.company=="Colgate" %}
+        <div class="slideshow-container">
+            <div style="color: white; margin-top: 200px;" id="{{item.product}}">
+                <form method="post">
+                    <div class="mySlides99" style="text-align: center;">
+                        <p style="color: #d62217;">{{item.product}} - çmimi {{item.price}} €</p>
+                        <p style="color: #d62217;">Sasia në depo - <span class="badge">{{item.quantity}}</span></p>
+                        <img src="static/images/{{item.product}}.png" style="height:400px;">
+                        <p><input class="container-fluid borderbox" type="number" name="quantity"
+                                  pattern="[0-9]*" min="1"
+                                  placeholder="Sasia"
+                                  style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
+                                  required><br><input class="eoli" type="submit" name="submit{{item.product}}"
+                                                      style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;"
+                                                      value="Shto në listë">
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+        {% endif %}
+        {% endif %}
+        {% endif %}
+        {% endfor %}
+    </div>
+    <div style="color: white;">
+        {% for item in values1 %}
+        {% if item.category=="Higjienë" %}
+        {% if item.section=="Kimikale" %}
+        {% if item.company=="Domestos" %}
+        <div class="slideshow-container">
+            <div style="color: white; margin-top: 200px;" id="{{item.product}}">
+                <form method="post">
+                    <div class="mySlides99" style="text-align: center;">
+                        <p style="color: #d62217;">{{item.product}} - çmimi {{item.price}} €</p>
+                        <p style="color: #d62217;">Sasia në depo - <span class="badge">{{item.quantity}}</span></p>
+                        <img src="static/images/{{item.product}}.png" style="height:400px;">
+                        <p><input class="container-fluid borderbox" type="number" name="quantity"
+                                  pattern="[0-9]*" min="1"
+                                  placeholder="Sasia"
+                                  style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
+                                  required><br><input class="eoli" type="submit" name="submit{{item.product}}"
+                                                      style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;"
+                                                      value="Shto në listë">
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+        {% endif %}
+        {% endif %}
+        {% endif %}
+        {% endfor %}
     </div>
 </div>
 </body>

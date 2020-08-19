@@ -16,7 +16,40 @@
   opacity: 1.0;
 }
 
+.closebtn1 {
+  padding: 2px;
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 16px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.closebtn {
+padding: 3px;
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
 
+.closebtn:hover {
+  color: grey;
+
+
+.badge{
+background-color: #D63D17;
+height: 23px;
+width: auto;
+font-size: 17px;
+padding: 5px;
+}
 
 </style>
 <body style="background-color: #D63D17; color: white;">
@@ -40,22 +73,47 @@
 
             <p><input type="submit" name="submit" value="Kyçu" style="color: #D63D17;"></p>
         </form>
-        <p>Nuk ke një llogari? <a href="/signup" style="color: #003F78;">Regjistrohu</a><br>
-        <a href="/forgotpassword" style="color: #003F78;">Keni harruar fjalëkalimin?</a></p>
+        <p>Nuk ke një llogari? <a href="/signup" style="color: black;">Regjistrohu</a><br>
+            <a href="/forgotpassword" style="color: black;">Keni harruar fjalëkalimin?</a></p>
         {% with messages = get_flashed_messages() %}
         {% if messages %}
         {% for msg in messages %}
         {% if msg=="Shkyçja është bërë me sukses!" %}
-        <p style="color: green; opacity: 1.0;">{{msg}}</p>
+        <div style="text-align: center;">
+                <span class="badge" style="background-color: green; border: none;">
+                    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                    <span class="closebtn1">{{msg}}</span>
+                </span>
+
+        </div>
         {% endif %}
         {% if msg=="Emri është gabim!" %}
-        <p style="color: black; opacity: 1.0;">{{msg}}</p>
+        <div style="text-align: center;">
+                <span class="badge" style="background-color: red; border: none;">
+                    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                    <span class="closebtn1">{{msg}}</span>
+                </span>
+
+        </div>
         {% endif %}
         {% if msg=="Fjalëkalimi është gabim!" %}
-        <p style="color: black; opacity: 1.0;">{{msg}}</p>
+        <div style="text-align: center;">
+                <span class="badge" style="background-color: red; border: none;">
+                    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                    <span class="closebtn1">{{msg}}</span>
+                </span>
+
+        </div>
         {% endif %}
         {% if msg=="Ju lutem kyçuni!" %}
-        <p style="color: black; opacity: 1.0;">{{msg}}</p>
+        <div style="text-align: center;">
+                <span class="badge" style="background-color: red; border: none;">
+                    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                    <span class="closebtn1">{{msg}}</span>
+                </span>
+
+        </div>
+
         {% endif %}
         {% endfor %}
         {% endif %}

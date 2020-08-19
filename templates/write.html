@@ -19,6 +19,37 @@
 
 
 </style>
+<script>
+    function random()
+    {
+       var a=document.getElementById('category').value;
+       if(a==="Ushqime")
+       {
+            var array=["Qipsa", "Keksa", "Qokollada", "Ëmbëlsira"];
+       }
+       else if(a==="Pije")
+       {
+            var array=["Të gazuara", "Lëngje", "Alkoolike"];
+       }
+       else if(a==="Higjienë")
+       {
+            var array=["Shampon", "Detergjentë", "Pastë e dhëmbëve", "Brushë e dhëmbëve", "Kimikale"];
+       }
+       else
+       {
+            var array=["Select product"];
+       }
+       var string="";
+       for(i=0;i<array.length;i++)
+       {
+           string=string+"<option>"+array[i]+"</option>";
+       }
+       string="<select class='container-fluid' name='section' style='margin-bottom: 20px; width: 700px; height: 50px; border: none; color:#D63D17;'>"+string+"</select>";
+       document.getElementById('output').innerHTML=string;
+}
+
+</script>
+
 <body style="background-color: #D63D17; color: white;">
 <div style="padding-bottom: 100px;">
     <a href="/home"><img src="static/images/cart.png" alt="Logo" height="50" style="padding: 10px 10px 0px"></a>
@@ -35,6 +66,46 @@
                     <option value="Ushqime">Ushqime</option>
                     <option value="Pije">Pije</option>
                     <option value="Higjienë">Higjienë</option>
+                </select>
+            </p>
+            <div id="output">
+                <select class="container-fluid" name="section"
+                        style="margin-bottom: 20px; width: 700px; height: 50px; border: none; color:#D63D17;" required>
+                    <option>Select seksionin</option>
+                </select>
+
+            </div>
+            <p style="margin-bottom: 0px;">
+
+                <select class="container-fluid" name="company"
+                        style="margin-bottom: 20px; width: 700px; height: 50px; border: none; color:#D63D17;" required>
+                    <option value="Zgjedh kompaninë">Zgjedh kompaninë</option>
+                    <option value="Doritos">Doritos</option>
+                    <option value="Patos">Patos</option>
+                    <option value="Plazma">Plazma</option>
+                    <option value="Snickers">Snickers</option>
+                    <option value="Mars">Mars</option>
+                    <option value="MilkyWay">MilkyWay</option>
+                    <option value="Twix">Twix</option>
+                    <option value="Raffaello">Raffaello</option>
+                    <option value="Merci">Merci</option>
+                    <option value="Bisfino">Bisfino</option>
+                    <option value="Romantic">Romantic</option>
+                    <option value="Samba">Samba</option>
+                    <option value="Coca Cola">Coca Cola</option>
+                    <option value="Fanta">Fanta</option>
+                    <option value="Pepsi">Pepsi</option>
+                    <option value="Sprite">Sprite</option>
+                    <option value="Frutti">Frutti</option>
+                    <option value="Smirnoff">Smirnoff</option>
+                    <option value="Birra Peja">Birra Peja</option>
+                    <option value="Birra Shkupi">Birra Shkupi</option>
+                    <option value="Birra Lasko">Birra Lasko</option>
+                    <option value="Jack Daniels">Jack Daniels</option>
+                    <option value="Schauma">Schauma</option>
+                    <option value="Abc">Abc</option>
+                    <option value="Colgate">Colgate</option>
+                    <option value="Domestos">Domestos</option>
                 </select>
             </p>
             <p><input
