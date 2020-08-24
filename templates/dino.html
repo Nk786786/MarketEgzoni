@@ -1,76 +1,7 @@
 {% extends "base.html" %}
 {% block title %}Market Egzoni - Pije{% endblock %}
 {% block content %}
-
-<style>
-    body {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 20px;
-}
-* {box-sizing: border-box}
-.mySlides1, .mySlides2, .mySlides3, .mySlides4, .mySlides5, .mySlides6, .mySlides7, .mySlides8, .mySlides9 {display: none}
-img {vertical-align: middle;}
-
-/* Slideshow container */
-.slideshow-container {
-  max-width: 1000px;
-  position: relative;
-  margin: auto;
-}
-@media only screen and (max-width: 750px) {
-    #searchremove {
-        display: none;
-    }
-}
-@media only screen and (min-width: 750px) {
-    #searchremove1 {
-        display: none;
-    }
-}
-@media only screen and (max-width: 1000px) {
-    #pic {
-        display: none;
-    }
-}
-@media only screen and (min-width: 1000px) {
-    #pic1 {
-        display: none;
-    }
-}
-.badge{
-background-color: #D63D17;
-height: 23px;
-width: auto;
-border-radius: 50%;
-font-size: 17px;
-}
-.alert {
-  padding: 5px;
-  background-color: black;
-  color: white;
-  height: auto;
-  text-align: center;
-  display: block
-   margin-left: auto;
-   margin-right: auto;
-   width: 98%;
-}
-
-.closebtn {
-  padding: 5px;
-  margin-left: 15px;
-  color: white;
-  font-weight: bold;
-  float: right;
-  font-size: 22px;
-  line-height: 20px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.closebtn:hover {
-  color: grey;
-</style>
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/productstyle.css') }}">
 <body>
 <div style="text-align: right; margin-top: 20px; margin-right: 20px;">
     <div class="dropdown" style="text-align: left;" id="search">
@@ -309,7 +240,7 @@ font-size: 17px;
         {% if item.section=="Alkoolike" %}
         {% if item.company=="Birra Peja" %}
         <div class="slideshow-container">
-            <div style="color: white; margin-top: 200px;" id="{{item.product}}">
+            <div style="margin-top: 200px;" id="{{item.product}}">
                 <form method="post">
                     <div class="mySlides99" style="text-align: center;">
                         <p style="color: #d62217;">{{item.product}} - çmimi {{item.price}} €</p>
@@ -320,7 +251,7 @@ font-size: 17px;
                                   placeholder="Sasia"
                                   style="margin-bottom: 0px; width: 130px; height: 36px; border: none; color: #d62217;"
                                   required><br><input class="eoli" type="submit" name="submit{{item.product}}"
-                                                      style="background-color: #D63D17; color: white; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;"
+                                                      style="background-color: #D63D17; width: 130px; height: 36px; margin-bottom: 0px; margin-top: 5px;"
                                                       value="Shto në listë">
                         </p>
                     </div>

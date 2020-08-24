@@ -1,69 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Market Egzoni - Porosia</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <link rel="shortcut icon" type="image/png" href="static/images/logo2.png">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-
-</head>
-{% extends "base.html" %}
-{% block title %}Ushqime{% endblock %}
-{% block content %}
-<style>
-    ::placeholder {
-  color:  #007bff;
-  opacity: 1.0;
-}
-
-
-#section1
-{
-}
-
-.eoli:hover {
-     opacity: 0.85;
-}
-.closebtn1 {
-  padding: 2px;
-  margin-left: 15px;
-  color: white;
-  font-weight: bold;
-  float: right;
-  font-size: 16px;
-  line-height: 20px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-.closebtn {
-padding: 3px;
-  margin-left: 15px;
-  color: white;
-  font-weight: bold;
-  float: right;
-  font-size: 22px;
-  line-height: 20px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.closebtn:hover {
-  color: grey;
-
-
-.badge{
-background-color: #D63D17;
-height: 23px;
-width: auto;
-font-size: 17px;
-padding: 5px;
-}
-
-</style>
-
+    <head>
+        <meta charset="UTF-8">
+        <title>Market Egzoni - Porosia</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <link rel="shortcut icon" type="image/png" href="static/images/logo2.png">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/styles.css') }}">
+    
+    </head>
+    {% extends "base.html" %}
+    {% block content %}
 <script>
     function random()
     {
@@ -96,6 +45,8 @@ padding: 5px;
 </script>
 
 <body style="background-color: #FF4C20; color: white;">
+
+    
 <div style="padding-bottom: 50px;">
 
 

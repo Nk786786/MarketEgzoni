@@ -13,173 +13,12 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/stylesbase.css') }}">
+
 
 </head>
-
 <style>
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 16px;
-  }
-#myBtn {
-  display: none;
-  position: fixed;
-  bottom: 20px;
-  right: 30px;
-  z-index: 99;
-  font-size: 18px;
-  border: none;
-  outline: none;
-  background-color: red;
-  color: white;
-  cursor: pointer;
-  padding: 15px;
-  border-radius: 4px;
-}
-
-#myBtn:hover {
-  background-color: black;
-  color: red;
-}
-html {
-  scroll-behavior: smooth;
-}
-.topnav {
-  overflow: hidden;
-  background-color: #D63D17;
-  position: fixed;
-  top: 0;
-  width: auto;
-  width: 100%;
-  z-index: 99;
-  }
-
-.topnav a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-  top: 0;
-  z-index: 99;
-}
-
-.topnav a:hover {
-  background-color: black;
-  color: white;
-}
-
-.topnav a.active {
-  background-color: #D63D17;
-  color: white;
-}
-
-.topnav .icon {
-  display: none;
-}
-
-@media screen and (max-width: 800px) {
-  .topnav a:not(:first-child) {display: none;}
-  .topnav a.icon {
-    top: 0;
-    float: right;
-    display: block;
-  }
-}
-
-@media screen and (max-width: 800px) {
-  .topnav.responsive {position: fixed; top: 0;}
-  .topnav.responsive .icon {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  .topnav.responsive a {
-    top: 0;
-    float: none;
-    display: block;
-    text-align: left;
-  }
-}
-/* Next & previous buttons */
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  padding: 16px;
-  margin-top: -22px;
-  color: white;
-  background-color: #CF0909;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-}
-
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-/* On hover, add a grey background color */
-.prev:hover, .next:hover {
-  background-color: #FF713B;
-  color: white;
-}
-
-.topnav-right {
-  float: right;
-}
-
-#example2 {
-  border: none;
-  border-radius: 25px;
-  padding: 10px;
-  box-shadow: 3px 5px #030305;
-  background-color: #34495E;
-
-}
-#section1 {
-  height: auto;
-}
-
-#section2 {
-  height: auto;
-}
-#ushqime {
-  height: auto;
-  background-color:black;
-  color: black;
-}
-#keksa {
-  height: auto;
-  background-color:black;
-  color: black;
-}
-.borderbox {
-box-shadow: 0 1px rgba(0, 0, 0, 0.3),
-            0 3px 7px rgba(0, 0, 0, 0.3),
-            inset 0 1px rgba(255,255,255,1),
-            inset 0 -3px 2px rgba(0,0,0,0.25);
-            border-radius: 5px;
-            background: linear-gradient(#eeefef, #ffffff 10%);
-}
-.borderbox1 {
-box-shadow: 0 0px rgba(0, 0, 0, 0.3),
-            0 0px 7px rgba(0, 0, 0, 0.3),
-            inset 0 1px rgba(255,255,255,1),
-            inset 0 -3px 2px rgba(0,0,0,0.25);
-            border-radius: 5px;
-            background: linear-gradient(#eeefef, #ffffff 10%);
-}
-
-#myInput {
+  #myInput {
   box-sizing: border-box;
   background-image: url('static/images/searchbar4.png');
   background-position: 0px -2px;
@@ -192,45 +31,6 @@ box-shadow: 0 0px rgba(0, 0, 0, 0.3),
   color: #D63D17;
 
 }
-
-#myInput:focus {outline: 3px solid #ddd;}
-
-.dropdown {
-  position: relative;
-  display: inline-block;
-  color: #D63D17;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f6f6f6;
-  min-width: 230px;
-  overflow: auto;
-  border: 1px solid #ddd;
-  z-index: 1;
-  width: 248px;
-  height: 260px;
-
-}
-
-.dropdown-content a {
-  color: #D63D17;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown a:hover {background-color: #D63D17; color: white;}
-
-.show {display: inline-block;}
-
-::placeholder{
-color: #D63D17;
-}
-
-
-
 </style>
 <body>
 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
@@ -313,16 +113,116 @@ function filtersearchFunction() {
         {% endif %}
     </div>
     <div style="float: right;">
-        <a href="/order" style="font-size: 20px;">Porosi {% if length == 0 %}<img src="static/images/order1.png"
+        <a href="#" style="font-size: 20px;"  onclick="document.getElementById('id01').style.display='block'" >Porosi {% if length == 0 %}<img src="static/images/order1.png"
                                                                                   alt="Logo"
                                                                                   height="25">{% endif %}{% if not
             length == 0 %}<span class="badge"
                                 style="background-color: white; color: #D63D17; height: 23px; width: auto; border-radius: 50%; font-size: 17px;">{{length}}</span>{%
             endif %}</a>
+            <div id="id01" class="modal">
+                  
+              <form class="modal-content animate" method="post">
+                <div class="imgcontainer">
+                    <p style="color: #d62217; font-size: 50px;">Porosia Juaj</p>
+                  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Anulo">&times;</span>
+                </div>
+                
+            
+                <div class="container-fluid">
+                  <table class="table" style="color:#d62217; background-color: #f1f1f1;">
+                    {% if not length == 0 %}
+                    <thead>
+                    <tr>
+                        <td><strong style="font-size: 30px;">Kategoria</strong></td>
+
+                        <td><strong style="font-size: 30px;">Produkti</strong></td>
+
+                        <td><strong style="font-size: 30px;">Sasia</strong></td>
+
+                        <td><strong style="font-size: 30px;">Çmimi<br></strong><i style="font-size: 16px;">për një</i></td>
+
+                        <td><strong style="font-size: 30px;">Çmimi<br></strong><i style="font-size: 16px;">për të gjitha</i></td>
+                    </tr>
+                    </thead>
+                    {% endif %}
+
+                    <tbody>
+
+                    {% for item in orders %}
+
+                    <tr>
+                        <td><strong>{{item.category}}</strong></td>
+
+                        <td><strong>{{item.product}}</strong></td>
+
+                        <td><strong>{{item.quantity}}</strong></td>
+
+                        <td><strong>{{item.qmimi}} €</strong></td>
+
+                        <td><strong>{{item.price}} €</strong></td>
+                        <td><form method="post">
+
+                        <input class="eoli" type="submit" name="remove{{item.id}}"
+                               style="background-color: #d62217; color: white; border-radius: 4px; width: 28px; height: 28px; border: none; "
+                               value="X">
+
+
+                    </form>
+                        </td>
+                    </tr>
+
+
+
+                    {% endfor %}
+
+                    </tbody>
+                </table>
+                <div style="text-align: center; margin-bottom: 50px;">
+
+                  <div class="btn-group" style="text-align: center; margin: 15px 0px 15px">
+                      <span class="btn btn-primary btn-lg" style="background-color: #d62217; border: none;">
+                          Total : {{total}} €
+                      </span>
+      
+                  </div>
+                  {% if not length == 0 %}
+                  <div class="btn-group" style="text-align: center; margin: 15px 0px 5px;">
+                      <form method="post">
+                          <p><input class="eoli" type="submit" name="submit1"
+                                    style="color: #d62217; width: 80px; height: 36px;"
+                                    value="Fshij"></p>
+                      </form>
+                  </div>
+                  {% endif %}
+              </div>
+
+                </div>
+            
+                <div class="container-fluid" style="background-color:#f1f1f1; text-align: center;">
+                  <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn button1">Anulo</button>
+                  <input class="cancelbtn button1" type="submit" name="order"
+                    value="Porosit">
+                </div>
+              </form>
+            
+            
+            </div>
+            </div>
     </div>
 
 
 </div>
+<script>
+  // Get the modal
+  var modal = document.getElementById('id01');
+  
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+      if (event.target == modal) {
+          modal.style.display = "none";
+      }
+  }
+  </script>
 
 <script>
 function myFunction() {
